@@ -23,6 +23,7 @@ public class SmokeTestProd extends TestInitReference {
 		    new SmokeTestUtil().checkHealth();
 		    new SmokeTestUtil().logout(); 
 		    new SmokeTestUtil().register();
+		    
 		    new SmokeTestUtil().changePassword();
 			
 		}catch(Exception e){
