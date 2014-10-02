@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="214841" started-at="2014-10-02T20:17:38Z" finished-at="2014-10-02T20:21:13Z">
+  <suite name="Default suite" duration-ms="56993" started-at="2014-10-02T23:33:52Z" finished-at="2014-10-02T23:34:49Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="214841" started-at="2014-10-02T20:17:38Z" finished-at="2014-10-02T20:21:13Z">
+    <test name="Default test" duration-ms="56993" started-at="2014-10-02T23:33:52Z" finished-at="2014-10-02T23:34:49Z">
       <class name="myrp.test.SmokeTestProd">
-        <test-method status="PASS" signature="Startup(java.lang.String)[pri:0, instance:myrp.test.SmokeTestProd@68e0a1b9]" name="Startup" is-config="true" duration-ms="167382" started-at="2014-10-03T04:17:38Z" finished-at="2014-10-03T04:20:26Z">
+        <test-method status="PASS" signature="Startup(java.lang.String)[pri:0, instance:myrp.test.SmokeTestProd@7532bfa4]" name="Startup" is-config="true" duration-ms="26847" started-at="2014-10-03T07:33:52Z" finished-at="2014-10-03T07:34:19Z">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -16,11 +16,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Startup -->
-        <test-method status="PASS" signature="verifyEstimatedValueSubscription()[pri:0, instance:myrp.test.SmokeTestProd@68e0a1b9]" name="verifyEstimatedValueSubscription" duration-ms="46746" started-at="2014-10-03T04:20:26Z" finished-at="2014-10-03T04:21:13Z">
+        <test-method status="PASS" signature="verifyExternalConnections()[pri:0, instance:myrp.test.SmokeTestProd@7532bfa4]" name="verifyExternalConnections" duration-ms="29922" started-at="2014-10-03T07:34:19Z" finished-at="2014-10-03T07:34:49Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyEstimatedValueSubscription -->
-        <test-method status="PASS" signature="teardown()[pri:0, instance:myrp.test.SmokeTestProd@68e0a1b9]" name="teardown" is-config="true" duration-ms="533" started-at="2014-10-03T04:21:13Z" finished-at="2014-10-03T04:21:13Z">
+        </test-method> <!-- verifyExternalConnections -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:myrp.test.SmokeTestProd@7532bfa4]" name="teardown" is-config="true" duration-ms="158" started-at="2014-10-03T07:34:49Z" finished-at="2014-10-03T07:34:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardown -->

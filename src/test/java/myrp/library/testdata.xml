@@ -116,10 +116,10 @@ The predominant age group in Manly is 25-34 years.
 	<!-- Smoke Test -->
 	
 	 	<!-- Register -->
-	<entry key ="smokeFirstName">Myrp Test003</entry>
+	<entry key ="smokeFirstName">Myrp Test004</entry>
 	<entry key ="smokeLastName">Tooltwist</entry>
-	<entry key ="smokeEmail">MyrpTest003@gmail.com</entry>
-	<entry key ="smokeConfirmEmail">MyrpTest003@gmail.com</entry>
+	<entry key ="smokeEmail">MyrpTest004@gmail.com</entry>
+	<entry key ="smokeConfirmEmail">MyrpTest004@gmail.com</entry>
 	<entry key ="smokePassword">123456</entry>
 	<entry key ="smokeConfirmPassword">123456</entry>
 	<entry key ="smokeSecurityQuestion">test</entry>

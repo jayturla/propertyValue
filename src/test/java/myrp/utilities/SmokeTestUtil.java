@@ -113,9 +113,7 @@ public class SmokeTestUtil extends TestInitReference {
 			
 			waitForElementPresent(xpath(ObjectReference.smokeSuccessRegister));
 			Assert.assertTrue(verifyTextPresent("You have successfully signed in to myRPData and you are now logged in."));
-			
-			pass("02. SIGNUP [Verify that user can signup into myrp]");
-		
+				
 		}catch(AssertionError e){
 			fail("Did not register successfully!");
 			takeScreenshot();
@@ -581,10 +579,10 @@ public class SmokeTestUtil extends TestInitReference {
 	
 	public void searchSuburb(String address) throws Exception {
 		
-		waitForElementPresent(xpath(ObjectReference.smokeSearchLine_xp));
-		type(xpath(ObjectReference.smokeSearchLine_xp), address);
-		click(xpath(ObjectReference.search_button_xp));
-		waitForElementPresent(xpath(ObjectReference.smokeSearchAddress_xp));
+		waitForElementPresent(xpath(smokeSearchLine_xp));
+		type(xpath(smokeSearchLine_xp), address);
+		click(xpath(search_button_xp));
+		waitForElementPresent(xpath(smokeSearchAddress_xp));
 		try{
 			
 			pass(" - Test: " + suburbAddress + " is present");
@@ -702,10 +700,23 @@ public void searchSuburb(int method) throws Exception {
 	}
 	
 	public void checkKeyStats() throws Exception {
-		searchSuburb();
+		//searchSuburb();
 		try{
-			waitForElementPresent(xpath(ObjectReference.smokeBtnKeyStats_xp));
-			click(xpath(ObjectReference.smokeBtnKeyStats_xp));
+			waitForElementPresent(xpath(smokeSearchLine_xp));
+			type(xpath(smokeSearchLine_xp), suburbAddress);
+			click(xpath(search_button_xp));
+			waitForElementPresent(xpath(smokeSearchAddress_xp));
+			pass("User in Suburb tab");
+		} catch(Exception e){
+			takeScreenshot();
+			fail("User NOT in Suburb tab");
+		}
+		
+		try{
+			waitForElementPresent(xpath(smokeBtnKeyStats_xp));
+			Assert.assertTrue(isElementPresent(xpath(smokeBtnKeyStats_xp)));
+			click(xpath(smokeBtnKeyStats_xp));
+			pass("User is navigated to Key Stats page");
 			checkImgAgeSexRatio();
 			checkImgIncome();
 			checkImgStructure();
@@ -718,9 +729,12 @@ public void searchSuburb(int method) throws Exception {
 	
 	public void checkImgAgeSexRatio() throws Exception{
 		try{
-			waitForElementPresent(xpath(ObjectReference.smokeBtnAgeSexRatio_xp));
-			click(xpath(ObjectReference.smokeBtnAgeSexRatio_xp));
-			waitForElementPresent(xpath(ObjectReference.smokeImgAgeSexRatio_xp));
+			waitForElementPresent(xpath(smokeBtnAgeSexRatio_xp));
+			Assert.assertTrue(isElementPresent(xpath(smokeBtnAgeSexRatio_xp)));
+			click(xpath(smokeBtnAgeSexRatio_xp));
+			
+			waitForElementPresent(xpath(smokeImgAgeSexRatio_xp));
+			Assert.assertTrue(isElementPresent(xpath(smokeImgAgeSexRatio_xp)));
 			Thread.sleep(500);
 		}catch(Exception e){
 			takeScreenshot();
@@ -731,9 +745,12 @@ public void searchSuburb(int method) throws Exception {
 	
 	public void checkImgIncome() throws Exception{
 		try{
-			waitForElementPresent(xpath(ObjectReference.smokeBtnIncome_xp));
-			click(xpath(ObjectReference.smokeBtnIncome_xp));
+			waitForElementPresent(xpath(smokeBtnIncome_xp));
+			Assert.assertTrue(isElementPresent(xpath(smokeBtnIncome_xp)));
+			click(xpath(smokeBtnIncome_xp));
+			
 			waitForElementPresent(xpath(ObjectReference.smokeImgIncome_xp));
+			Assert.assertTrue(isElementPresent(xpath(smokeImgIncome_xp)));
 			Thread.sleep(500);
 		}catch(Exception e){
 			takeScreenshot();
@@ -743,9 +760,12 @@ public void searchSuburb(int method) throws Exception {
 	
 	public void checkImgStructure() throws Exception{
 		try{
-			waitForElementPresent(xpath(ObjectReference.smokeBtnStructure_xp));
+			waitForElementPresent(xpath(smokeBtnStructure_xp));
+			Assert.assertTrue(isElementPresent(xpath(smokeBtnStructure_xp)));
 			click(xpath(ObjectReference.smokeBtnStructure_xp));
-			waitForElementPresent(xpath(ObjectReference.smokeImgStructure_xp));
+			
+			waitForElementPresent(xpath(smokeImgStructure_xp));
+			Assert.assertTrue(isElementPresent(xpath(smokeImgStructure_xp)));
 			Thread.sleep(500);
 		}catch(Exception e){
 			takeScreenshot();
@@ -755,9 +775,12 @@ public void searchSuburb(int method) throws Exception {
 	
 	public void checkImgOccupancy() throws Exception{
 		try{
-			waitForElementPresent(xpath(ObjectReference.smokeBtnOccupancy_xp));
-			click(xpath(ObjectReference.smokeBtnOccupancy_xp));
-			waitForElementPresent(xpath(ObjectReference.smokeImgOccupancy_xp));
+			waitForElementPresent(xpath(smokeBtnOccupancy_xp));
+			Assert.assertTrue(isElementPresent(xpath(smokeBtnOccupancy_xp)));
+			click(xpath(smokeBtnOccupancy_xp));
+			
+			waitForElementPresent(xpath(smokeImgOccupancy_xp));
+			Assert.assertTrue(isElementPresent(xpath(smokeImgOccupancy_xp)));
 			Thread.sleep(500);
 		}catch(Exception e){
 			takeScreenshot();
@@ -1095,7 +1118,6 @@ public void searchSuburb(int method) throws Exception {
 			if(isLoggedin()){
 				waitForElementPresent(xpath(ObjectReference.smokeBtnLogout_xp));
 				click(xpath(ObjectReference.smokeBtnLogout_xp));
-				pass("06. LOGOUT [Verify that user can log out from myrp]");
 			}
 		}catch(Exception e){
 			takeScreenshot();
@@ -1204,10 +1226,7 @@ public void searchSuburb(int method) throws Exception {
 				pass("Checking CPS is OK.!");
 			}catch(AssertionError e){
 				fail("Checking CPS failed!");
-			}
-			
-			pass("01. HEALTH CHECK - Checking HealthCheck Done!");
-			
+			}		
 			
 		}catch(Exception e){
 			takeScreenshot();
