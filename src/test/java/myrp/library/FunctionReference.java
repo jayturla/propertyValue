@@ -620,4 +620,14 @@ public class FunctionReference extends Results {
 		return metaYpath;
 	}
 	
+    /*public String getValue(By by, String attribute) {
+        String value = "";
+        if (isElementPresent(by)) {
+        	if (driver.findElement(by).getAttribute(attribute) != null) {
+        		value = driver.findElement(by).getAttribute(attribute);
+        	}
+        }
+        return value;
+    }*/
+	
 }

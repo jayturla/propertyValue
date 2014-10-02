@@ -13,25 +13,71 @@ import atu.testng.reports.listeners.MethodListener;
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class, MethodListener.class })
 public class SmokeTestProd extends TestInitReference {
 	{
-		System.setProperty("atu.reporter.config", "/tooltwist/eclipse/rppm/conf/atu.properties");
+		System.setProperty("atu.reporter.config", "/tooltwist Automation/eclipse/myrp-automation/conf/atu.properties");
 	}
 	
-	@Test
+	/*@Test
 	public void verifyExternalConnections(){
 		try{
 			new SmokeTestUtil().login("admin");
 		    new SmokeTestUtil().checkHealth();
 		    new SmokeTestUtil().logout(); 
-		    new SmokeTestUtil().register();
-		    
-		    new SmokeTestUtil().changePassword();
-			
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-		
 	}
 	
+	@Test
+	public void verifyRegistration(){
+		try{
+		    new SmokeTestUtil().register();   
+		    new SmokeTestUtil().changePassword();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+	
+	@Test
+	public void verifyEstimatedValueReport(){
+		try{
+			new SmokeTestUtil().buyEstimatedValueReport();
+			new SmokeTestUtil().testCPS();			
+			pass("08. ESTIMATED VALUE REPORT - Verify that Estimated Value Report can be purchased by a guest user");
+		}catch(Exception e){
+			e.printStackTrace();
+			fail("08. ESTIMATED VALUE REPORT - FAILED");
+		}
+	}*/	
+
+	@Test
+	public void verifyEstimatedValueSubscription(){
+		try{
+			new SmokeTestUtil().login();
+		
+			//new SmokeTestUtil().isLoggedin();
+			new SmokeTestUtil().buyEstimatedValueSubscription();
+			new SmokeTestUtil().testCPS();	
+			pass("03. ESTIMATED VALUE  SUBSCRIPTION - Verify that Estimated Value Subscription can be purchased as a logged in user");
+		}catch(Exception e){
+			e.printStackTrace();
+			fail("03. ESTIMATED VALUE  SUBSCRIPTION - FAILED");
+		}
+	}
+	
+/*	@Test
+	public void verifyDetailedPropertyReport(){
+		try{
+			new SmokeTestUtil().buyDetailedPropertyReport();
+			new SmokeTestUtil().testCPS();	
+			pass("10. DETAILED PROPERTY REPORT -Verify that Detailed Property Report can be purchased by a guest user");
+		}catch(Exception e){
+			e.printStackTrace();
+			fail("10. DETAILED PROPERTY REPORT - FAILED");
+		}
+	}*/
+	
+	
+	//***NOT YET UPDATED***
 	/*@Test
 	public boolean verifyInvestorPostcodeReport(){
 		try{
@@ -44,15 +90,6 @@ public class SmokeTestProd extends TestInitReference {
 	} 
 	
 	@Test
-	public void verifyDetailedPropertyReport(){
-		try{
-			new SmokeTestUtil().buyDetailedPropertyReport();
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-	}
-	
-	@Test
 	public void verifySalesHistoryReport(){
 		try{
 			new SmokeTestUtil().buySalesHistoryReport();
@@ -61,14 +98,7 @@ public class SmokeTestProd extends TestInitReference {
 		}
 	}
 	
-	@Test
-	public void verifyEstimatedValueReport(){
-		try{
-			new SmokeTestUtil().buyEstimatedValueReport();
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-	}
+	
 	
 	@Test
 	public void verifyStreetSalesReport(){
@@ -142,14 +172,6 @@ public class SmokeTestProd extends TestInitReference {
 		}
 	}
 	
-	@Test
-	public void verifyEstimatedValueSubscription(){
-		try{
-			new SmokeTestUtil().buyEstimatedValueSubscription();
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-	}
 	
 	@Test
 	public void verifySuburbSalesMapSubscription(){

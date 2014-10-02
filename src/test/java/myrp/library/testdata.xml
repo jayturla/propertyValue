@@ -128,6 +128,8 @@ The predominant age group in Manly is 25-34 years.
 	 	<!-- Change Password -->
 	<entry key ="smokeChangePassword">qwerty</entry>	
 	
+	<entry key ="testEmail">safaritooltwist@gmail.com</entry>
+	<entry key ="testPwd">123456</entry>
 	
 	<entry key ="smokePropertyAddress">1/287-293 Exhibition Street Melbourne VIC 3000</entry>
 	<entry key ="smokePropertyAddress1">11 Testa Street Caboolture QLD 4510</entry>
@@ -135,6 +137,7 @@ The predominant age group in Manly is 25-34 years.
 	<entry key ="smokePropertyAddress3">145 Red Hill Road Tolland NSW 2650</entry>
 	<entry key ="smokePropertyAddress4">147 Scenic Highway Terrigal NSW 2260</entry>
 	<entry key="smokeStateBreadcrumb">NSW</entry>
+	<entry key="smokeStateVicBreadcrumb">VIC</entry>
 	<entry key="smokeCouncilBreadcrumb">Bankstown</entry>
 	<entry key="smokeSuburbBreadcrumb">Picnic Point 2213</entry>
 	<entry key="smokeStreetBreadcrumb">Atami Place</entry>
@@ -156,7 +159,13 @@ The predominant age group in Manly is 25-34 years.
 	<entry key="smokeAlternateRePassword">birdman33</entry>
 	<entry key="smokeStreetAddress">Sofala Avenue Riverview NSW 2066</entry>
 
-
+	<!-- CPS -->
+	<entry key="DpsCardNumber_xp">4111111111111111</entry>
+	<entry key="DpsCardHolderName_xp">TEST</entry>
+	<entry key="DpsExpiryDateMM_xp">11</entry>
+	<entry key="DpsExpiryDateYY_xp">16</entry>
+	<entry key="DpsCardSecCode_xp">123</entry>
+	<entry key="newCard">New Card</entry>
 
 	<!-- CFA MOBILE -->
 	<entry key="cfaStreetNumber">2891</entry>

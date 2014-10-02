@@ -2,6 +2,8 @@ package myrp.library;
 
 import java.util.HashMap;
 
+
+
 public class ObjectReference {
     ReadXmlData rxml = new ReadXmlData();
     
@@ -185,7 +187,7 @@ public class ObjectReference {
     public static String smokeTermsAndConditions_xp = "//input[@id='termsConditions']";
     public static String smokeSuccessRegister = "//span[@class='bodyText']";
     
-    // Search
+    //Search
     public static String smokeSearchLine_xp = "//input[@id='singleLineSearch']";
     public static String smokeBtnSearch_xp = "//input[@id='searchButtonIcon']";
     public static String smokeSearchAddress_xp = "//h1/span[@itemprop='streetAddress']";
@@ -307,7 +309,7 @@ public class ObjectReference {
    public static String smokePurchasedSuccessful_xp = "//span[@class='wbdRichText']";
    public static String smokeTxtPromoCode_xp = "//input[@id='promotionCode']";
    public static String smokeBtnPromoCode_xp = "//input[@name='applyPromoCodeButton']";
-   
+
    
    //change password
    public static String smokeBtnMyDetails_xp = "//a[contains(@href,'/My-details/')]";
@@ -411,6 +413,28 @@ public class ObjectReference {
    public static String MyMapsBtn_xp ="";
    
    //My Purchases
+   public static String cartLoginBtn_xp = "//input[@name='cartLoginButton']";
+   public static String cartUserName_xp = "//*[@id='cartUserName']";
+   public static String cartPwd_xp = "//*[@id='cartPasswordDefault']";
+   public static String confirmLbl_xp = "//*[@id='confirmDetails']/label";
+   public static String confirmDtls_xp = "//*[@id='confirmDetails']/div/span[1]";
+   public static String totalAmount_xp = "//*[@id='totalAmount']";
+   public static String rememberCardCb_xp = "//*[@id='rememberCard']";
+   public static String rememberCardLabel_xp ="//*[@id='rememberCardLabel']";
+   public static String orderNowBtn_xp = "//*[@id='btnContinue']";
+   public static String payNowBtn_xp = "//*[@id='getApproval']";
+   
+   
+   //CPS
+   public static String DpsHeaderLogo_xp = "//*[@id='DpsHeaderLogo']";
+   public static String DpsCardNumber_xp = "//*[@id='CardNumber']";
+   public static String DpsCardHolderName_xp = "//*[@id='CardHolderName']";
+   public static String DpsExpiryDateMM_xp = "//*[@id='DateExpiry_1']";
+   public static String DpsExpiryDateYY_xp = "//*[@id='DateExpiry_2']";
+   public static String DpsCardSecCode_xp = "//*[@id='Cvc2']";
+   public static String DpsSubmitBtn_xp = "//*[@id='clickedAdd']";
+   public static String DpsNewCard_xp = "//*[@id='card_payment_tokens']";
+	
    
    // Street report
    public static String streetReportAccordion_xp = "//div[@class='street-report'][1]";

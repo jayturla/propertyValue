@@ -12,6 +12,8 @@ import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.thoughtworks.selenium.Selenium;
+
 public class SmokeTestUtil extends TestInitReference {
 	
 	private boolean isPasswordChanged = false;
@@ -41,6 +43,7 @@ public class SmokeTestUtil extends TestInitReference {
 	String contactNumber = rxml.data("smokeContactNumber");
 	String propertyAddress = rxml.data("smokePropertyAddress");
 	String stateBreadCrumb = rxml.data("smokeStateBreadcrumb");
+	String stateVicBreadCrumb = rxml.data("smokeStateVicBreadcrumb");
 	String councilBreadCrumb = rxml.data("smokeCouncilBreadcrumb");
 	String suburbBreadCrumb = rxml.data("smokeSuburbBreadcrumb");
 	String streetBreadCrumb = rxml.data("smokeStreetBreadcrumb");
@@ -53,6 +56,16 @@ public class SmokeTestUtil extends TestInitReference {
 	String alternatePassword = rxml.data("smokeAlternatePassword");
 	String alternateRePassword = rxml.data("smokeAlternateRePassword");
 	String streetAddress = rxml.data("smokeStreetAddress");
+	
+	String testEmail = rxml.data("testEmail");
+	String testPwd = rxml.data("testPwd");
+	
+	String DpsCardNumber = rxml.data("DpsCardNumber_xp");
+	String DpsCardHolderName = rxml.data("DpsCardHolderName_xp");
+	String DpsExpiryDateMM = rxml.data("DpsExpiryDateMM_xp");
+	String DpsExpiryDateYY = rxml.data("DpsExpiryDateYY_xp");
+	String DpsCardSecCode = rxml.data("DpsCardSecCode_xp");
+	String DpsNewCard = rxml.data("newCard");
 	
 	public SmokeTestUtil(){
 		checkEnvironmentUrl();
@@ -71,23 +84,36 @@ public class SmokeTestUtil extends TestInitReference {
 	//Registration
 	@Test
 	public void register() throws Exception {
-		waitForElementPresent(xpath(ObjectReference.signup_button_xp));
-		click(xpath(ObjectReference.signup_button_xp));
-		waitForElementPresent(xpath(ObjectReference.smokeFirstName_xp));
+		
 		try{
+			waitForElementPresent(xpath(ObjectReference.signup_button_xp));
+			click(xpath(ObjectReference.signup_button_xp));
+			pass("Sign Up button is available");
+		}catch(AssertionError e){
+			fail("Sign Up button is NOT available!");
+			takeScreenshot();
+			resultcount++;
+		}
+		
+		try{
+			waitForElementPresent(xpath(smokeFirstName_xp));
 			type(xpath(ObjectReference.smokeFirstName_xp), firstName);
 			type(xpath(ObjectReference.smokeLastName_xp),  lastName);
 			type(xpath(ObjectReference.smokeEmail_xp),  email);
-			type(xpath(ObjectReference.smokeConfirmEmail_xp),  confirmEmail);
-			type(xpath(ObjectReference.smokePassword_xp),  password );
+			type(xpath(ObjectReference.smokeConfirmEmail_xp), confirmEmail);
+			type(xpath(ObjectReference.smokePassword_xp), password);
 			type(xpath(ObjectReference.smokeConfirmPassword_xp), confirmPassword );
 			type(xpath(ObjectReference.smokeSecurityQuestion_xp), securityQuestion );
 			type(xpath(ObjectReference.smokeSecurityQuestionAnswer_xp), securityQuestionAnswer);
 			click(xpath(ObjectReference.smokeTermsAndConditions_xp));
+			
 			Thread.sleep(8000);
-			click(xpath(ObjectReference.smokeBtnDone_xp));
+			waitForElementPresent(xpath(smokeBtnDone_xp));
+			click(xpath(smokeBtnDone_xp));
+			
 			waitForElementPresent(xpath(ObjectReference.smokeSuccessRegister));
 			Assert.assertTrue(verifyTextPresent("You have successfully signed in to myRPData and you are now logged in."));
+			
 			pass("02. SIGNUP [Verify that user can signup into myrp]");
 		
 		}catch(AssertionError e){
@@ -104,19 +130,20 @@ public class SmokeTestUtil extends TestInitReference {
 	//Search address
 	@Test
 	public void searchPropertyAddress() throws Exception {
-		waitForElementPresent(xpath(ObjectReference.smokeSearchLine_xp));
-		type(xpath(ObjectReference.smokeSearchLine_xp), propertyAddress);
-		click(xpath(ObjectReference.search_button_xp));
-		waitForElementPresent(xpath(ObjectReference.smokeSearchAddress_xp));
+		waitForElementPresent(xpath(smokeSearchLine_xp));
+		type(xpath(smokeSearchLine_xp), propertyAddress);
+		
+		click(xpath(search_button_xp));
+		waitForElementPresent(xpath(smokeSearchAddress_xp));
 		try{
 			Assert.assertEquals(propertyAddress, getText(xpath(ObjectReference.smokeSearchAddress_xp)));
 			Assert.assertEquals(stateBreadCrumb, getText(xpath(ObjectReference.smokeStateBreadCrumb_xp)));
+			//Assert.assertEquals(stateVicBreadCrumb, getText(xpath(ObjectReference.smokeStateBreadCrumb_xp)));
 			Assert.assertEquals(councilBreadCrumb, getText(xpath(ObjectReference.smokeCouncilBreadCrumb_xp)));
 			Assert.assertEquals(suburbBreadCrumb, getText(xpath(ObjectReference.smokeSuburbBreadCrumb_xp)));
-			Assert.assertEquals(streetBreadCrumb, getText(xpath(ObjectReference.smokeStreetBreadCrumb_xp)));
-			
+			Assert.assertEquals(streetBreadCrumb, getText(xpath(smokeStreetBreadCrumb_xp)));
 			pass(" - Test: " + propertyAddress + " is present");
-
+			
 		}
 		catch(Exception e){
 			fail(" - Test: " + propertyAddress + " is not present");
@@ -141,7 +168,9 @@ public class SmokeTestUtil extends TestInitReference {
 		}else if(method.equals("buyEstimatedValueSubscription")){
 			propertyAddress = rxml.data("smokePropertyAddress3");
 		}else if(method.equals("buySalesHistoryReport")){
-			propertyAddress = rxml.data("smokePropertyAddress4");
+			propertyAddress = rxml.data("smokePropertyAddress4");	
+		}else if(method.equals("buyDetailedPropertyReport")){
+			propertyAddress = rxml.data("smokePropertyAddress");
 		}
 		type(xpath(ObjectReference.smokeSearchLine_xp), propertyAddress);
 		click(xpath(ObjectReference.search_button_xp));
@@ -165,106 +194,351 @@ public class SmokeTestUtil extends TestInitReference {
 	}
 	
 	public void buyDetailedPropertyReport() throws Exception {
-		searchPropertyAddress();
+		searchPropertyAddress("buyDetailedPropertyReport");
+		
 		try{
+			//Add to Cart for Detailed Property Report
+			Thread.sleep(1500);
+			waitForElementPresent(xpath(smokeBtnAddToCartDetailedPropertyReport_xp));
+			click(xpath(smokeBtnAddToCartDetailedPropertyReport_xp));
+			Thread.sleep(1000);
+			waitForElementPresent(xpath(btnCart_xp));
+			click(xpath(btnCart_xp));
+			
+			//My Cart screen
+			waitForElementPresent(xpath(ObjectReference.smokeCartLabel_xp));
+			Assert.assertTrue(verifyTextPresent("Detailed Property Report"));
+			pass("Detailed Property Report is added to Cart");
+		}catch(Exception e ){
+			takeScreenshot();
+			fail("Detailed Property Report is NOT added to Cart");
+			
+		}catch(AssertionError e){
+			e.printStackTrace();
+		}
+		
+		//Login as Guest
+				try{
+					waitForElementPresent(xpath(smokeGuest_xp));
+					Assert.assertTrue(isElementPresent(xpath(smokeGuest_xp)));
+					type(xpath(smokeGuest_xp), testEmail);
+					pass("Guest Email is entered");
+				}catch(Exception e ){
+				takeScreenshot();
+					fail("Guest Email is NOT entered");
+				
+				}catch(AssertionError e){
+				e.printStackTrace();
+				}	
+		
+		//My Cart
+			try{
+				waitForElementPresent(xpath(orderNowBtn_xp));
+				Assert.assertTrue(isElementPresent(xpath(orderNowBtn_xp)));
+				click(xpath(orderNowBtn_xp));
+				Thread.sleep(1000);
+				pass("User click Order Now button");
+
+			}catch(Exception e ){
+			takeScreenshot();
+			fail("User failed to click Order Now button");
+			
+			}catch(AssertionError e){
+			e.printStackTrace();
+			}
+			
+			try{	
+				waitForElementPresent(xpath(confirmLbl_xp));
+				Assert.assertTrue(verifyTextPresent("Confirm:"));
+				
+				waitForElementPresent(xpath(confirmDtls_xp));
+				Assert.assertTrue(verifyTextPresent("Your credit card will be charged "));
+				
+				waitForElementPresent(xpath(totalAmount_xp));
+				Assert.assertTrue(verifyTextPresent("$39.95"));	
+				
+				waitForElementPresent(xpath(payNowBtn_xp));
+				Assert.assertTrue(verifyTextPresent("Pay Now"));
+				click(xpath(payNowBtn_xp));
+				Thread.sleep(1000);
+	
+				waitForElementPresent(xpath(DpsHeaderLogo_xp));
+				Assert.assertTrue(isElementPresent(xpath(DpsHeaderLogo_xp)));
+				pass("User is navigated to CPS");
+			}catch(Exception e ){
+			takeScreenshot();
+				fail("User is NOT navigated to CPS");
+			
+			}catch(AssertionError e){
+			e.printStackTrace();
+			}
+		}		
+	
+/*		try{
 			waitForElementPresent(xpath(ObjectReference.smokeBtnAddToCartDetailedPropertyReport_xp));
 			click(xpath(ObjectReference.smokeBtnAddToCartDetailedPropertyReport_xp));
 			Thread.sleep(1000);
+			
 			waitForElementPresent(xpath(ObjectReference.smokeBtnContinueBuyingDetailedPropertyReport_xp));
-			click(xpath(ObjectReference.smokeBtnContinueBuyingDetailedPropertyReport_xp));
+			click(xpath(ObjectReference.smokeBtnContinueBuyingDetailedPropertyReport_xp));			
+			
 			waitForElementPresent(xpath(ObjectReference.smokeBtnGoToCart_xp));
 			click(xpath(ObjectReference.smokeBtnGoToCart_xp));
+			
 			waitForElementPresent(xpath(ObjectReference.smokeCartLabel_xp));
 			Assert.assertTrue(verifyTextPresent("Detailed Property Report"));
-			
-		
 		}catch(Exception e){
 			fail("Unable to buy Detailed Property Report");
 		}catch(AssertionError e){
 			fail(" - Test: " + propertyAddress + " is not present");
 			takeScreenshot();
 			resultcount++;
-		}
+		}*/
 		
-	}
 	
 	public void getTitleDocument() throws Exception {
 		searchPropertyAddress("getTitleDocument");
 		try{
-			
-			waitForElementPresent(xpath(ObjectReference.smokeBtnGetTitleDocument_xp));
-			
-		}
-			
+			waitForElementPresent(xpath(ObjectReference.smokeBtnGetTitleDocument_xp));	
+		}	
 		catch(Exception e){
 			takeScreenshot();
 		}
-		
 		catch(AssertionError e){
 			takeScreenshot();
 		}
-		
 	}
 	
 	public void buyEstimatedValueReport() throws Exception {
-		searchPropertyAddress("buyEstimatedValueReport");
 		
+		//Search for a property address
+		searchPropertyAddress("buyEstimatedValueReport");	
 		try{
-			//gets free report
-//			click(xpath(smokeBtnGetThisFree_xp));
-//			waitForElementPresent(xpath(smokeFirstName_xp));
-//			type(xpath(smokeFirstName_xp), firstName);
-//			type(xpath(smokeLastName_xp),  lastName);
-//			type(xpath(smokeEmailLead_xp),  email);
-//			type(xpath(smokeContactNumber_xp), contactNumber);
-//			selectOption(xpath(smokeRelationShipOnProperty_xp), "Refinancing/Consolidation");
-//			selectOption(xpath(smokeTimeToAct_xp), "Unsure");
-//			type(xpath(smokeLoanAmount_xp), loanAmount);
-//			selectOption(xpath(smokePreferredContactTime), "Afternoon");
-//			click(xpath(smokeBtnIAgree_xp));
-//			Thread.sleep(800);
-//			click(xpath(smokeBtnSubmitDetails_xp));
-//			Thread.sleep(1500);
-//	//		Assert.assertTrue(verifyTextPresent("We hope you find your chat with them useful."));
-//			Thread.sleep(1500);
-//			waitForElementPresent(xpath(smokeBtnGetThisFreeClose_xp));
-//			click(xpath(smokeBtnGetThisFreeClose_xp));
-			//buys report
+			//Add to Cart for Estimated Value Report
 			Thread.sleep(1500);
-			waitForElementPresent(xpath(ObjectReference.smokeBtnAddToCartEstimatedValueReport_xp));
-			click(xpath(ObjectReference.smokeBtnAddToCartEstimatedValueReport_xp));
+			waitForElementPresent(xpath(smokeBtnAddToCartEstimatedValueReport_xp));
+			click(xpath(smokeBtnAddToCartEstimatedValueReport_xp));
 			Thread.sleep(1000);
-			click(xpath(ObjectReference.btnCart_xp));
+			waitForElementPresent(xpath(btnCart_xp));
+			click(xpath(btnCart_xp));
+			
+			//My Cart screen
 			waitForElementPresent(xpath(ObjectReference.smokeCartLabel_xp));
 			Assert.assertTrue(verifyTextPresent("Estimated Value Report"));
-			pass("buyEstimatedValueReport");
-			
+			pass("Estimated Value Report is added to Cart");	
 		}catch(Exception e ){
 			takeScreenshot();
-			fail("buyEstimatedValueReport");
+			fail("Estimated Value Report is NOT added to Cart");
 			
 		}catch(AssertionError e){
 			e.printStackTrace();
 		}
-	}
+		
+		//Login as Guest
+		try{
+			waitForElementPresent(xpath(smokeGuest_xp));
+			Assert.assertTrue(isElementPresent(xpath(smokeGuest_xp)));
+			type(xpath(smokeGuest_xp), testEmail);
+			pass("Guest Email is entered");
+		}catch(Exception e ){
+		takeScreenshot();
+			fail("Guest Email is NOT entered");
+		
+		}catch(AssertionError e){
+		e.printStackTrace();
+		}
+
+		/*try{
+			waitForElementPresent(xpath(cartUserName_xp));
+			Assert.assertTrue(isElementPresent(xpath(cartUserName_xp)));
+			type(xpath(cartUserName_xp), testEmail);
+			pass("Username is entered");
+		}catch(Exception e ){
+		takeScreenshot();
+			fail("Username is NOT entered");
+		}catch(AssertionError e){
+		e.printStackTrace();
+		}
+		try{
+			waitForElementPresent(xpath(cartPwd_xp));
+			Assert.assertTrue(isElementPresent(xpath(cartPwd_xp)));
+			type(xpath(cartPwd_xp), testPwd);
+			pass("Password is entered");
+		}catch(Exception e ){
+		takeScreenshot();
+			fail("Password is NOT entered");
+		}catch(AssertionError e){
+		e.printStackTrace();
+		}*/
+		
+		//My Cart
+		try{
+			waitForElementPresent(xpath(orderNowBtn_xp));
+			Assert.assertTrue(isElementPresent(xpath(orderNowBtn_xp)));
+			click(xpath(orderNowBtn_xp));
+			Thread.sleep(1000);
+			pass("User click Order Now button");
+
+		}catch(Exception e ){
+		takeScreenshot();
+		fail("User failed to click Order Now button");
+		
+		}catch(AssertionError e){
+		e.printStackTrace();
+		}
+		
+		try{	
+			waitForElementPresent(xpath(confirmLbl_xp));
+			Assert.assertTrue(verifyTextPresent("Confirm:"));
+			
+			waitForElementPresent(xpath(confirmDtls_xp));
+			Assert.assertTrue(verifyTextPresent("Your credit card will be charged "));
+			
+			waitForElementPresent(xpath(totalAmount_xp));
+			Assert.assertTrue(verifyTextPresent("$24.95"));	
+			
+			waitForElementPresent(xpath(payNowBtn_xp));
+			Assert.assertTrue(verifyTextPresent("Pay Now"));
+			click(xpath(payNowBtn_xp));
+			Thread.sleep(1000);
+			
+			waitForElementPresent(xpath(DpsHeaderLogo_xp));
+			Assert.assertTrue(isElementPresent(xpath(DpsHeaderLogo_xp)));
+		
+			pass("User is navigated to CPS");
+		}catch(Exception e ){
+		takeScreenshot();
+			fail("User is NOT navigated to CPS");
+		
+		}catch(AssertionError e){
+		e.printStackTrace();
+		}
+	}		
+	
+		public void testCPS() throws Exception {
+			//CPS
+			try{			
+				waitForElementPresent(xpath(DpsCardNumber_xp));
+				Assert.assertTrue(isElementPresent(xpath(DpsCardNumber_xp)));
+				type(xpath(DpsCardNumber_xp), DpsCardNumber);
+				
+				waitForElementPresent(xpath(DpsCardHolderName_xp));
+				Assert.assertTrue(isElementPresent(xpath(DpsCardHolderName_xp)));
+				type(xpath(DpsCardHolderName_xp), DpsCardHolderName);
+				
+				waitForElementPresent(xpath(DpsExpiryDateMM_xp));
+				Assert.assertTrue(isElementPresent(xpath(DpsExpiryDateMM_xp)));
+				type(xpath(DpsExpiryDateMM_xp), DpsExpiryDateMM);
+
+				waitForElementPresent(xpath(DpsExpiryDateYY_xp));
+				Assert.assertTrue(isElementPresent(xpath(DpsExpiryDateYY_xp)));
+				type(xpath(DpsExpiryDateYY_xp), DpsExpiryDateYY);
+
+				waitForElementPresent(xpath(DpsCardSecCode_xp));
+				Assert.assertTrue(isElementPresent(xpath(DpsCardSecCode_xp)));
+				type(xpath(DpsCardSecCode_xp), DpsCardSecCode);
+				
+				waitForElementPresent(xpath(DpsSubmitBtn_xp));
+				Assert.assertTrue(isElementPresent(xpath(DpsSubmitBtn_xp)));
+				click(xpath(DpsSubmitBtn_xp));
+				Thread.sleep(1000);
+				
+				waitForElementPresent(xpath(smokePurchasedSuccessful_xp));
+				Assert.assertTrue(isElementPresent(xpath(smokePurchasedSuccessful_xp)));
+				pass("Report successfully purchased by a guest user");
+				
+				/*waitForElementPresent(xpath(rememberCardCb_xp));
+				getValue(xpath(rememberCardCb_xp));
+				//Assert.assertTrue(getValue(xpath(rememberCardCb_xp)));
+				waitForElementPresent(xpath(rememberCardLabel_xp));
+				Assert.assertTrue(verifyTextPresent("Remember My Card"));*/
+				
+			}catch(Exception e ){
+			takeScreenshot();
+				fail("Purchased Report FAILED!");
+			}catch(AssertionError e){
+			e.printStackTrace();
+			}			
+		}
 	
 	public void buyEstimatedValueSubscription() throws Exception {
 		searchPropertyAddress("buyEstimatedValueSubscription");
-		try{
-			waitForElementPresent(xpath(ObjectReference.smokeBtnAddToCartEstimatedValueSubscription_xp));
-			click(xpath(ObjectReference.smokeBtnAddToCartEstimatedValueSubscription_xp));
-			click(xpath(ObjectReference.smokeBtnGoToCart_xp));
-			waitForElementPresent(xpath(ObjectReference.smokeCartLabel_xp));
-			Assert.assertTrue(verifyTextPresent("Estimated Value Subscription"));
-			pass("buyEstimatedValueSubscription");
-			
-		}catch(Exception e){
-			takeScreenshot();
-			e.printStackTrace();
-			fail("buyEstimatedValueSubscription()");
-		}
 		
-	}
+		try{
+			//Add to Cart for EstimatedValueSubscription
+			Thread.sleep(1500);
+			waitForElementPresent(xpath(smokeBtnAddToCartEstimatedValueSubscription_xp));
+			click(xpath(smokeBtnAddToCartEstimatedValueSubscription_xp));
+			Thread.sleep(1000);
+			waitForElementPresent(xpath(btnCart_xp));
+			click(xpath(btnCart_xp));
+			
+			//My Cart screen
+			waitForElementPresent(xpath(ObjectReference.smokeCartLabel_xp));
+			Assert.assertTrue(verifyTextPresent("Estimated Value Subscription (12 months)"));
+			pass("Estimated Value Subscription (12 months) is added to Cart");
+		}catch(Exception e ){
+			takeScreenshot();
+			fail("Estimated Value Subscription (12 months) is NOT added to Cart");
+			
+		}catch(AssertionError e){
+			e.printStackTrace();
+		}		
+		
+		//My Cart
+			/*try{
+				waitForElementPresent(xpath(orderNowBtn_xp));
+				Assert.assertTrue(isElementPresent(xpath(orderNowBtn_xp)));
+				click(xpath(orderNowBtn_xp));
+				Thread.sleep(1000);
+				pass("User click Order Now button");
+
+			}catch(Exception e ){
+			takeScreenshot();
+			fail("User failed to click Order Now button");
+			
+			}catch(AssertionError e){
+			e.printStackTrace();
+			}*/
+			
+			try{	
+				waitForElementPresent(xpath(confirmLbl_xp));
+				Assert.assertTrue(verifyTextPresent("Confirm:"));
+				
+				waitForElementPresent(xpath(confirmDtls_xp));
+				Assert.assertTrue(verifyTextPresent("Your credit card will be charged "));
+				
+				waitForElementPresent(xpath(totalAmount_xp));
+				Assert.assertTrue(verifyTextPresent("$49.95"));	
+				
+				waitForElementPresent(xpath(rememberCardCb_xp));
+				getValue(xpath(rememberCardCb_xp));
+
+				waitForElementPresent(xpath(rememberCardLabel_xp));
+				Assert.assertTrue(verifyTextPresent("Remember My Card"));
+				
+				waitForElementPresent(xpath(DpsNewCard_xp));
+				Assert.assertTrue(isElementPresent(xpath(DpsNewCard_xp)));
+				//getValue(xpath(rememberCardCb_xp));
+				selectOption(xpath(DpsNewCard_xp), DpsNewCard);
+				
+				waitForElementPresent(xpath(payNowBtn_xp));
+				Assert.assertTrue(verifyTextPresent("Pay Now"));
+				click(xpath(payNowBtn_xp));
+				Thread.sleep(1000);
+	
+				waitForElementPresent(xpath(DpsHeaderLogo_xp));
+				Assert.assertTrue(isElementPresent(xpath(DpsHeaderLogo_xp)));
+				pass("User is navigated to CPS");
+			}catch(Exception e ){
+			takeScreenshot();
+				fail("User is NOT navigated to CPS");
+			
+			}catch(AssertionError e){
+			e.printStackTrace();
+			}
+		}		
+		
 	
 	public void buySalesHistoryReport() throws Exception {
 		searchPropertyAddress("buySalesHistoryReport");
@@ -673,14 +947,14 @@ public void searchSuburb(int method) throws Exception {
 				waitForElementPresent(xpath(ObjectReference.smokeBtnMyAccount_xp));
 			}
 
-			
-			
 			pass("login");
 		}catch(Exception e){
 			takeScreenshot();
 			fail("login");
 		}
 	}
+	
+	
 	
 	public void checkOut() throws Exception{
 		try{
@@ -742,9 +1016,7 @@ public void searchSuburb(int method) throws Exception {
 		}
 	}
 	
-	
-	
-	
+
 	
 	public boolean isLoggedin() throws Exception{
 		try{
@@ -790,12 +1062,30 @@ public void searchSuburb(int method) throws Exception {
 			Thread.sleep(1000);
 			setPasswordChanged(true);
 			
-			waitForElementPresent(xpath(ObjectReference.smokeBtnLogout_xp));
-			click(xpath(ObjectReference.smokeBtnLogout_xp));
-			
+			waitForElementPresent(xpath(ObjectReference.smokeBtnLogout_xp));			
 			pass("19. FORGOTTEN PASSWORD [Verify that password can be reset via the Forgotten Password Form]");
 		}catch(Exception e){
 			fail("changePassword");
+			takeScreenshot();
+		}
+	}
+	
+	public void login() throws Exception{
+		try{
+			waitForElementPresent(xpath(smokeBtnLogin_xp));
+			click(xpath(ObjectReference.smokeBtnLogin_xp));
+			
+			waitForElementPresent(xpath(smokeUserNameLogin_xp));
+			type(xpath(smokeUserNameLogin_xp), testEmail);
+			
+			waitForElementPresent(xpath(smokePasswordLogin_xp));
+			type(xpath(smokePasswordLogin_xp), testPwd);
+			
+			waitForElementPresent(xpath(smokeBtnSubmitLogin_xp));
+			click(xpath(smokeBtnSubmitLogin_xp));
+			pass("User login successfully");
+		}catch(Exception e){
+			fail("Failed to login");
 			takeScreenshot();
 		}
 	}
