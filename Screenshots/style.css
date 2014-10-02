@@ -1,0 +1,7 @@
+.tableMain{
+    border-collapse:collapse;
+}
+.tableMain td{
+    align:center;
+    border:1px solid black;
+}

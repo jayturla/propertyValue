@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="12190" started-at="2013-12-11T03:36:45Z" finished-at="2013-12-11T03:36:57Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="12190" started-at="2013-12-11T03:36:45Z" finished-at="2013-12-11T03:36:57Z">
+      <class name="myrpdata.propertyAddressSearch">
+        <test-method status="PASS" signature="Startup(java.lang.String)[pri:0, instance:myrpdata.propertyAddressSearch@76d45adb]" name="Startup" is-config="true" duration-ms="3712" started-at="2013-12-11T14:36:45Z" finished-at="2013-12-11T14:36:49Z">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Startup -->
+        <test-method status="PASS" signature="propertyAddressSearchTest()[pri:0, instance:myrpdata.propertyAddressSearch@76d45adb]" name="propertyAddressSearchTest" duration-ms="7630" started-at="2013-12-11T14:36:49Z" description="RP Data Property Address Search" finished-at="2013-12-11T14:36:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- propertyAddressSearchTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:myrpdata.propertyAddressSearch@76d45adb]" name="teardown" is-config="true" duration-ms="833" started-at="2013-12-11T14:36:56Z" finished-at="2013-12-11T14:36:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- myrpdata.propertyAddressSearch -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

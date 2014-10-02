@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>Browser and Environment variables</comment>
+	<!--<entry key="browser">Chrome</entry>-->
+	<entry key="browser">Remote</entry>
+	<entry key="record">No</entry>
+	<!--<entry key="browser">HTMLUnit</entry>-->
+
+	<!--<entry key="browser">Firefox</entry> -->
+	<!--<entry key="browser">InternetExplorer</entry> -->
+	<entry key="screen_shot_location">C:\Selenium\TestResults\Screenshots\</entry>
+	<!--remote -->
+	<entry key="remoteUrl">http://192.168.0.101:8001/wd/hub</entry>	
+	<entry key="environment">Prod</entry>
+	<entry key="local_url">http://192.168.0.20:8080/</entry>
+	<entry key="prod_url">http://www.myrp.com.au/</entry>
+	<entry key="devtest_url"></entry>	
+	<entry key="address_search_val">44 The Esplanade Thornleigh NSW 2120</entry>
+	<entry key="postcode_search_val">2120</entry>
+	<entry key="state_search_val">NSW</entry>
+</properties>

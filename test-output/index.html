@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Default_suite">
+              <span class="suite-name border-skipped">Default suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
+                    <span>testng-customsuite.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Default_suite">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Default_suite">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Default_suite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Default_suite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Default_suite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Default_suite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">2 methods,  2 skipped,  </span>
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods skipped suite-Default_suite"> (hide)</a> <!-- hide-methods skipped suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods skipped suite-Default_suite"> (show)</a> <!-- show-methods skipped suite-Default_suite -->
+                    </span>
+                    <div class="method-list-content skipped suite-Default_suite">
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="myrp.test.AddressChange" hash-for-method="addressChange(class java.lang.String, [10002, VXJ-000000574081, DUAL ADDRESS, 1.Open order at EVR UI
+2.Navigate to...)">addressChange(class java.lang.String, [10002, VXJ-000000574081, DUAL ADDRESS, 1.Open order at EVR UI
+2.Navigate to...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="myrp.test.AddressChange" hash-for-method="addressChange(class java.lang.String, [10003, VXJ-000000574081, DUAL ADDRESS, 1.Open order at EVR UI
+2.Navigate to...)">addressChange(class java.lang.String, [10003, VXJ-000000574081, DUAL ADDRESS, 1.Open order at EVR UI
+2.Navigate to...)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-Default_suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Default_suite" class="panel Default_suite">
+          <div class="suite-Default_suite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
+              <span class="class-name">myrp.test.AddressChange</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="addressChange(class java.lang.String, [10002, VXJ-000000574081, DUAL ADDRESS, 1.Open order at EVR UI
+2.Navigate to...)">
+                  </a> <!-- addressChange(class java.lang.String, [10002, VXJ-000000574081, DUAL ADDRESS, 1.Open order at EVR UI
+2.Navigate to...) -->
+                  <span class="method-name">addressChange</span>
+                  <span class="parameters">(class java.lang.String, [10002, VXJ-000000574081, DUAL ADDRESS, 1.Open order at EVR UI
+2.Navigate to any tab (Verify Data, Sales Evidence or Submission page)
+3.Navigate to Address match modal
+4.Click Change Address button
+5.Verify the following components:
+-Single Line Address Search field with placeholder text ("Enter an address, street name, suburb or postcode")
+-Can't find address? button
+6.Click 'Can't find address' and verify can't find address form is displayed
+7.Click Back to single line button and verify Single Line Address Search form prompts, When the "Can’t find address" form is opened
+Then I should the following fields and buttons:
+Unit/Lot - (which is an optional field, and has a placeholder text "Unit/Lot)
+Number - (which is an optional field, and has a placeholder text "Number")
+Street - (which is an optional field, and has a placeholder text "Street")
+Type - (which is an optional field, and has a placeholder text "Type")
+Suburb -
+(which is a mandatory field, and has a placeholder text: "Enter suburb or postcode")
+Search RP button
+Back to single line button
+Use typed address button
+Single Line Address Search form should prompt after clicking 'Back to single line'
+
+, In Can't Find Addres Form 
+The following fields are displayed
+Unit/Lot - (which is an optional field, and has a placeholder text "Unit/Lot)
+Number - (which is an optional field, and has a placeholder text "Number")
+Street - (which is an optional field, and has a placeholder text "Street")
+Type - (which is an optional field, and has a placeholder text "Type")
+Suburb -
+(which is a mandatory field, and has a placeholder text: "Enter suburb or postcode")
+Search RP button
+Back to single line button
+Use typed address button
+Single Line Address Search form should prompt after clicking 'Back to single line', One Of the Following Field  fields are not properly displayed
+Unit/Lot - (which is an optional field, and has a placeholder text "Unit/Lot)
+Number - (which is an optional field, and has a placeholder text "Number")
+Street - (which is an optional field, and has a placeholder text "Street")
+Type - (which is an optional field, and has a placeholder text "Type")
+Suburb -
+(which is a mandatory field, and has a placeholder text: "Enter suburb or postcode")
+Search RP button
+Back to single line button
+Use typed address button
+Single Line Address Search form should prompt after clicking 'Back to single line', Berala NSW 2141, 285, Clarke, Street, , 1.Open order at EVR UI desktop
+2.Go to Change Address - Use Typed Address modal
+3.Enter the following address - 285 Clarke Street Berala NSW 2141 (no rpid)
+4.Click Use Typed Address button
+5.Click 'Change Address Discard Property Data' Amendmend Confirmation
+6.Verify on screen refresh, subject property address was changed to 285 Clarke Street Berala NSW 2141.
+7.Verify on verify data page, no property data was retrieved from BSG and the existing data and photos are removed.
+, *When Used typed address did not match a BSG address and selected 'Change Address Discard Property Data', no property info must retrieved from BSG and subject property address must update to the Used typed address. 
+*The existing data and photos of The previous subject property should be removed., In Verify Page No Property Data was retrieved and
+Property Address Has Succesfully Change to 285 Clarke Street Berala NSW 2141 , FAILED:In Verify Page a Property Data was retrieved OR
+Property Address Has Not Succesfully Change to 285 Clarke Street Berala NSW 2141 , 1/16 ROYSTON STREET DARLINGHURST NSW 2010, 1.Open order at EVR UI
+2.Navigate to any tab (Verify Data, Sales Evidence or Submission page)
+3.Navigate to Change address tab
+4.On SLAS field, verify search results for the following address:
+5.Click Search RP button and verify results
+
+, Search results should be relevant to the search term should be generated under "Results" bar, 1/16 ROYSTON STREET DARLINGHURST NSW 2010 is succesfully displayed under the results bar, FAILED:1/16 ROYSTON STREET DARLINGHURST NSW 2010 is NOT succesfully displayed under the results bar, 1.Open order at EVR UI
+2.Navigate to any tab (Verify Data, Sales Evidence or Submission page)
+3.Navigate to Change address tab
+4.Click Search by Parcel tab
+5.Verify no search results should be automatically populated
+6.Click Search RP without inputting in SLAS field
+-An Modal Error Message Should Appear “Invalid Address: Please use the address search prompt to find and select an address suggestion prior to clicking 'Search RP'”
+7.Input DP63 BARNSLEY NSW on SLAS field and click Search RP
+8.Click Select property (18 Thomas Street Barnsley, NSW, 2278)
+-Then it should prompt the "Amendment Confirmation" modal:
+"You are about to change the address of the subject property.
+Are you sure you wish to proceed?
+Please note property data will be removed."
+With "Change Address" button and "Back" button
+9.Click Back button
+10.Click OK on Amendment Confirmation modal
+
+, Then the job order should refresh with the updated details.
+And I should be navigated back to the very first tab -- Verify Data, Succesfully update the Address
+And Inavigated back to the very first tab -- Verify Data, FAILED:Did Not Succesfully update the Address
+And did not navigated back to the very first tab -- Verify Data, NO RPID, 1.Open order at EVR UI desktop
+2.Go to Change Address - Use Typed Address modal
+3.Enter the following address - 285 Clarke Street Berala NSW 2141 (no rpid)
+4.Click Use Typed Address button
+5.Click 'Change Address Keep Property Data' Amendmend Confirmation
+6.Verify on screen refresh, subject property address was changed to 285 Clarke Street Berala NSW 2141.
+7.Verify on verify data page, only the property address is changed and the existing data and photos will remain.
+, *When Used typed address did not match a BSG address and 
+selected 'Change Address Keep Property Data', only the 
+subject property address must update to the Used typed address.
+*The existing data and photos of the previous subject property should remain., Data and Photos on the Prevous subject is remains and Address Successfully Change to 285 Clarke Street Berala NSW 2141., FAILED:Data and Photos on the Prevous subject is NOT remains OR Address is NOT Successfully Change to 285 Clarke Street Berala NSW 2141.])</span>
+                  <em>
+(T1535038)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="addressChange(class java.lang.String, [10003, VXJ-000000574081, DUAL ADDRESS, 1.Open order at EVR UI
+2.Navigate to...)">
+                  </a> <!-- addressChange(class java.lang.String, [10003, VXJ-000000574081, DUAL ADDRESS, 1.Open order at EVR UI
+2.Navigate to...) -->
+                  <span class="method-name">addressChange</span>
+                  <span class="parameters">(class java.lang.String, [10003, VXJ-000000574081, DUAL ADDRESS, 1.Open order at EVR UI
+2.Navigate to any tab (Verify Data, Sales Evidence or Submission page)
+3.Navigate to Address match modal
+4.Click Change Address button
+5.Verify the following components:
+-Single Line Address Search field with placeholder text ("Enter an address, street name, suburb or postcode")
+-Can't find address? button
+6.Click 'Can't find address' and verify can't find address form is displayed
+7.Click Back to single line button and verify Single Line Address Search form prompts, When the "Can’t find address" form is opened
+Then I should the following fields and buttons:
+Unit/Lot - (which is an optional field, and has a placeholder text "Unit/Lot)
+Number - (which is an optional field, and has a placeholder text "Number")
+Street - (which is an optional field, and has a placeholder text "Street")
+Type - (which is an optional field, and has a placeholder text "Type")
+Suburb -
+(which is a mandatory field, and has a placeholder text: "Enter suburb or postcode")
+Search RP button
+Back to single line button
+Use typed address button
+Single Line Address Search form should prompt after clicking 'Back to single line'
+
+, In Can't Find Addres Form 
+The following fields are displayed
+Unit/Lot - (which is an optional field, and has a placeholder text "Unit/Lot)
+Number - (which is an optional field, and has a placeholder text "Number")
+Street - (which is an optional field, and has a placeholder text "Street")
+Type - (which is an optional field, and has a placeholder text "Type")
+Suburb -
+(which is a mandatory field, and has a placeholder text: "Enter suburb or postcode")
+Search RP button
+Back to single line button
+Use typed address button
+Single Line Address Search form should prompt after clicking 'Back to single line', One Of the Following Field  fields are not properly displayed
+Unit/Lot - (which is an optional field, and has a placeholder text "Unit/Lot)
+Number - (which is an optional field, and has a placeholder text "Number")
+Street - (which is an optional field, and has a placeholder text "Street")
+Type - (which is an optional field, and has a placeholder text "Type")
+Suburb -
+(which is a mandatory field, and has a placeholder text: "Enter suburb or postcode")
+Search RP button
+Back to single line button
+Use typed address button
+Single Line Address Search form should prompt after clicking 'Back to single line', Berala NSW 2141, 2, Lillian, Street, , 1.Open order at EVR UI desktop
+2.Go to Change Address - Use Typed Address modal
+3.Enter the following address - 2 Lillian Street Berala NSW 2141 (rpid 1393418)
+4.Click Use Typed Address button
+5.Click 'Change Address Discard Property Data' Amendmend Confirmation
+6.Verify on screen refresh, subject property address was changed to 2 Lillian Street Berala NSW 2141 (displayed the address used on typed address)
+7.Verify on verify data page, no property data was retrieved from BSG and the existing data and photos are removed and replaced with the new address details, *When Used typed address did match a BSG address and selected 'Change Address Discard Property Data', property info must retrieved from BSG for the matched BSG address and subject property address must display the address used on typed address.
+*The existing data and photos of The previous subject property should be removed and replaced with The new address details., In Verify Page a Property Data was retrieved and
+Property Address Has Not Succesfully Change to2 Lillian Street Berala NSW 2141, FAILED:In Verify Page No Property Data was retrieved OR
+Property Address Has Not Succesfully Change to 2 Lillian Street Berala NSW 2141, 1/16 ROYSTON STREET DARLINGHURST NSW 2010, 1.Open order at EVR UI
+2.Navigate to any tab (Verify Data, Sales Evidence or Submission page)
+3.Navigate to Change address tab
+4.On SLAS field, verify search results for the following address:
+5.Click Search RP button and verify results
+
+, Search results should be relevant to the search term should be generated under "Results" bar, 1/16 ROYSTON STREET DARLINGHURST NSW 2010 is succesfully displayed under the results bar, FAILED:1/16 ROYSTON STREET DARLINGHURST NSW 2010 is NOT succesfully displayed under the results bar, 1.Open order at EVR UI
+2.Navigate to any tab (Verify Data, Sales Evidence or Submission page)
+3.Navigate to Change address tab
+4.Click Search by Parcel tab
+5.Verify no search results should be automatically populated
+6.Click Search RP without inputting in SLAS field
+-An Modal Error Message Should Appear “Invalid Address: Please use the address search prompt to find and select an address suggestion prior to clicking 'Search RP'”
+7.Input DP63 BARNSLEY NSW on SLAS field and click Search RP
+8.Click Select property (18 Thomas Street Barnsley, NSW, 2278)
+-Then it should prompt the "Amendment Confirmation" modal:
+"You are about to change the address of the subject property.
+Are you sure you wish to proceed?
+Please note property data will be removed."
+With "Change Address" button and "Back" button
+9.Click Back button
+10.Click OK on Amendment Confirmation modal
+
+, Then the job order should refresh with the updated details.
+And I should be navigated back to the very first tab -- Verify Data, Succesfully update the Address
+And Inavigated back to the very first tab -- Verify Data, FAILED:Did Not Succesfully update the Address
+And did not navigated back to the very first tab -- Verify Data, WITH RPID, 1.Open order at EVR UI desktop
+2.Go to Change Address - Use Typed Address modal
+3.Enter the following address - 2 Lillian Street Berala NSW 2141 (rpid 1393418)
+4.Click Use Typed Address button
+5.Click 'Change Address Keep Property Data' Amendmend Confirmation
+6.Verify on screen refresh, subject property address was changed to 2 Lillian Street Berala NSW 2141 (displayed the address used on typed address)
+7.Verify on verify data page, only the property address is changed and the existing data and photos will remain. Data of the new typed address should not be reflected., *When Used typed address did not match a BSG address and selected 
+'Change Address Keep Property Data', only the subject property 
+address must update to the Used typed address.
+*The existing data and photos of The previous subject property should 
+remain and data of The new typed address should not be reflected., Data and Photos on the Prevous subject is NOT remains and Address Successfully Change to 285 Clarke Street Berala NSW 2141., FAILED:Data and Photos on the Prevous subject is  remains OR Address is NOT Successfully Change to 285 Clarke Street Berala NSW 2141.])</span>
+                  <em>
+(T1535038)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Default_suite-class-skipped -->
+        </div> <!-- panel Default_suite -->
+        <div panel-name="test-xml-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">/private/var/folders/5h/yyvl20wn4tbgdsmx60_v37q00000gp/T/testng-eclipse--397808165/testng-customsuite.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;Default suite&quot;&gt;
+  &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;myrp.test.AddressChange&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Default test --&gt;
+&lt;/suite&gt; &lt;!-- Default suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Default test (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Default_suite');
+function tableData_Default_suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(2);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'addressChange')
+data.setCell(0, 2, 'myrp.test.AddressChange')
+data.setCell(0, 3, 29);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'addressChange')
+data.setCell(1, 2, 'myrp.test.AddressChange')
+data.setCell(1, 3, 1);
+window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 30 ms</span>
+              <div id="times-div-Default_suite">
+              </div> <!-- times-div-Default_suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Default suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Default_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">myrp.test.AddressChange</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">Startup(null)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="test-method">
+                <span class="method-name">addressChange(class java.lang.String, [10002, VXJ-000000574081, DUAL ADDRESS, 1.Open order at EVR UI
+2.Navigate to...)</span>
+                <span class="method-start">10848156 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">addressChange(class java.lang.String, [10003, VXJ-000000574081, DUAL ADDRESS, 1.Open order at EVR UI
+2.Navigate to...)</span>
+                <span class="method-start">10848188 ms</span>
+              </div> <!-- test-method -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>
