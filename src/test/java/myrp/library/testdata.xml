@@ -14,7 +14,7 @@
 		
 	<entry key="screen_shot_location">/Users/Selenium/Screenshots/</entry>
 	<!--remote -->
-	<entry key="remoteUrl">http://10.0.1.48:4444/wd/hub</entry>	
+	<entry key="remoteUrl">http://10.0.1.245:4444/wd/hub</entry>	
 	
 	<entry key="environment">stage</entry>
 	
