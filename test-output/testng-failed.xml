@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="myrp.test.SmokeTestProd">
+      <class name="myrp.test.Regression.RT_07810">
         <methods>
           <include name="Startup"/>
-          <include name="verifyKeyStats"/>
-          <include name="teardown"/>
+          <include name="init"/>
+          <include name="T1534935" invocation-numbers="0"/>
+          <include name="reinitializeBrowser"/>
         </methods>
-      </class> <!-- myrp.test.SmokeTestProd -->
+      </class> <!-- myrp.test.Regression.RT_07810 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
