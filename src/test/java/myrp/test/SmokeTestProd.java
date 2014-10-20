@@ -22,52 +22,33 @@ public class SmokeTestProd extends TestInitReference {
 			new SmokeTestUtil().login("admin");
 		    new SmokeTestUtil().checkHealth();
 			pass("01. HEALTH CHECK - Checking HealthCheck Done!");
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-		try{
-		    new SmokeTestUtil().register();
+			new SmokeTestUtil().logout();
+			
+			new SmokeTestUtil().register();
 			pass("02. SIGNUP - Verify that user can signup into myrp");
-		    new SmokeTestUtil().changePassword();
-		}catch(Exception e){
-			e.printStackTrace();
-		}
-		try{
+			new SmokeTestUtil().changePassword();
+			new SmokeTestUtil().logout();
 			new SmokeTestUtil().login();
-		
+			
 			//new SmokeTestUtil().isLoggedin();
 			new SmokeTestUtil().buyEstimatedValueSubscription();
 			new SmokeTestUtil().testCPS();	
 			pass("03. ESTIMATED VALUE  SUBSCRIPTION - Verify that Estimated Value Subscription can be purchased as a logged in user");
-
-		}catch(Exception e){
-			e.printStackTrace();
-			fail("03. ESTIMATED VALUE  SUBSCRIPTION - FAILED");
-		}
-		try{
-		    new SmokeTestUtil().logout();
+			new SmokeTestUtil().logout();
 			pass("06. LOGOUT [Verify that user can log out from myrp]");
-		}catch(Exception e){
-			e.printStackTrace();
-			fail("06. LOGOUT - FAILED");
-		}
-		try{
+			
 			new SmokeTestUtil().buyEstimatedValueReport();
 			new SmokeTestUtil().testCPS();			
 			pass("08. ESTIMATED VALUE REPORT - Verify that Estimated Value Report can be purchased by a guest user");
-		}catch(Exception e){
-			e.printStackTrace();
-			fail("08. ESTIMATED VALUE REPORT - FAILED");
-		}
-		try{
+			
 			new SmokeTestUtil().buyDetailedPropertyReport();
 			new SmokeTestUtil().testCPS();	
 			pass("10. DETAILED PROPERTY REPORT -Verify that Detailed Property Report can be purchased by a guest user");
+			
 		}catch(Exception e){
 			e.printStackTrace();
-			fail("10. DETAILED PROPERTY REPORT - FAILED");
 		}
-		
+			fail("Smoke Test Failed");
 	}
 	
 

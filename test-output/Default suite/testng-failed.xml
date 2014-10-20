@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="myrp.test.AddressChange">
+      <class name="myrp.test.SmokeTestProd">
         <methods>
           <include name="Startup"/>
-          <include name="addressChange"/>
+          <include name="verifyExternalConnections"/>
         </methods>
-      </class> <!-- myrp.test.AddressChange -->
+      </class> <!-- myrp.test.SmokeTestProd -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
