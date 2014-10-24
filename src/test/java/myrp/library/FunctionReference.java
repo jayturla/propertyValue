@@ -620,6 +620,19 @@ public class FunctionReference extends Results {
 		return metaYpath;
 	}
 	
+	public void goToNextBrowserTab() throws Exception {
+		// Switch to new window opened
+		for (String winHandle : driver.getWindowHandles()) {
+			driver.switchTo().window(winHandle);
+		}
+	}
+	
+	public void goToPreviousBrowserTab(String winHandleBefore) throws Exception {
+		// Store the current window handle
+		driver.close();
+		driver.switchTo().window(winHandleBefore);
+	}
+	
     /*public String getValue(By by, String attribute) {
         String value = "";
         if (isElementPresent(by)) {

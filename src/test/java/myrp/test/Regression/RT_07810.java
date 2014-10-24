@@ -4,7 +4,7 @@ import java.io.IOException;
 
 import myrp.library.ReadXlsData;
 import myrp.library.TestInitReference;
-import myrp.test.RegressionUtil.MYRPRegressionUtil;
+import myrp.test.RegressionUtil.MYRPRegressionUtil_RT_07810;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -32,7 +32,7 @@ public class RT_07810 extends TestInitReference {
 		String testcase = "Testing Testcase - " + input[0] + " : " + input[2];
 		int x = 1;
 		try {
-			MYRPRegressionUtil rp = new MYRPRegressionUtil(input);
+			MYRPRegressionUtil_RT_07810 rp = new MYRPRegressionUtil_RT_07810(input);
 			
 			if(rp.checkLandingPages()){
 				ATUReports.add(input[1],"LANDING PAGE",input[2], input[3], true);//pass
