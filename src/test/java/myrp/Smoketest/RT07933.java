@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import myrp.library.ObjectReferenceSmoketest;
 import myrp.library.ReadXlsData;
 import myrp.library.TestInitReference;
-
 import myrp.utilities.MYRPSmoketestUtil;
 
 import org.testng.Assert;
@@ -24,7 +23,7 @@ import atu.testng.reports.utils.Utils;
 
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class,
 MethodListener.class })
-public class loginAndLogoutSmoketest extends TestInitReference {
+public class RT07933 extends TestInitReference {
 	{
 		System.setProperty("atu.reporter.config", "../myrp-automation/conf/atu.properties");
 	}
@@ -40,6 +39,15 @@ public class loginAndLogoutSmoketest extends TestInitReference {
 			MYRPSmoketestUtil myrp = new MYRPSmoketestUtil(input);
 			
 			myrp.clickSignUp();
+			myrp.firstnameSignUp();
+			myrp.lastnameSignUp();
+			myrp.emailSignUp();
+			myrp.confirmEmailSignUp();
+			myrp.passwordSignUp();
+			myrp.confirmPasswordSignUp();
+			myrp.securityQuestionSignUp();
+			myrp.confirmsecurityQuestionSignUp();
+			myrp.acceptTermsSignUp();
 			
 		}catch (Exception e) {
 			fail(testcase);

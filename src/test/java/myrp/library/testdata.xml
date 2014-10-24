@@ -14,7 +14,7 @@
 		
 	<entry key="screen_shot_location">/Users/Selenium/Screenshots/</entry>
 	<!--remote -->
-	<entry key="remoteUrl">http://10.0.1.245:4444/wd/hub</entry>	
+	<entry key="remoteUrl">http://10.0.1.34:4444/wd/hub</entry>	
 	
 	<entry key="environment">stage</entry>
 	
@@ -22,7 +22,7 @@
 	<!-- -->
 	<entry key="dev_url">http://myrp:myrp999@dev.myrp.com.au/</entry>	
 	<entry key="stage_url">http://myrp:myrp999@stage.myrp.com.au/</entry>
-	<entry key="local_url">http://192.168.0.20:8080/</entry>
+	<entry key="local_url">http://10.0.1.209:8080/</entry>
 	<entry key="prod_url">http://www.myrp.com.au/</entry>
 	<entry key="awsDevTest_url">http://awspreprod.myrp.com.au/</entry>	
 	<entry key="awsStageTest_url">http://awspreprod.myrp.com.au/</entry>
