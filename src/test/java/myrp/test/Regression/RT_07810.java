@@ -38,7 +38,6 @@ public class RT_07810 extends TestInitReference {
 				ATUReports.add(input[1],"LANDING PAGE",input[2], input[3], true);//pass
 			}else{
 				ATUReports.add(input[1],"LANDING PAGE",input[2], input[4], true);//fail
-				sdfsdf
 			}
 			
 		}catch (Exception e) {
