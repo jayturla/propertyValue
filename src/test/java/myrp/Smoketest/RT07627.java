@@ -24,7 +24,7 @@ import atu.testng.reports.utils.Utils;
 
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class,
 MethodListener.class })
-public class RT07934 extends TestInitReference {
+public class RT07627 extends TestInitReference {
 	{
 		System.setProperty("atu.reporter.config", "../myrp-automation/conf/atu.properties");
 	}
@@ -37,14 +37,14 @@ public class RT07934 extends TestInitReference {
 		int x = 1;
 		
 		try {
-			MYRPSmoketestUtil myrp = new MYRPSmoketestUtil(input);
+		MYRPSmoketestUtil myrp = new MYRPSmoketestUtil(input);
 			
-			if(myrp.estimatedValueSubricption()){
-				ATUReports.add(input[1],"Estimated Value Subscription success",input[2], input[3], true);//pass
+			if (myrp.loginExistingUser()){
+				ATUReports.add(input[1],"Health Check Success",input[2], input[3], true);//pass
 			}else{
-				ATUReports.add(input[1],"Estimated Value Subscription failed ",input[2], input[4], true);//fail
+				ATUReports.add(input[1],"Health Check Failed",input[2], input[4], true);//fail
 			}
-	
+		
 		}catch (Exception e) {
 			fail(testcase);
 			e.printStackTrace();

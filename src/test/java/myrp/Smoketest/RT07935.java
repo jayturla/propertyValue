@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import myrp.library.ObjectReferenceSmoketest;
 import myrp.library.ReadXlsData;
 import myrp.library.TestInitReference;
-
 import myrp.utilities.MYRPSmoketestUtil;
 
 import org.testng.Assert;
@@ -24,7 +23,7 @@ import atu.testng.reports.utils.Utils;
 
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class,
 MethodListener.class })
-public class RT07934 extends TestInitReference {
+public class RT07935 extends TestInitReference {
 	{
 		System.setProperty("atu.reporter.config", "../myrp-automation/conf/atu.properties");
 	}
@@ -36,20 +35,20 @@ public class RT07934 extends TestInitReference {
 		String testcase = "Testing Testcase - " + input[0] + " : " + input[2];
 		int x = 1;
 		
-		try {
-			MYRPSmoketestUtil myrp = new MYRPSmoketestUtil(input);
+		
+		MYRPSmoketestUtil myrp = new MYRPSmoketestUtil(input);
 			
-			if(myrp.estimatedValueSubricption()){
-				ATUReports.add(input[1],"Estimated Value Subscription success",input[2], input[3], true);//pass
-			}else{
-				ATUReports.add(input[1],"Estimated Value Subscription failed ",input[2], input[4], true);//fail
-			}
-	
-		}catch (Exception e) {
-			fail(testcase);
-			e.printStackTrace();
-	        Assert.fail("Exception was thrown");
+		try {
+			myrp.preparetoLoginJohny();
+			myrp.loginButton();
+			myrp.clickSuburbReportsButton();
+			myrp.goTosuburbSalesMapSubscription();
+			myrp.searchOconnorAct();
+			myrp.selectinSLAS();
+		} catch (Exception e) {
+			fail("ERROR");
 		}
+			
 	}
 
 	//This function will provide the parameter data

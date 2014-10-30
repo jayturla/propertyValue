@@ -1,13 +1,11 @@
-package myrp.Smoketest;
+package myrp.test.Regression;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
-import myrp.library.ObjectReferenceSmoketest;
 import myrp.library.ReadXlsData;
 import myrp.library.TestInitReference;
-
-import myrp.utilities.MYRPSmoketestUtil;
+import myrp.test.RegressionUtil.MYRPRegressionUtil;
+import myrp.test.RegressionUtil.MYRPRegressionUtil_RT07926;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -24,27 +22,26 @@ import atu.testng.reports.utils.Utils;
 
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class,
 MethodListener.class })
-public class RT07934 extends TestInitReference {
+public class RT_07835 extends TestInitReference {
 	{
 		System.setProperty("atu.reporter.config", "../myrp-automation/conf/atu.properties");
 	}
 	
-	String testCase = "T1534935";
+	String testCase = "RT_07835";
 		
-	@Test(description="T1534935", dataProvider = "Data-Provider-Function")
-	public void T1534935(Class clzz, String[] input) {
+	@Test(description="RT_07835", dataProvider = "Data-Provider-Function")
+	public void RT_07927_to_RT_07930(Class clzz, String[] input) {
 		String testcase = "Testing Testcase - " + input[0] + " : " + input[2];
 		int x = 1;
-		
 		try {
-			MYRPSmoketestUtil myrp = new MYRPSmoketestUtil(input);
+			MYRPRegressionUtil_RT07926 myrp = new MYRPRegressionUtil_RT07926(input);
 			
-			if(myrp.estimatedValueSubricption()){
-				ATUReports.add(input[1],"Estimated Value Subscription success",input[2], input[3], true);//pass
+			if(myrp.nabPartner()){
+				ATUReports.add(input[1],"NAB PARTNER",input[2], input[3], true);//pass
 			}else{
-				ATUReports.add(input[1],"Estimated Value Subscription failed ",input[2], input[4], true);//fail
+				ATUReports.add(input[1],"NAB PARTNER",input[2], input[4], true);//fail
 			}
-	
+			
 		}catch (Exception e) {
 			fail(testcase);
 			e.printStackTrace();
@@ -52,11 +49,12 @@ public class RT07934 extends TestInitReference {
 		}
 	}
 
+
 	//This function will provide the parameter data
 	@DataProvider(name = "Data-Provider-Function")
 	public Object[][] parameterIntTestProvider() throws IOException{
 		Object[][] data = null;
-		ReadXlsData rxd = new ReadXlsData("../myrp-automation/test-data/testdata.xls");
+		ReadXlsData rxd = new ReadXlsData("../myrp-automation/test-data/RT_07835.xls");
 		data = rxd.getData();
 		return data;
 	}

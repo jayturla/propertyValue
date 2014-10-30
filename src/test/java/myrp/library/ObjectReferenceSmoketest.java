@@ -37,7 +37,8 @@ public class ObjectReferenceSmoketest {
 	
 	//Main Buttons 
 	public static String gotoMyCart = "//*[@id='cartCount']";
-	
+	public static String logOutButton = "//a[contains(.,'LOGOUT')]";
+	public static String patName = "//*[@class='customerName']";
 	
 	//cart User Fields 
 	public static String cartUserName = "//*[@id='cartUserName']";
@@ -50,5 +51,33 @@ public class ObjectReferenceSmoketest {
 	public static String merchantCard = "//*[@id='cardNumber']";
 	public static String merchantCode = "//*[@id='securityCode']";
 	public static String merchantPaynow = "//*[@id='checkOutButton']";
-		
+
+	//Purchase Success 
+	public static String purchaseSuccess = "//*[@class='wbdRichText'][contains(.,'Purchase successful')]";
+	
+	
+	//Tabs 
+	public static String adminButton = "(//*[@class='button redTheme'])[1]//a";
+			
+			/////"(//*[@class='button redTheme'])[2]";
+			/////"//*[@class='button redTheme'][contains(.,'ADMIN')]";
+	                                    
+	
+	//Admin Links 
+	public static String healthCheck =	"//a[contains(.,'Health Check')]";
+	public static String checkAllConnections = "//a[contains(.,'Check All Connections.')]";
+	public static String healthCheckResults = "//*[@id='checkResult']"; 
+	
+	
+	//Main Buttons 
+	public static String suburbReportsButton = "//a[@href='/n/Free-Suburb-Profile/myrp-545']";
+	public static String suburbReportsLabel = "//h1[contains(.,'Suburb Reports')]";
+	public static String suburbSalesMapSubscription = "//a[@href='/n/Suburb-Sales-Map-Subscription/myrp-547']";
+	
+	//SLAS
+	public static String slasField = "//*[@id='singleLineSearch']";
+	public static String selectajax = "//*[@class='jquery-autocomplete-selected-item acSelect']//li[1]";
+												
+	
+	
 } 
