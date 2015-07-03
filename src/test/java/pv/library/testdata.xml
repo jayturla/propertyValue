@@ -1,0 +1,196 @@
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<comment>Browser and Environment variables</comment>
+	<!--<entry key="browser">Remote</entry>-->
+	<!--<entry key="browser">Firefox</entry>-->
+	<!--<entry key="browser">Chrome</entry>-->
+	<!--<entry key="browser">Remote</entry>-->
+	<!--<entry key="browser">HTMLUnit</entry>-->
+	<!--<entry key="browser">InternetExplorer</entry>-->
+	<!-- <entry key="browser">Safari</entry> -->
+	<!-- <entry key="browser">WinChrome</entry> -->
+	<entry key="browser">Firefox</entry>
+	<entry key="record">No</entry>
+		
+	<entry key="screen_shot_location">/Users/Selenium/Screenshots/</entry>
+	<!--remote -->
+	<entry key="remoteUrl">http://10.0.1.140:4444/wd/hub</entry>	
+	
+	<entry key="environment">pvdev</entry>
+	<entry key="environment">pvprod</entry>
+	
+	
+	<!-- URL Default Channel -->
+	<!-- -->
+	
+	<entry key="pvdev_url">http://dev.propertyvalue.com.au/</entry>	
+	<entry key="pvprod_url">http://propertyvalue.com.au/</entry>	
+	<entry key="dev_url">http://myrp:myrp999@dev.myrp.com.au/</entry>	
+	<entry key="stage_url">http://myrp:myrp999@stage.myrp.com.au/</entry>
+	<entry key="local_url">http://10.0.1.140:8080/</entry>
+	<entry key="prod_url">http://www.myrp.com.au/</entry>
+	<entry key="awsDevTest_url">http://awspreprod.myrp.com.au/</entry>	
+	<entry key="awsStageTest_url">http://awspreprod.myrp.com.au/</entry>
+	<!--URL Domacom Channel -->
+	<entry key="domacom_local_url"></entry>
+	<entry key="domacom_dev_url">http://myrp:myrp999@dev-domacom.myrp.com.au/</entry>
+	<entry key="domacom_stage_url">http://myrp:myrp999@stage-domacom.myrp.com.au/</entry>
+	<entry key="domacom_prod_url">http://domacom.myrp.com.au/</entry>
+	<entry key ="domacom"></entry>
+	
+	
+	<!-- Mobile -->
+	<entry key="streetSearchMobile_val">Darley Road Manly NSW 2095</entry> 
+	
+	
+	
+	<!--URL RESI partner-->
+	<entry key="resi_dev_url">http://myrp:myrp999@dev.myrp.com.au/n/Home-Loans-Email-Report/myrp-1061</entry>
+	<!-- <entry key="resi_stage_url">http://myrp:myrp999@stage.myrp.com.au/n/Home-Loans-Email-Report/myrp-1061</entry> -->	
+	<entry key="resi_stage_url">http://myrp:myrp999@stage.myrp.com.au/n/myrp-1061?partnerId=29</entry>
+	<!-- http://myrp:myrp999@stage.myrp.com.au/n/myrp-1071> -->
+	
+	<entry key="address_search_val">79 Darley Road Manly NSW 2095</entry>
+	<entry key="address_search_val2">42 Tennyson Street Orbost VIC 3888</entry> <!--  Property address is not on the postcode list of HSBC -->
+	<entry key="address_search_val3">117 Cooper Street Waterloo NSW 2017</entry> <!-- Property address FSDScore 100  -->
+	<entry key="address_search_val4">32 Heritage Boulevard Pakenham VIC 3810</entry> <!-- Median price less than $550,00 -->
+	<entry key="street_search_val">Darley Road, Manly, NSW, 2095</entry>
+	<entry key="suburb_search_val">Manly, NSW, 2095</entry>
+	<entry key="suburb_search_val2">Manly NSW 2095</entry>
+	<entry key="postcode_search_val">2120</entry>
+	<entry key="state_search_val">NSW</entry>
+	<entry key="propertyReport">Property Report for 79 Darley Road Manly NSW 2095. Get Title Document, Sales History &amp; Valuation Report for 79 Darley Road Manly NSW 2095</entry>
+	<entry key="streetReport">Complete Property Sales History for Darley Road, Manly,  NSW. Find the Lastest Sold Property Prices for Darley Road, Manly on myrp.com.au</entry>
+	<entry key="suburbReport">Browse the Lastest Sold Property Prices for Manly, 2095 NSW &amp; Manly Real Estate Value Reports from myrp.com.au</entry>
+	<entry key="suburbMap">Map of Manly,  NSW, 2095,  AUS - Manly Maps showing location streets and homes for sale, rent and recently sold properties in Manly. Map Manly property and amenities such as schools, hospitals, shopping centres &amp; more. View Manly map areas serviced by real estate agents and rental managers.</entry>
+	<entry key="keyStats">The size of Manly is approximately 6 square kilometres. It has 13 parks covering nearly 17% of total area.
+The population of Manly in 2006 was 13,958 people. By 2011 the population was 15,079 showing a population growth of 8% in the area during that time.
+The predominant age group in Manly is 25-34 years.
+</entry>
+	<entry key="propertyReport_key">79 Darley Road Manly NSW 2095, House Prices, Property Value, Property Summary, Sales History, Estimated Market Value, Recent Sales History, Listing Advertising History, Selling Agents, Real Estate, Australia</entry>
+	<entry key="streetReport_key">Darley Road Manly NSW 2095, street sales history, sold property prices, home prices, house prices, recently sold property prices, property sales history, properties sold, property values, property valuations.</entry>
+	<entry key="suburbReport_key">Manly NSW 2095, House Prices, Unit Prices, Property Sales History, Property Prices, Real Estate, Australia</entry>
+	<entry key="suburbMap_key">Manly,  NSW, 2095,  AUS, map of Manly, homes for sale Manly, recently sold property Manly, sales history Manly</entry>
+	<entry key="keyStats_key">Statistics of Manly NSW 2095, Manly Profile, Area statistics, Market statistics, Age and Sex Ratio, Age &amp; Sex Ratio, Income, Household, Household structure, Ownership rate, Home ownership rate, House prices, Unit prices</entry>
+	<entry key="propertyReportInfo">Here you can find everything you need to know about 79 Darley Road, including the property sale history and estimated market value as well as insights into Darley Road and Manly.</entry>
+	<entry key="streetReportInfo">Here you can access the complete sales history for Darley Road.</entry>
+	<entry key="suburbReportInfo">Here you can access all sales in Manly for the last 12 months and view estimated market values for all Manly properties on a Google Map.</entry>
+	<entry key="localExpertsInfoMsg">Here you can find local experts in Manly that can help you with your property needs.</entry>
+	<entry key="suburbMapHeading">Map of Manly, NSW, 2095</entry>
+	<entry key="propertyBreadcrumbText">Property Value</entry>
+	<entry key="stateBreadcrumb">NSW</entry>
+	<entry key="councilBreadcrumb">Manly</entry>
+	<entry key="suburbBreadcrumb">Manly 2095</entry>
+	<entry key="streetBreadcrumb">Darley Road</entry>
+	<entry key="aerialMapHeaderModal">Aerial Map</entry>
+	<entry key="DPReport">Detailed property report</entry>
+	<entry key="DPRShortDesc">Provides an estimated value and full property sale and listing history.</entry>
+	<entry key="reportsServicesLabel">Reports and Services</entry>
+	<entry key="confidenceH">
+			High confidence typically caused by a low degree of variability between the subject and comparable properties and/or high availability of comparable property data in the area.
+		</entry>
+	<entry key ="confidenceM">Medium confidence typically caused by a medium degree of variability between the subject and comparable properties in the area and/or medium availability of comparable property data in the area.</entry>
+	<entry key ="confidenceL">Low confidence typically caused by a high degree of variability between the subject and comparable properties in the area and/or low availability of comparable property data in the area.</entry>
+	<!-- <entry key ="propertyValueH">High</entry>
+	<entry key ="propertyValueM">Medium</entry>
+	<entry key ="propertyValueL">Low</entry> -->
+	
+	<entry key="msgInvalidSearch">Unfortunately we are unable to provide information for this property. Please click the "Can't find address" button and enter the address manually.</entry>
+	
+	<!-- Resi Home Loans -->
+	<entry key="heading_val">Access Australia's best insight into...</entry>
+	<entry key="properties_Info">Get an estimated value, full sale and listing history and suburb information</entry>
+	<entry key="suburbs_Info">Get median values and a demographic profile for a suburb</entry>
+	<entry key="detailed_price">$39.95</entry>
+	<entry key="suburbfree_price">FREE</entry>
+	<entry key="viewSample_link">View sample report</entry>
+	<entry key="placeholderProperties">Enter property address here</entry>
+	<entry key="placeholderSuburbs">Enter suburb here</entry>
+	<entry key="placeholderEmail">Enter email address to receive report</entry>
+	<entry key="blankEmailM">Please enter email address.</entry>
+	<entry key="invalidEmail">test.email</entry>
+	<entry key="invalidEmailM">Invalid email address.</entry>
+	<entry key="validEmail">frances.olingay@twistresources.com</entry>
+	<entry key="freePaymentInfo">Just provide some details so a RESI home loan expert can discuss your property needs with you and then email you the report within one working day</entry>
+
+	<!-- Rates Online -->
+	
+	<entry key="firstName_reg">Test</entry>
+	
+	
+	<!-- Smoke Test -->
+	
+	 	<!-- Register -->
+	<entry key ="smokeFirstName">Myrp Test004</entry>
+	<entry key ="smokeLastName">Tooltwist</entry>
+	<entry key ="smokeEmail">MyrpTest004@gmail.com</entry>
+	<entry key ="smokeConfirmEmail">MyrpTest004@gmail.com</entry>
+	<entry key ="smokePassword">123456</entry>
+	<entry key ="smokeConfirmPassword">123456</entry>
+	<entry key ="smokeSecurityQuestion">test</entry>
+	<entry key ="smokeSecurityQuestionAnswer">test</entry>
+	
+	 	<!-- Change Password -->
+	<entry key ="smokeChangePassword">qwerty</entry>	
+	
+	<entry key ="testEmail">safaritooltwist@gmail.com</entry>
+	<entry key ="testPwd">123456</entry>
+	
+	<entry key ="smokePropertyAddress">1/287-293 Exhibition Street Melbourne VIC 3000</entry>
+	<entry key ="smokePropertyAddress1">11 Testa Street Caboolture QLD 4510</entry>
+	<entry key ="smokePropertyAddress2">8 Indigo Street Upper Coomera QLD 4209</entry>
+	<entry key ="smokePropertyAddress3">145 Red Hill Road Tolland NSW 2650</entry>
+	<entry key ="smokePropertyAddress4">147 Scenic Highway Terrigal NSW 2260</entry>
+	<entry key="smokeStateBreadcrumb">NSW</entry>
+	<entry key="smokeStateVicBreadcrumb">VIC</entry>
+	<entry key="smokeCouncilBreadcrumb">Bankstown</entry>
+	<entry key="smokeSuburbBreadcrumb">Picnic Point 2213</entry>
+	<entry key="smokeStreetBreadcrumb">Atami Place</entry>
+	<entry key="smokeContactNumber">1234567890</entry>
+	<entry key="smokeLoanAmount">$1,000.00</entry>
+	
+	<entry key="smokeSuburbAddress">Magill, SA, 5072</entry>
+	<entry key="smokeSuburbAddress1">Lane Cove North NSW 2066</entry>
+	<entry key="smokeSuburbAddress2">Manly NSW 2095</entry>
+	<entry key="smokeSuburbAddress3">Wollstonecraft NSW 2065</entry>
+	<entry key="smokeSuburbAddress4">Turramurra NSW 2074</entry>
+	<entry key="suburbAddressWithoutExpert">Ardrossan SA 5571</entry>
+	<entry key="smokePostCode">2710 NSW</entry>
+	
+	<entry key="smokeUserName">pxshallvey@hotmail.com</entry>
+	<entry key="smokeCardNumber">4111111111111111</entry>
+	<entry key="smokeSecurityCode">123</entry>
+	<entry key="smokeAlternatePassword">birdman33</entry>
+	<entry key="smokeAlternateRePassword">birdman33</entry>
+	<entry key="smokeStreetAddress">Sofala Avenue Riverview NSW 2066</entry>
+
+	<!-- CPS -->
+	<entry key="DpsCardNumber_xp">4111111111111111</entry>
+	<entry key="DpsCardHolderName_xp">TEST</entry>
+	<entry key="DpsExpiryDateMM_xp">11</entry>
+	<entry key="DpsExpiryDateYY_xp">16</entry>
+	<entry key="DpsCardSecCode_xp">123</entry>
+	<entry key="newCard">New Card</entry>
+
+	<!-- CFA MOBILE -->
+	<entry key="cfaStreetNumber">2891</entry>
+	<entry key="cfaUnitNumber"></entry>
+	<entry key="cfaLotNumber"></entry>
+	<entry key="cfaStreetName">Sussex</entry>
+	<entry key="cfaStreetType">Street</entry>
+	<entry key="cfaSuburbStatePostcode">Sydney NSW 2000</entry>
+
+
+	<!-- Smoke Test URL -->
+	
+	<!-- Dev URL -->
+	
+	
+	<!-- Stage URL -->
+	
+	<!-- AWS Dev URL -->
+	
+	<!-- AWS Stage URL -->
+	
+	
+</properties>
