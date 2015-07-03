@@ -36,7 +36,8 @@ public class PVSmoketestUtil extends FunctionReference {
 
 		if (text.contains("Explore Compare Strategies Get Premium Features")) {
 			available = true;
-		}dsfsdfsdfsdfs
+		}
+		
 		if(withATU) {
 			if(available){
 				performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
