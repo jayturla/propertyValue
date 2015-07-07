@@ -15,5 +15,6 @@ public class PVObjectReferenceSmoketest {
 	public static String password = "//*[@id='password']";
 	public static String loginSite = "//*[@class='form']//button";
 	public static String verifyLoginName = "//*[@class='login']";
-	
+	public static String clickMenu = "(//*[@class='login']//a)[1]";
+	public static String clickLogOut = "(//*[@class='login']//a)[5]";
 }

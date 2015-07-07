@@ -37,6 +37,8 @@ public class Login_Test extends TestInitReference {
 			pvHeader.checkLogin(0,1,2,3,true);
 			//Login existing user
 			pvHeader.LoginPV(4,5,6,7,8,9,10,true);
+			//Logout existing user 
+			pvHeader.logOutUser(11,12,13,14,15,true);
 		} catch (Exception e) {
 		}
 	}

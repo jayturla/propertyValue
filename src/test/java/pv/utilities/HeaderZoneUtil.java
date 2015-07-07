@@ -6,7 +6,10 @@ import static org.openqa.selenium.By.xpath;
 import pv.atu_utilities.copy.ATUUtil;
 import pv.library.FunctionReference;
 import pv.library.PVObjectReferenceSmoketest;
+
 import org.testng.Assert;
+
+import com.sun.org.apache.xerces.internal.impl.xpath.XPath;
 
 public class HeaderZoneUtil extends FunctionReference {
 	
@@ -104,5 +107,51 @@ public class HeaderZoneUtil extends FunctionReference {
 		return available;
 	}
 
+	
+	
+	public void clickMenu() throws Exception{ 
+		
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickMenu));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.clickMenu)));
+		click(xpath(PVObjectReferenceSmoketest.clickMenu));
+	}
+	
+	
+	public void clickLogOut() throws Exception{ 
+		
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickLogOut));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.clickLogOut)));
+		click(xpath(PVObjectReferenceSmoketest.clickLogOut));
+		
+	}
+	
+	
+	public boolean logOutUser(int steps, int inputVal, int expected, int actualPass,int actualFail,boolean withATU)  throws Exception{
+		boolean available = false;
+		clickMenu();
+		clickLogOut();
+		
+		String text = getText(xpath(PVObjectReferenceSmoketest.verifyLoginName));
+		if (text.contains("Log in")) {
+			available = true;	
+		}
+		
+		if(withATU) {
+			if(available){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actualPass],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actualFail],true,false);//fail
+			}
+		}
+		if(available){
+			pass("Existing User was able to Logout");
+		}else {
+			fail("Existing User was not able to Logout!");
+		}
+		
+
+		return available;
+	}
+	
 }
 
