@@ -3,23 +3,12 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="myrp.test.SmokeTestProd">
+      <class name="pv.Smoketest.Login_Test">
         <methods>
           <include name="Startup"/>
-          <include name="verifyExternalConnections"/>
+          <include name="headerZone"/>
         </methods>
-      </class> <!-- myrp.test.SmokeTestProd -->
-=======
-      <class name="myrp.test.Regression.RT_07810">
-        <methods>
-          <include name="Startup"/>
-          <include name="init"/>
-          <include name="T1534935" invocation-numbers="0"/>
-          <include name="reinitializeBrowser"/>
-        </methods>
-      </class> <!-- myrp.test.Regression.RT_07810 -->
->>>>>>> FETCH_HEAD
+      </class> <!-- pv.Smoketest.Login_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
