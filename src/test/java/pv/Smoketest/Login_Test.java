@@ -39,6 +39,9 @@ public class Login_Test extends TestInitReference {
 			pvHeader.LoginPV(4,5,6,7,8,9,10,true);
 			//Logout existing user 
 			pvHeader.logOutUser(11,12,13,14,15,true);
+			//Forgotten Password
+			pvHeader.resetPassword(16, 17, 18, 19, 20, 21, true);
+			
 		} catch (Exception e) {
 		}
 	}

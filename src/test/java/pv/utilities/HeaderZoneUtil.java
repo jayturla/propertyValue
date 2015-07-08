@@ -77,6 +77,27 @@ public class HeaderZoneUtil extends FunctionReference {
 	
 	}
 
+	public void forgottenPassword() throws Exception{
+
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.forgottenPassword));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.forgottenPassword)));
+		click(xpath(PVObjectReferenceSmoketest.forgottenPassword));
+	}
+	
+	public void enterEmailFP(int inputval) throws Exception{ 
+		
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.emailForgottenPassword));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.emailForgottenPassword)));
+		type(xpath(PVObjectReferenceSmoketest.emailForgottenPassword), input[inputval]);
+	}
+	
+	public void clickResetFP() throws Exception{
+
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.resetFP));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.resetFP)));
+		click(xpath(PVObjectReferenceSmoketest.resetFP));
+	}
+	
 	public boolean LoginPV(int steps, int inputVal, int expected, int actualPass,int actualFail,int userName,int password,boolean withATU)  throws Exception{
 		boolean available = false;
 		
@@ -153,5 +174,37 @@ public class HeaderZoneUtil extends FunctionReference {
 		return available;
 	}
 	
+
+	public boolean resetPassword(int steps, int inputVal, int expected, int actualPass,int actualFail ,int email ,boolean withATU)  throws Exception{
+		boolean available = false;
+		
+		clickLogin();
+		forgottenPassword();
+		enterEmailFP(email);
+		clickResetFP();
+		
+		String text = getText(xpath(PVObjectReferenceSmoketest.verifyResetPW));
+		if (text.contains("Your password has been reset")) {
+			available = true;	
+		}
+		
+		if(withATU) {
+			if(available){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actualPass],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actualFail],true,false);//fail
+			}
+		}
+		if(available){
+			pass("User was able to Reset Password");
+		}else {
+			fail("User was able to Reset Password");
+		}
+		
+
+		return available;
+	}
+
+
 }
 

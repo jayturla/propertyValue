@@ -27,4 +27,8 @@ public class PVObjectReferenceSmoketest {
 	public static String clickLogo = "//*[@class='logo']//a";
 	public static String verifySuburbInsights = "//*[@class='col-sm-12 col-md-10']";
 	public static String viewSuburbProfile = "//*[@class='default-btn blue-btn hidden-xs hidden-sm']";
+	public static String forgottenPassword = "(//*[@class='col-xs-12 col-sm-6 col-md-6 col-lg-6']//a)[1]";
+	public static String emailForgottenPassword = "//*[@id='resetPassword_input']";
+	public static String verifyResetPW = "//*[@class='user-sign']";
+	public static String resetFP = "//*[@id='resetPassword_submit']";
 }
