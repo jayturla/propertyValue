@@ -126,7 +126,7 @@ public class HeaderZoneUtil extends FunctionReference {
 	}
 	
 	
-	public boolean logOutUser(int steps, int inputVal, int expected, int actualPass,int actualFail,boolean withATU)  throws Exception{
+	public boolean logOutUser(int steps, int inputVal, int expected, int actualPass,int actualFail ,boolean withATU)  throws Exception{
 		boolean available = false;
 		clickMenu();
 		clickLogOut();

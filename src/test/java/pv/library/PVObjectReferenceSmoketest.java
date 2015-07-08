@@ -17,4 +17,14 @@ public class PVObjectReferenceSmoketest {
 	public static String verifyLoginName = "//*[@class='login']";
 	public static String clickMenu = "(//*[@class='login']//a)[1]";
 	public static String clickLogOut = "(//*[@class='login']//a)[5]";
+	public static String selectPropety = "//*[@class='home-slas-def']//ul//li";
+	public static String verifyPropertyInsights = "(//*[@class='wbdRichText']//h2)[1]";
+	public static String clickAddtoWatchList = "(//*[@class='hidden-xs']//li//a)[1]";
+	public static String goToWatclist = "(//*[@class='login']//a)[3]";
+	public static String verifyifPropertyisAddedtoWatchlist = "//*[@class='row'][3]";
+	public static String checkWatchlist = "//*[@class='DivWidget suburb watchlist']";
+	public static String verifyStreetInsights = "//*[@class='col-sm-12 col-md-10']";
+	public static String clickLogo = "//*[@class='logo']//a";
+	public static String verifySuburbInsights = "//*[@class='col-sm-12 col-md-10']";
+	public static String viewSuburbProfile = "//*[@class='default-btn blue-btn hidden-xs hidden-sm']";
 }
