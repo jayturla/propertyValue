@@ -37,5 +37,7 @@ public class PVObjectReferenceSmoketest {
 	public static String advanceSearchPage = "//*[@class='form']";
 	public static String streetAdvanceSearch = "//*[@id='adv_streetname']";
 	public static String searchResultsAdvanceSearch = "//*[@class='row sectionAnchor']";
-	
+	public static String gotoMyAccount = "(//*[@class='login']//a)[4]";
+	public static String verifyAccountPage = "//*[@class='container'][1]";
+
 }
