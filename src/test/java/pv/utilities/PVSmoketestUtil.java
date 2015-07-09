@@ -18,6 +18,9 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import atu.testng.reports.ATUReports;
+import atu.testng.reports.logging.LogAs;
+import atu.testng.selenium.reports.CaptureScreen;
+import atu.testng.selenium.reports.CaptureScreen.ScreenshotOf;
 
 public class PVSmoketestUtil extends FunctionReference {
 	
@@ -125,7 +128,12 @@ public class PVSmoketestUtil extends FunctionReference {
 	
 	//ATU Report
 	public void performATU(String steps, String inputVal, String expected, String actual, boolean screenShot, boolean status){
-		ATUReports.add(steps, inputVal, expected, actual, screenShot);
+		if(status) {
+			ATUReports.add(steps,inputVal,expected,actual,screenShot);
+		}else{
+			ATUReports.add(actual, LogAs.FAILED, new CaptureScreen(ScreenshotOf.DESKTOP));
+		}
+		
 		
 	}
 	

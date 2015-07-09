@@ -8,3 +8,9 @@
 *.html
 
 *.class
+
+/pv
+
+/ATU Reports
+
+/test-output
