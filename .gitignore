@@ -1,7 +1,6 @@
+test-output
 
 *.html
-
-*.xlsx
 
 *.js
 
@@ -9,8 +8,10 @@
 
 *.class
 
-/pv
+*.xml
 
-/ATU Reports
+test-output-TANGINAMO/bullet_point.png
 
-/test-output
+test-output-TANGINAMO/collapseall.gif
+
+test-output-TANGINAMO/old/Default suite/classes.html
