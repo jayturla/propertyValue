@@ -87,13 +87,14 @@ public class HeaderZoneUtil extends FunctionReference {
 	public boolean enterEmailFP(int steps, int inputVal, int expected, int actualPass, int actualFail, int email, boolean withATU) throws Exception{ 
 		boolean available = false;
 		
+		String text = getText(xpath(PVObjectReferenceSmoketest.fpPage));
+		if (text.contains("Forgotten Password")) {
+			available = true;	
+		
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.emailForgottenPassword));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.emailForgottenPassword)));
 		type(xpath(PVObjectReferenceSmoketest.emailForgottenPassword), input[email]);
 		
-		String text = getText(xpath(PVObjectReferenceSmoketest.emailForgottenPassword));
-		if (text.contains("Email Address")) {
-			available = true;	
 		}
 		
 		if(withATU) {
@@ -227,7 +228,7 @@ public class HeaderZoneUtil extends FunctionReference {
 		
 		clickLogin();
 		forgottenPassword();
-		enterEmailFP(email, 0, 0, 0, 0, 0, false);
+		enterEmailFP(0, 0, 0, 0, 0, email, false);
 		clickResetFP(0,0,0,0,0,false);
 		 
 		String text = getText(xpath(PVObjectReferenceSmoketest.verifyResetPW));
