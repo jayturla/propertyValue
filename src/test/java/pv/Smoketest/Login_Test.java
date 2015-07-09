@@ -12,7 +12,6 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import pv.utilities.HeaderZoneUtil;
-import pv.utilities.PVSmoketestUtil;
 import atu.testng.reports.ATUReports;
 import atu.testng.reports.listeners.ATUReportsListener;
 import atu.testng.reports.listeners.ConfigurationListener;
@@ -29,7 +28,7 @@ public class Login_Test extends TestInitReference {
 	String testCase = "HomePage";
 		
 	@Test(description="HomePage", dataProvider = "Data-Provider-Function")
-	public void headerZone(Class clzz, String[] input) {
+	public void headerZone(Class<?> clzz, String[] input) {
 		HeaderZoneUtil pvHeader = new HeaderZoneUtil(input);
 		
 		try {
