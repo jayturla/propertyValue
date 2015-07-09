@@ -228,7 +228,7 @@ public class HeaderZoneUtil extends FunctionReference {
 		clickLogin();
 		forgottenPassword();
 		enterEmailFP(email, 0, 0, 0, 0, 0, false);
-		clickResetFP();
+		clickResetFP(0,0,0,0,0,false);
 		 
 		String text = getText(xpath(PVObjectReferenceSmoketest.verifyResetPW));
 		if (text.contains("Your password has been reset")) {
