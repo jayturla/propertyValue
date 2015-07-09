@@ -33,5 +33,9 @@ public class PVObjectReferenceSmoketest {
 	public static String resetFP = "//*[@id='resetPassword_submit']";
 	public static String advanceSearch = "(//*[@class='active']//button)[15]";
 	public static String fpPage = "//*[@class='container'][1]";
-
+	public static String unitAdvanceSearch = "//*[@id='adv_unitnumber']";
+	public static String advanceSearchPage = "//*[@class='form']";
+	public static String streetAdvanceSearch = "//*[@id='adv_streetname']";
+	public static String searchResultsAdvanceSearch = "//*[@class='row sectionAnchor']";
+	
 }
