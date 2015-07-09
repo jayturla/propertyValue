@@ -31,4 +31,6 @@ public class PVObjectReferenceSmoketest {
 	public static String emailForgottenPassword = "//*[@id='resetPassword_input']";
 	public static String verifyResetPW = "//*[@class='user-sign']";
 	public static String resetFP = "//*[@id='resetPassword_submit']";
+	public static String advanceSearch = "(//*[@class='active']//button)[15]";
+
 }

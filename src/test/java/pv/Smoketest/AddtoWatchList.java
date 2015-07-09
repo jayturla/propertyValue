@@ -49,6 +49,7 @@ public class AddtoWatchList extends TestInitReference {
 			pvAddtoWatchList.selectSuburb(29, 30, 31, 32, 33, 34, true);
 			//Verify if Suburb is added and displaying in WatchList
 			 pvAddtoWatchList.verifyIfSuburbisAddedtoWatchList(35, 36, 37, 38, 39, true);
+		
 		} catch (Exception e) {
 		}
 	}

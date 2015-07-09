@@ -214,7 +214,7 @@ public class AddtoWatchListUtil extends FunctionReference {
 	
 	public boolean verifyIfSuburbisAddedtoWatchList(int steps, int inputVal, int expected, int actualPass,int actualFail ,boolean withATU)  throws Exception{
 		boolean available = false;
-		//clickAddtoWatchList();
+		clickAddtoWatchList();
 		head.clickMenu();
 		goToWatchList();
 		

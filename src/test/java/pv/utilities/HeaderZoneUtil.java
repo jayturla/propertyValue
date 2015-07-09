@@ -84,18 +84,65 @@ public class HeaderZoneUtil extends FunctionReference {
 		click(xpath(PVObjectReferenceSmoketest.forgottenPassword));
 	}
 	
-	public void enterEmailFP(int inputval) throws Exception{ 
+	public boolean enterEmailFP(int steps, int inputVal, int expected, int actualPass, int actualFail, int email, boolean withATU) throws Exception{ 
+		boolean available = false;
 		
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.emailForgottenPassword));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.emailForgottenPassword)));
-		type(xpath(PVObjectReferenceSmoketest.emailForgottenPassword), input[inputval]);
+		type(xpath(PVObjectReferenceSmoketest.emailForgottenPassword), input[email]);
+		
+		String text = getText(xpath(PVObjectReferenceSmoketest.emailForgottenPassword));
+		if (text.contains("Email Address")) {
+			available = true;	
+		}
+		
+		if(withATU) {
+			if(available){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actualPass],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actualFail],true,false);//fail
+			}
+		}
+		if(available){
+			pass("Enter Email Address in Forgotten password is displaying!");
+		}else {
+			fail("Enter Email Address in Forgotten password is NOT displaying");
+		}
+		
+
+		return available;
+	
 	}
 	
-	public void clickResetFP() throws Exception{
-
+	public boolean clickResetFP(int steps, int inputVal, int expected, int actualPass,int actualFail,boolean withATU) throws Exception{
+		boolean available = false; 
+		
+		String text = getText(xpath(PVObjectReferenceSmoketest.resetFP));
+		if (text.contains("Reset")) {
+			available = true;	
+		
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.resetFP));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.resetFP)));
 		click(xpath(PVObjectReferenceSmoketest.resetFP));
+		
+	}
+		
+		if(withATU) {
+			if(available){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actualPass],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actualFail],true,false);//fail
+			}
+		}
+		if(available){
+			pass("Reset buton is displat!");
+		}else {
+			fail("Existing User was not able to Login!");
+		}
+		
+
+		return available;
+		
 	}
 	
 	public boolean LoginPV(int steps, int inputVal, int expected, int actualPass,int actualFail,int userName,int password,boolean withATU)  throws Exception{
@@ -180,9 +227,9 @@ public class HeaderZoneUtil extends FunctionReference {
 		
 		clickLogin();
 		forgottenPassword();
-		enterEmailFP(email);
+		enterEmailFP(email, 0, 0, 0, 0, 0, false);
 		clickResetFP();
-		
+		 
 		String text = getText(xpath(PVObjectReferenceSmoketest.verifyResetPW));
 		if (text.contains("Your password has been reset")) {
 			available = true;	
