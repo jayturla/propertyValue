@@ -11,8 +11,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import pv.utilities.AddtoWatchListUtil;
-import pv.utilities.HeaderZoneUtil;
+import pv.utilities.PropertyProfileReportUtil;
 import atu.testng.reports.ATUReports;
 import atu.testng.reports.listeners.ATUReportsListener;
 import atu.testng.reports.listeners.ConfigurationListener;
@@ -21,34 +20,31 @@ import atu.testng.reports.utils.Utils;
 
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class,
 MethodListener.class })
-public class AddtoWatchList extends TestInitReference {
+public class PropertyProfileReport_Test extends TestInitReference {
 	{
 		System.setProperty("atu.reporter.config", "../propertyValue-automation/conf/atu.properties");
 	}
 	
-	String testCase = "HomePage";
+	String testCase = "PropertyProfileReport";
 		
-	@Test(description="HomePage", dataProvider = "Data-Provider-Function")
-	public void testHomePage(Class clzz, String[] input) {
-		AddtoWatchListUtil pvAddtoWatchList = new AddtoWatchListUtil(input);
-		HeaderZoneUtil headZone = new HeaderZoneUtil(input);
-	
+	@Test(description="PropertyProfileReport", dataProvider = "Data-Provider-Function")
+	public void testPropertyProfileReport(Class clzz, String[] input) {
+		PropertyProfileReportUtil pvSmoke = new PropertyProfileReportUtil(input);
+		
+
 		try {
-			//Login Existing User 
-			headZone.LoginPV(0,1,2,3,4,5,6,true);
-			//Search and Select for Property
-			pvAddtoWatchList.selectProperty(7,8,9,10,11,12,true);
-		   //Verify if Property is added and displaying in WatchList
-			pvAddtoWatchList.verifyIfPropertyisAddedtoWatchList(13, 14, 15, 16, 17, true);
-			//Search and Select for Street
-			pvAddtoWatchList.selectStreet(18, 19, 20, 21, 22, 23, true);
-			//Verify if Street is added and displaying in WatchList
-			pvAddtoWatchList.verifyIfStreetisAddedtoWatchList(24, 25, 26, 27, 28, true);
-			//Search and Select for Suburb
-			pvAddtoWatchList.selectSuburb(29, 30, 31, 32, 33, 34, true);
-			//Verify if Suburb is added and displaying in WatchList
-			 pvAddtoWatchList.verifyIfSuburbisAddedtoWatchList(35, 36, 37, 38, 39, true);
-		
+			//check for $ Buy Property report
+			pvSmoke.checkBuyPropertyReport(1,2,3,4,25,true);
+			//click $ Buy Property report button to navigate to Property Profile Report screen
+			pvSmoke.clickBuyPropertyReport(5,2,6,7,true);
+			//click Get This Report Button to navigate Payment Summary Screen
+			pvSmoke.clickGetThisReport(8,2,9,10,true);
+			//click buy now button checked if updated to pay now button
+			pvSmoke.clickBuyNow(11,2,12,13,true);
+			//click pay now button to navigate to Payment Checkout
+			pvSmoke.clickPayNow(14,2,15,16,true);
+			//submit credit card details and navigate to payment success screen
+			pvSmoke.submitCreditCard(17,2,18,19,21,22,23,24,true);
 		} catch (Exception e) {
 		}
 	}
@@ -58,7 +54,7 @@ public class AddtoWatchList extends TestInitReference {
 	@DataProvider(name = "Data-Provider-Function")
 	public Object[][] parameterIntTestProvider() throws IOException{
 		Object[][] data = null;
-		ReadXlsData rxd = new ReadXlsData("../propertyValue-automation/pvtest-data/addtoWatchlist.xls");
+		ReadXlsData rxd = new ReadXlsData("../propertyValue-automation/pvtest-data/propertyprofilereport.xls");
 		data = rxd.getData();
 		return data;
 	}

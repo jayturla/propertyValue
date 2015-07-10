@@ -10,11 +10,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
-import pv.utilities.AddtoWatchListUtil;
 import pv.utilities.HeaderZoneUtil;
 import pv.utilities.MyAccountUtil;
-import pv.utilities.PVSmoketestUtil;
 import atu.testng.reports.ATUReports;
 import atu.testng.reports.listeners.ATUReportsListener;
 import atu.testng.reports.listeners.ConfigurationListener;
