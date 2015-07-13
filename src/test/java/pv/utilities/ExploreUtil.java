@@ -160,9 +160,9 @@ public class ExploreUtil extends FunctionReference {
 	public boolean selectTopSuburb(int steps, int inputVal, int expected, int actual,boolean withATU)  throws Exception {
 		boolean available = false;
 		click(xpath(PVObjectReferenceSmoketest.selectTopSuburb));
-		waitForElementPresent(xpath(PVObjectReferenceSmoketest.checkSuburbProfilePage));
-		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.checkSuburbProfilePage)));
-		available = isElementVisible(xpath(PVObjectReferenceSmoketest.checkSuburbProfilePage));
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.checkProfilePage));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.checkProfilePage)));
+		available = isElementVisible(xpath(PVObjectReferenceSmoketest.checkProfilePage));
 		
 		if(withATU) {
 			if(available){

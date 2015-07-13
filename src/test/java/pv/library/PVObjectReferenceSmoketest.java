@@ -45,7 +45,7 @@ public class PVObjectReferenceSmoketest {
 		public static String selectRegion ="//*[@id='explore_region_select']/div/ul";
 		public static String metricSorting ="//*[@id='explore_metric_div']";
 		public static String selectTopSuburb = "//*[@id='explore_form']/div/div/div[4]/table/tbody/tr[1]/td[1]/a";
-		public static String checkSuburbProfilePage = "//*[@class='col-xs-12 col-sm-8 col-md-8 col-lg-8']";
+		public static String checkProfilePage = "//*[@class='col-xs-12 col-sm-8 col-md-8 col-lg-8']";
 		
 		//Homepage
 		public static String headerNav = "//*[@class='main']";
@@ -103,5 +103,19 @@ public class PVObjectReferenceSmoketest {
 		public static String rememberCard = "//*[@id='rememberCard']";
 		public static String waitCreditCardPayment = "//*[@id='TxnAuthCreditCard']";
 		public static String backtoHomepage = "//*[@class='home-link-success']";
+		
+		//PropertyDetails
+		public static String propertyDetailsHeader = "//*[@class='ie']";
+		public static String checkPropertyInsights = "//*[@id='property-insights']";
+		public static String propertyInsightsData = "//h4[contains(.,'-')]";
+		public static String propertyGallery = "//*[@id='property-insights']/div[2]/div[1]/div[1]";
+		public static String aboutProperty = "//*[@id='property-insights']/div[3]";
+		public static String comparableProperties = "//*[@id='comparable_main_wrap']/table/tbody/tr/td/table/tbody/tr/td/div[2]/div/div[2]/div[2]/div";
+		public static String auctionResults = "//*[@id='property-insights']/div[3]/div[6]";
+		public static String suburbInfo = "//*[@id='property-insights']/div[3]/div[7]/div";
+		public static String suburbStats = "//*[@id='property-insights']/div[3]/div[8]/div/div[1]";
+		public static String marketTrends = "//*[@id='upgrade-premium-btn']/div/a";
+		
+		
 		
 }

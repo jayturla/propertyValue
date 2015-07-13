@@ -116,13 +116,6 @@ public class HomepageUtil extends FunctionReference {
 			return available;
 	}
 	
-//	public boolean checkMedianPriceAndGrossYield(int steps, int inputVal, int expected, int actual,boolean withATU) throws Exception {
-//		boolean exist = false;
-//		if(checkMedianPriceChange(steps,inputVal,expected,actual,withATU) && checkMedianGrossYield(steps,inputVal,expected,actual,withATU)){
-//			exist = true;
-//		}
-//		return exist;
-//	}
 	//Checking Top Suburbs by Median Price change (1yr) and Median Gross Yield if available in the homepage.
 	public boolean checkMedianPriceChange(int steps, int inputVal, int expected, int actual,boolean withATU) throws Exception {
 		boolean available = false;
