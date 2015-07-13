@@ -46,6 +46,7 @@ public class PVObjectReferenceSmoketest {
 		public static String metricSorting ="//*[@id='explore_metric_div']";
 		public static String selectTopSuburb = "//*[@id='explore_form']/div/div/div[4]/table/tbody/tr[1]/td[1]/a";
 		public static String checkProfilePage = "//*[@class='col-xs-12 col-sm-8 col-md-8 col-lg-8']";
+		public static String clickPortfolio = "//a[contains(.,'Portfolio')]";
 		
 		//Homepage
 		public static String headerNav = "//*[@class='main']";
@@ -116,6 +117,11 @@ public class PVObjectReferenceSmoketest {
 		public static String suburbStats = "//*[@id='property-insights']/div[3]/div[8]/div/div[1]";
 		public static String marketTrends = "//*[@id='upgrade-premium-btn']/div/a";
 		
+		//Portfolio Summary
+		public static String portfolioSnapshot = "//*[@id='portfolio-watchlist-div']/div/table/tbody/tr/td/div/div[1]";
+		public static String portfolioValues = "//*[@id='portfolio-watchlist-div']/div/table/tbody/tr/td/div/div[1]/div[1]";
+		public static String calculateEquity = "//*[@id='equity-not-select']/a";
+		public static String calculateModal = "//*[@id='calculateModal']/div/div/div[2]";
 		
 		
 }
