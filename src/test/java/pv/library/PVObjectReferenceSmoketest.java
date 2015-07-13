@@ -123,5 +123,15 @@ public class PVObjectReferenceSmoketest {
 		public static String calculateEquity = "//*[@id='equity-not-select']/a";
 		public static String calculateModal = "//*[@id='calculateModal']/div/div/div[2]";
 		
+		//StreetDetails
+		public static String togglePropertyType = "//*[@id='propertyTypeToggle_units']";
+		public static String clickHouse = "//*[@id='propertyTypeToggle_houses']";
+		public static String checkStreetInsights = "//*[@class='sti']";
+		public static String propertyPrices = "//*[@id='comparable_main_wrap']/table/tbody/tr/td/table/tbody/tr/td/div[2]/div";
+		public static String streetAuction = "//h3[contains(.,' Auction ')]";
+		public static String streetSuburbInfo = "//*[@class='spacer sectionAnchor']";
+		public static String streetSuburbStat = "//*[@class='col-sm-12 col-md-12 hidden-xs nhGraph']";
+		public static String otherStreets = "//*[@id='streets-insights-main-container']";
+		
 		
 }
