@@ -133,7 +133,19 @@ public class PVObjectReferenceSmoketest {
 		public static String streetSuburbStat = "//*[@class='col-sm-12 col-md-12 hidden-xs nhGraph']";
 		public static String otherStreets = "//*[@id='streets-insights-main-container']";
 		
+		//SUBSCRIBED USERS
 		//Subscription Details
 		public static String subscriptionType = "//*[@class='col-md-8']";
+
+		//Premium suburb map result
+		public static String clickadvanceFilter = "//*[@id='filters-pane']/div[6]/div[2]/div[2]/a/i";
+		public static String advanceFilter = "//*[@id='advFilters']";
+		public static String toggleInsights = "//*[@id='mapSearch_form']/div[2]/div[6]/div[3]/div/button";
+		public static String checkDropdownInsights = "//*[@id='SIlist']";
+		public static String clickList = "//*[@id='SIlist']/li[5]";
+		public static String clickRecentlySold = "//*[@id='filters-pane']/div[2]/label[2]";
+		public static String clickSearch = "//*[@id='filters-pane']/div[8]/div";
+		public static String moreResults = "//*[@id='left-container']";
+		public static String actualPrice = "//*[@id='property-result-list']/div[1]/div[2]/div[2]/span[2]";
 		
 }
