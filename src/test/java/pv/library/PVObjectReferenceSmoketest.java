@@ -60,6 +60,9 @@ public class PVObjectReferenceSmoketest {
 		//Signup
 		public static String btnSignup = "//*[@class='sign-up']";
 		public static String SignupPage = "//h1[contains(.,'Sign up')]";
+		//Signup with FB
+		public static String clickSignupFB = "//*[@id='freemiumRegisForm']/div/div/div/div[1]/div[1]/div[5]/div/div[1]/a";
+		public static String signupFB = "//*[@id='facebook']";	
 		
 		//PropertyProfileReport
 		public static String BuyPropertyReport = "(//*[@id='property-insights']/div[1]/table/tbody/tr[1]/td/div[1]/ul[1]/li[2]/a)";
@@ -131,7 +134,7 @@ public class PVObjectReferenceSmoketest {
 		public static String streetAuction = "//h3[contains(.,' Auction ')]";
 		public static String streetSuburbInfo = "//*[@class='spacer sectionAnchor']";
 		public static String streetSuburbStat = "//*[@class='col-sm-12 col-md-12 hidden-xs nhGraph']";
-		public static String otherStreets = "//*[@id='streets-insights-main-container']";
+		public static String otherStreets = "//*[@id='streets-insights-main-container']";	
 		
 		//SUBSCRIBED USERS
 		//Subscription Details
