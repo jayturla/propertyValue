@@ -133,5 +133,7 @@ public class PVObjectReferenceSmoketest {
 		public static String streetSuburbStat = "//*[@class='col-sm-12 col-md-12 hidden-xs nhGraph']";
 		public static String otherStreets = "//*[@id='streets-insights-main-container']";
 		
+		//Subscription Details
+		public static String subscriptionType = "//*[@class='col-md-8']";
 		
 }
