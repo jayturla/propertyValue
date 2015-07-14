@@ -47,6 +47,8 @@ public class PVObjectReferenceSmoketest {
 		public static String selectTopSuburb = "//*[@id='explore_form']/div/div/div[4]/table/tbody/tr[1]/td[1]/a";
 		public static String checkProfilePage = "//*[@class='col-xs-12 col-sm-8 col-md-8 col-lg-8']";
 		public static String clickPortfolio = "//a[contains(.,'Portfolio')]";
+		public static String getPremium = "//a[contains(.,'Get Premium')]";
+		
 		
 		//Homepage
 		public static String headerNav = "//*[@class='main']";
@@ -75,6 +77,12 @@ public class PVObjectReferenceSmoketest {
 		public static String PaymentSummaryUserEmail = "//*[@id='userEmail']";
 		public static String btnBuyNow = "//*[@id='order_now_btn']";
 		public static String btnPayNow = "//*[@id='getApproval']";
+		public static String premiumBuyNow = "//*[@id='optionList']/div[1]/div/div/div[2]/a";
+		public static String purchasePremium = "//*[@id='purchaseSubscription']/a";
+		public static String promoCode = "//*[@id='promocode']";
+		public static String btnContinue = "//*[@id='continue_btn']";
+		public static String applyCode = "//*[@id='promocode_panel']/div/div[2]/button";
+		public static String circleLogo = "//*[@class='circle-logo']//a";
 		
 		//Payment Checkout
 		public static String PaymentCheckout = "//*[@id='PxPayAuthMain']/div/h2";
