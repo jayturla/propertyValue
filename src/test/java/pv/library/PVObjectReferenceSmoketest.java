@@ -182,4 +182,9 @@ public class PVObjectReferenceSmoketest {
 		public static String ownedRented = "//*[@class='street-percent']";
 		public static String estimatedValue = "//*[@id='watched-pty-127']/td[2]";
 		public static String clickWatchlist = "//*[@class='nav menu-tab-active']";
+		
+		//compare
+		public static String compareBoxA ="//*[@id='compare-inputA']/input";
+		public static String compareBoxB ="//*[@id='compare-inputB']/input";
+		public static String Comparison = "//*[@class='heading']";
 }
