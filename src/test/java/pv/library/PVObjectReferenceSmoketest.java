@@ -164,4 +164,22 @@ public class PVObjectReferenceSmoketest {
 		public static String moreResults = "//*[@id='left-container']";
 		public static String actualPrice = "//*[@id='property-result-list']/div[1]/div[2]/div[2]/span[2]";
 		
+		//Download Report
+		public static String propertyDownload = "//a[contains(.,' Download Property Report ')]";
+		public static String postcodeDownload = "//*[@id='property-insights']/div[1]/table/tbody/tr[1]/td/div[1]/ul[1]/li[2]";
+		public static String successReport = "//*[@id='sendReportModal']/div/div/div";
+		public static String closebtn = "//*[@id='sendReportModal']/div/div/div/div[1]/button/span";
+		
+		//Portfolio
+		public static String btnAddProperty = "//*[@id='portfolioListSection']/h4/a";
+		public static String addProperty = "//*[@id='addPropertyModal']/div/div/div[2]/div[1]/h3";
+		public static String btnClose = "//*[@id='addPropertyModal']/div/div/div[1]/button/span";
+		public static String estimateGrossYield = "//*[@id='upgrade-premium-overlay-div']";
+		public static String portfolioValueGraph = "//*[@id='portfolio-watchlist-div']/div/table/tbody/tr/td/div/div[1]/div[2]/div[3]";
+		public static String progressBar = "//*[@id='portfolio-results-table']/tbody/tr[1]/td[4]/div/div[2]/div";
+		
+		//watchlist
+		public static String ownedRented = "//*[@class='street-percent']";
+		public static String estimatedValue = "//*[@id='watched-pty-127']/td[2]";
+		public static String clickWatchlist = "//*[@class='nav menu-tab-active']";
 }
