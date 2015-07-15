@@ -35,7 +35,7 @@ public class Payment_Test extends TestInitReference {
 			//purchase any product using promoCode
 			pvSmoke.promoCode(0,1,2,3,4,5,true);
 			//purchase using email
-//			pvSmoke.emailPurchase(6,13,7,8,5,9,10,11,12,true);
+			pvSmoke.emailPurchase(6,7,8,9,5,10,11,12,13,14,15,true);
 		} catch (Exception e) {
 		}
 	}

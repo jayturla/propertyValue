@@ -93,6 +93,11 @@ public class PVObjectReferenceSmoketest {
 		public static String cardSecurityCode = "//*[@id='Cvc2']";
 		public static String btnSubmit = "//*[@id='clickedAdd']";
 		public static String paymentSuccess = "//h2[contains(.,'Your payment has been successful!')]";
+		public static String checkEmail = "//*[@id='Email']";
+		public static String gmailPasswd = "//*[@id='Passwd']";
+		public static String checkGmail = "//*[@id=':2']/div/div";
+		public static String btnNext = "//*[@id='next']";
+		public static String btnSignin = "//*[@id='signIn']";
 		
 		//PostCodeDetails
 		public static String postcodeAddress = "//h1[contains(.,'Suburbs in Postcode')]";
