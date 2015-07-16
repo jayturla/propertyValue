@@ -209,4 +209,7 @@ public class PVObjectReferenceSmoketest {
 		public static String investmentStrategyScore = "//*[@id='strategy-scores']";
 		public static String propertyTimeline = "//*[@id='propertyTimeline']/div/div[1]/div[2]";
 		public static String unliComparableProperties = "//*[@id='comparable_main_wrap']/table/tbody/tr/td/table/tbody/tr/td/div[2]/div/div[3]/h5/span/span";
+		
+		//street details premium
+		public static String checkBreakdown = "//*[@class='street']";
 }
