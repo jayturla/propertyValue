@@ -198,4 +198,15 @@ public class PVObjectReferenceSmoketest {
 		public static String checkSortText = "//a[contains(.,'Ainslie')]";
 		public static String viewValue = "//*[@id='explore_form']/div/div/div[4]/table/tbody/tr[1]/td[4]/div/div[2]/div";
 		
+		//PropertyDetails  premium
+		public static String checkExactValue = "//*[@id='property-insights']/div[2]/div[1]/div[2]/div[1]/div[1]/h4";
+		public static String checkEstimatedValue = "//*[@id='property-insights']/div[2]/div[1]/div[2]/div[1]/div[1]/span[3]";
+		public static String estimatedRent = "//*[@id='property-insights']/div[2]/div[1]/div[2]/div[1]/table/tbody/tr[3]/td[2]/div";
+		public static String estimatedYield = "//*[@id='property-insights']/div[2]/div[1]/div[2]/div[1]/table/tbody/tr[5]/td[2]/div";
+		public static String grossCashflow = "//*[@id='property-insights']/div[2]/div[1]/div[2]/div[1]/table/tbody/tr[4]/td[2]/div";
+		public static String checkPros = "//*[@id='property-insights']/div[2]/div[1]/div[2]/div[3]/div/h5[1]";
+		public static String checkCons = "//*[@id='property-insights']/div[2]/div[1]/div[2]/div[3]/div/h5[2]";
+		public static String investmentStrategyScore = "//*[@id='strategy-scores']";
+		public static String propertyTimeline = "//*[@id='propertyTimeline']/div/div[1]/div[2]";
+		public static String unliComparableProperties = "//*[@id='comparable_main_wrap']/table/tbody/tr/td/table/tbody/tr/td/div[2]/div/div[3]/h5/span/span";
 }
