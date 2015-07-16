@@ -187,4 +187,15 @@ public class PVObjectReferenceSmoketest {
 		public static String compareBoxA ="//*[@id='compare-inputA']/input";
 		public static String compareBoxB ="//*[@id='compare-inputB']/input";
 		public static String Comparison = "//*[@class='heading']";
+		
+		//strategies
+		public static String investmentStrategy = "//*[@id='cashflowContent']/div/div[2]";
+		public static String clickStrategy = "//a[contains(.,'Strategies')]";
+		public static String checkExplorePane = "//*[@id='explore_activity_pane']";
+		public static String clickOrder = "//*[@id='explore_metric_div']/a";
+		public static String selectOrder = "//*[@id='explore_metric_div']/div/ul/li[2]/a";
+		public static String clickSort = "//*[@id='explore_form']/div/div/div[4]/table/thead/tr/th[1]";
+		public static String checkSortText = "//a[contains(.,'Ainslie')]";
+		public static String viewValue = "//*[@id='explore_form']/div/div/div[4]/table/tbody/tr[1]/td[4]/div/div[2]/div";
+		
 }
