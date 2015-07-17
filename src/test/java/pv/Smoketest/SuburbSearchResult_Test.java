@@ -25,9 +25,9 @@ public class SuburbSearchResult_Test extends TestInitReference {
 		System.setProperty("atu.reporter.config", "../propertyValue-automation/conf/atu.properties");
 	}
 	
-	String testCase = "SuburbSearchResultUtil";
+	String testCase = "Suburb Search Result";
 		
-	@Test(description="SuburbSearchResultUtil", dataProvider = "Data-Provider-Function")
+	@Test(description="General User Suburb Search Result", dataProvider = "Data-Provider-Function")
 	public void testSuburbSearchResult(Class clzz, String[] input) {
 		SuburbSearchResultUtil pvSmoke = new SuburbSearchResultUtil(input);
 		

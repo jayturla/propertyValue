@@ -23,11 +23,7 @@ public class SuburbSearchResultUtil extends FunctionReference {
 	public boolean btnPropertyProfile(int steps, int inputVal, int expected, int actual,int suburb,boolean withATU)  throws Exception {
 		boolean navigate = false;
 		
-		type(xpath(PVObjectReferenceSmoketest.slasBox), input[suburb]);
-		driver.findElement(xpath(PVObjectReferenceSmoketest.slasBox)).sendKeys(Keys.RETURN);
-		
-		waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickSuburb));
-		click(xpath(PVObjectReferenceSmoketest.clickSuburb));
+		driver.navigate().to(input[suburb]);
 		
 		click(xpath(PVObjectReferenceSmoketest.btnForSale));
 		click(xpath(PVObjectReferenceSmoketest.btnViewProfile));
