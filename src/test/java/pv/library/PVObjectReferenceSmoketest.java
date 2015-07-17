@@ -63,6 +63,11 @@ public class PVObjectReferenceSmoketest {
 	public static String btnSignup = "//*[@class='sign-up']";
 	public static String SignupPage = "//h1[contains(.,'Sign up')]";
 	
+	//login suburb search
+	public static String suburbPins = "//*[@id='googleMap']/div/div[1]/div[3]/div[3]/div[1]";
+	public static String propertyPins = "//*[@id='googleMap']/div/div[1]/div[3]/div[3]/div[5]";
+	public static String propertyData = "//*[@id='property-result-list']/div[1]";
+	
 	//Signup with FB
 	public static String clickSignupFB = "//*[@id='freemiumRegisForm']/div/div/div/div[1]/div[1]/div[5]/div/div[1]/a";
 	public static String signupFB = "//*[@id='facebook']";	
