@@ -62,6 +62,18 @@ public class PVObjectReferenceSmoketest {
 	//Signup
 	public static String btnSignup = "//*[@class='sign-up']";
 	public static String SignupPage = "//h1[contains(.,'Sign up')]";
+	public static String firstNameBox = "//*[@id='freemiumRegisForm']/div/div/div/div[1]/div[1]/div[1]/div[1]/div[1]/input";
+	public static String lastNameBox = "//*[@id='freemiumRegisForm']/div/div/div/div[1]/div[1]/div[1]/div[2]/div[1]/input";
+	public static String addressBox = "//*[@id='suburbasgcsearch']";
+	public static String emailBox = "//*[@id='freemiumRegisForm']/div/div/div/div[1]/div[1]/div[2]/div[2]/div[1]/input";
+	public static String confirmEmailBox = "//*[@id='confirmUserEmail']";
+	public static String passwordBox = "//*[@id='userPass']";
+	public static String confirmpasswordBox = "//*[@id='confirmUserPass']";
+	public static String termsAndCondition = "//*[@id='freemiumRegisForm']/div/div/div/div[1]/div[1]/input";
+	public static String captchaBox = "//*[@id='recaptcha_response_field']";
+	public static String submitSignup = "//*[@id='freemiumRegisForm']/div/div/div/div[1]/div[1]/button";
+	public static String signupSuccess = "//*[@id='signupSuccess']";
+	
 	
 	//login suburb search
 	public static String suburbPins = "//*[@id='googleMap']/div/div[1]/div[3]/div[3]/div[1]";
