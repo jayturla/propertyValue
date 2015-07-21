@@ -77,7 +77,19 @@ public class PVObjectReferenceSmoketest {
 	public static String ProfileReportPage = "//*[@class='report']";	
 	public static String btnGetThisReport = "//a[contains(.,'Get this report for ')]";
 	public static String btnGetThisReportProperty = "//a[contains(.,'Get this Report for ')]";
-		
+	
+	//Suburb Profile
+	public static String checkAddress = "//*[@id='paddress']";
+	public static String checkSuburbInsights = "//*[@class='si']";
+	public static String propertyPricesForSale = "//*[@id='comparable_main_wrap']/table/tbody/tr/td/table/tbody/tr/td/div[2]/div/div[2]/div[2]/div/div[1]/div";
+	public static String propertyPricesRecentlySold = "//*[@id='comparable_main_wrap']/table/tbody/tr/td/table/tbody/tr/td/div[2]/div/div[2]/div[2]/div/div[2]/div";
+	public static String propertyPricesForRent = "//*[@id='comparable_main_wrap']/table/tbody/tr/td/table/tbody/tr/td/div[2]/div/div[2]/div[2]/div/div[3]/div";
+	public static String suburbAuction = "//*/div[4]/div/div[2]/div[12]";
+	public static String suburbStatistics = "//*/div[4]/div/div[2]/div[14]/div/div[1]";
+	public static String suburbTrends = "//*/div[4]/div/div[2]/div[16]/div";
+	public static String localExperts = "//*/div[4]/div/div[2]/div[17]/table/tbody/tr[2]/td/div/div";
+	
+	
 	//Payment Summary 
 	public static String PaymentSummaryScreen = "//*[@id='payment_panel']/h2";
 	public static String PaymentSummaryUserEmail = "//*[@id='userEmail']";
