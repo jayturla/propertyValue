@@ -28,6 +28,11 @@ public class SC_PVObjectReferenceSmoketest {
 	public static String btnContinue = "//*[@id='checkOutButton']";
 	public static String paymentSuccess = "//*[@id='purchaseDoneForm']/ul/li[1]/label";
 	
+	//Investors Postcode Report
+	public static String investorsTab = "//a[contains(.,'Investors')]";
+	public static String investorAddToCart = "(//*[@class='purchaseButtonContainer'])[1]/div/*[@id='purchaseButton']";
+	public static String guestEmail = "//*[@id='customerEmail']";
+	
 	
 	
 }
