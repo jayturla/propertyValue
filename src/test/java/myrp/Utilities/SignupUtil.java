@@ -1,5 +1,5 @@
 
-package sc.pv.Utilities;
+package myrp.Utilities;
 
 
 import static org.openqa.selenium.By.xpath;
@@ -10,15 +10,15 @@ import java.io.InputStreamReader;
 import org.testng.Assert;
 
 import pv.atu_utilities.copy.ATUUtil;
-import pv.library.FunctionReference;
-import pv.library.SC_PVObjectReferenceSmoketest;
+import myrp.library.FunctionReference;
+import myrp.library.SC_PVObjectReferenceSmoketest;
 
-public class SC_SignupUtil extends FunctionReference {
+public class SignupUtil extends FunctionReference {
 	
 	private String[] input = null;
 	private ATUUtil atu = new ATUUtil();
 	
-	public SC_SignupUtil(String[] i) {
+	public SignupUtil(String[] i) {
 		input = i;
 	
 	}

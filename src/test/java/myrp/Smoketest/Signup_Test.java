@@ -1,9 +1,10 @@
-package sc.pv.Smoketest;
+package myrp.Smoketest;
 
 import java.io.IOException;
 
-import pv.library.ReadXlsData;
-import pv.library.TestInitReference;
+import myrp.library.ReadXlsData;
+import myrp.library.TestInitReference;
+import myrp.Utilities.SignupUtil;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -11,7 +12,6 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import sc.pv.Utilities.SC_SignupUtil;
 import atu.testng.reports.ATUReports;
 import atu.testng.reports.listeners.ATUReportsListener;
 import atu.testng.reports.listeners.ConfigurationListener;
@@ -20,7 +20,7 @@ import atu.testng.reports.utils.Utils;
 
 @Listeners({ ATUReportsListener.class, ConfigurationListener.class,
 MethodListener.class })
-public class SC_Signup extends TestInitReference {
+public class Signup_Test extends TestInitReference {
 	{
 		System.setProperty("atu.reporter.config", "../propertyValue-automation/conf/atu.properties");
 	}
@@ -29,7 +29,7 @@ public class SC_Signup extends TestInitReference {
 		
 	@Test(description="Subscriptions Channel Signup", dataProvider = "Data-Provider-Function")
 	public void testSubscriptionsChannelSignup(Class clzz, String[] input) {
-		SC_SignupUtil scSmoke = new SC_SignupUtil(input);
+		SignupUtil scSmoke = new SignupUtil(input);
 
 		try {
 			//Signup to subscriptions channel propertyvalue
@@ -45,7 +45,7 @@ public class SC_Signup extends TestInitReference {
 	@DataProvider(name = "Data-Provider-Function")
 	public Object[][] parameterIntTestProvider() throws IOException{
 		Object[][] data = null;
-		ReadXlsData rxd = new ReadXlsData("../propertyValue-automation/sc.pvtest-data/SC_Signup.xls");
+		ReadXlsData rxd = new ReadXlsData("../propertyValue-automation/myrptest-data/Signup.xls");
 		data = rxd.getData();
 		return data;
 	}
