@@ -17,6 +17,7 @@ public class SC_PVObjectReferenceSmoketest {
 	
 	//Estimated Value Report
 	public static String logIn = "//*[@class='buttonLogin']";
+	public static String logOut = "//a[contains(.,'LOGOUT')]";
 	public static String btnLogIn = "//*[@name='loginButton']";
 	public static String userName = "//*[@id='userName']";
 	public static String passWord = "//*[@id='password']";
@@ -26,5 +27,7 @@ public class SC_PVObjectReferenceSmoketest {
 	public static String promoCode = "//*[@id='promotionCode']";
 	public static String btnContinue = "//*[@id='checkOutButton']";
 	public static String paymentSuccess = "//*[@id='purchaseDoneForm']/ul/li[1]/label";
+	
+	
 	
 }

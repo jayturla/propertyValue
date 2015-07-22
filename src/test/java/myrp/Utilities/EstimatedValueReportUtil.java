@@ -8,7 +8,6 @@ import org.openqa.selenium.Keys;
 import org.testng.Assert;
 
 import pv.atu_utilities.copy.ATUUtil;
-import pv.library.PVObjectReferenceSmoketest;
 import myrp.library.FunctionReference;
 import myrp.library.SC_PVObjectReferenceSmoketest;
 
