@@ -1,4 +1,4 @@
-package pv.library;
+package myrp.library;
 
 public class SC_PVObjectReferenceSmoketest {
 	
@@ -14,5 +14,17 @@ public class SC_PVObjectReferenceSmoketest {
 	public static String captchaField = "//*[@id='recaptcha_response_field']";
 	public static String clickDone = "//*[@id='subRegInd']";
 	public static String successSignup = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr[2]/td/span";
+	
+	//Estimated Value Report
+	public static String logIn = "//*[@class='buttonLogin']";
+	public static String btnLogIn = "//*[@name='loginButton']";
+	public static String userName = "//*[@id='userName']";
+	public static String passWord = "//*[@id='password']";
+	public static String slasBox = "//*[@id='singleLineSearch']";
+	public static String addToCart = "//*[@id='estimatedValueButton']/div/*[@id='purchaseButton']";
+	public static String goToCart = "//*[@id='goToCart']";
+	public static String promoCode = "//*[@id='promotionCode']";
+	public static String btnContinue = "//*[@id='checkOutButton']";
+	public static String paymentSuccess = "//*[@id='purchaseDoneForm']/ul/li[1]/label";
 	
 }
