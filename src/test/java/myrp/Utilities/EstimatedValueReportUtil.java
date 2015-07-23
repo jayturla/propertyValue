@@ -53,9 +53,9 @@ public class EstimatedValueReportUtil extends FunctionReference {
 		}
 		
 		if(passed){
-			pass("Go to Card button will navigate to Shopping Card Screen.");
+			pass("Go to Cart button will navigate to Shopping Card Screen.");
 		}else {
-			fail("Go to Card button will not navigate to Shopping Card Screen.");
+			fail("Go to Cart button will not navigate to Shopping Card Screen.");
 		}
 		
 		return passed;
