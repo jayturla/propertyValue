@@ -305,6 +305,12 @@ public class PVObjectReferenceSmoketest {
 	//Suburb Sales History Report
 	public static String suburbAddToCart = "(//*[@class='purchaseButtonContainer'])[1]/div/*[@id='purchaseButton']";
 	
+	//Free Suburb Profile Report
+	public static String btnFreeReport = "(//*[@class='purchaseButtonContainer'])[6]/div/*[@id='purchaseButton']";
+	public static String getFreeReportEmail = "//*[@id='freePackageEmail']";
+	public static String freeReportSent = "//*[@id='cboxLoadedContent']/div/div/label";
+	public static String clickSubmit = "//*[@id='freePackageSubmit']";
+	
 	//Iframe
 	public static String iframe = "//iframe";
 		
