@@ -10,8 +10,8 @@ import java.io.InputStreamReader;
 import org.testng.Assert;
 
 import pv.atu_utilities.copy.ATUUtil;
-import myrp.library.FunctionReference;
-import myrp.library.SC_PVObjectReferenceSmoketest;
+import pv.library.FunctionReference;
+import pv.library.PVObjectReferenceSmoketest;
 
 public class SignupUtil extends FunctionReference {
 	
@@ -29,27 +29,27 @@ public class SignupUtil extends FunctionReference {
 			int userEmail, int confirmEmail, int userPass, int confirmPass, boolean withATU) throws Exception {
 		boolean passed = false;
 		
-		click(xpath(SC_PVObjectReferenceSmoketest.clickSignup));
-		type(xpath(SC_PVObjectReferenceSmoketest.firstName), input[firstName]);
-		type(xpath(SC_PVObjectReferenceSmoketest.lastName), input[lastName]);
-		type(xpath(SC_PVObjectReferenceSmoketest.userEmail), input[userEmail]);
-		type(xpath(SC_PVObjectReferenceSmoketest.confirmEmail), input[confirmEmail]);
-		type(xpath(SC_PVObjectReferenceSmoketest.userPass), input[userPass]);
-		type(xpath(SC_PVObjectReferenceSmoketest.confirmPass), input[confirmPass]);
-		click(xpath(SC_PVObjectReferenceSmoketest.termsConditions));
+		click(xpath(PVObjectReferenceSmoketest.clickSignup));
+		type(xpath(PVObjectReferenceSmoketest.firstName), input[firstName]);
+		type(xpath(PVObjectReferenceSmoketest.lastName), input[lastName]);
+		type(xpath(PVObjectReferenceSmoketest.userEmail), input[userEmail]);
+		type(xpath(PVObjectReferenceSmoketest.confirmEmail), input[confirmEmail]);
+		type(xpath(PVObjectReferenceSmoketest.userPass), input[userPass]);
+		type(xpath(PVObjectReferenceSmoketest.confirmPass), input[confirmPass]);
+		click(xpath(PVObjectReferenceSmoketest.termsConditions));
 		
 		String captcha = null;
 		
 		System.out.print("Enter value for captcha: ");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		captcha = reader.readLine();
-		type(xpath(SC_PVObjectReferenceSmoketest.captchaField), captcha);
+		type(xpath(PVObjectReferenceSmoketest.captchaField), captcha);
 		
-		click(xpath(SC_PVObjectReferenceSmoketest.clickDone));
+		click(xpath(PVObjectReferenceSmoketest.clickDone));
 		
-		waitForElementPresent(xpath(SC_PVObjectReferenceSmoketest.successSignup));
-		Assert.assertTrue(isElementPresent(xpath(SC_PVObjectReferenceSmoketest.successSignup)));
-		String text = getText(xpath(SC_PVObjectReferenceSmoketest.successSignup));
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.successSignup));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.successSignup)));
+		String text = getText(xpath(PVObjectReferenceSmoketest.successSignup));
 		
 		if(text.contains("You have successfully signed in to myRPData and you are now logged in.")){
 			passed = true;

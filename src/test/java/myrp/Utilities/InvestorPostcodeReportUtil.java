@@ -8,8 +8,8 @@ import org.openqa.selenium.Keys;
 import org.testng.Assert;
 
 import pv.atu_utilities.copy.ATUUtil;
-import myrp.library.FunctionReference;
-import myrp.library.SC_PVObjectReferenceSmoketest;
+import pv.library.FunctionReference;
+import pv.library.PVObjectReferenceSmoketest;
 
 public class InvestorPostcodeReportUtil extends FunctionReference {
 	
@@ -25,15 +25,15 @@ public class InvestorPostcodeReportUtil extends FunctionReference {
 	public boolean shopCartScreen(int steps, int inputVal, int expected, int actualPass, int actualFail, int postcode, boolean withATU) throws Exception {
 		boolean passed = false;
 		
-		type(xpath(SC_PVObjectReferenceSmoketest.slasBox), input[postcode]);
-		driver.findElement(xpath(SC_PVObjectReferenceSmoketest.slasBox)).sendKeys(Keys.RETURN);
-		click(xpath(SC_PVObjectReferenceSmoketest.investorsTab));
+		type(xpath(PVObjectReferenceSmoketest.slasBoxSC), input[postcode]);
+		driver.findElement(xpath(PVObjectReferenceSmoketest.slasBoxSC)).sendKeys(Keys.RETURN);
+		click(xpath(PVObjectReferenceSmoketest.investorsTab));
 		
-		waitForElementPresent(xpath(SC_PVObjectReferenceSmoketest.investorAddToCart));
-		Assert.assertTrue(isElementPresent(xpath(SC_PVObjectReferenceSmoketest.investorAddToCart)));
-		click(xpath(SC_PVObjectReferenceSmoketest.investorAddToCart));
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.investorAddToCart));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.investorAddToCart)));
+		click(xpath(PVObjectReferenceSmoketest.investorAddToCart));
 		Thread.sleep(2000);
-		click(xpath(SC_PVObjectReferenceSmoketest.goToCart));
+		click(xpath(PVObjectReferenceSmoketest.goToCart));
 		
 		String url = driver.getCurrentUrl();
 		if(url.contains("/Payment-Form")){
@@ -61,15 +61,15 @@ public class InvestorPostcodeReportUtil extends FunctionReference {
 	public boolean paymentSuccess(int steps, int inputVal, int expected, int actualPass, int actualFail, int promo, int guest, boolean withATU) throws Exception {
 		boolean passed = false;
 		
-		type(xpath(SC_PVObjectReferenceSmoketest.promoCode), input[promo]);
-		driver.findElement(xpath(SC_PVObjectReferenceSmoketest.promoCode)).sendKeys(Keys.RETURN);
+		type(xpath(PVObjectReferenceSmoketest.promoCodeSC), input[promo]);
+		driver.findElement(xpath(PVObjectReferenceSmoketest.promoCodeSC)).sendKeys(Keys.RETURN);
 		
-		type(xpath(SC_PVObjectReferenceSmoketest.guestEmail), input[guest]);
-		click(xpath(SC_PVObjectReferenceSmoketest.btnContinue));
+		type(xpath(PVObjectReferenceSmoketest.guestEmail), input[guest]);
+		click(xpath(PVObjectReferenceSmoketest.btnContinueSC));
 		
-		waitForElementPresent(xpath(SC_PVObjectReferenceSmoketest.paymentSuccess));
-		Assert.assertTrue(isElementPresent(xpath(SC_PVObjectReferenceSmoketest.paymentSuccess)));
-		String text = getText(xpath(SC_PVObjectReferenceSmoketest.paymentSuccess));
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.paymentSuccessSC));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.paymentSuccessSC)));
+		String text = getText(xpath(PVObjectReferenceSmoketest.paymentSuccessSC));
 		
 		if(text.contains("Your order has been successfully completed.")) {
 			passed = true;

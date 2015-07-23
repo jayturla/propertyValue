@@ -8,8 +8,8 @@ import org.openqa.selenium.Keys;
 import org.testng.Assert;
 
 import pv.atu_utilities.copy.ATUUtil;
-import myrp.library.FunctionReference;
-import myrp.library.SC_PVObjectReferenceSmoketest;
+import pv.library.FunctionReference;
+import pv.library.PVObjectReferenceSmoketest;
 
 public class EstimatedValueReportUtil extends FunctionReference {
 	
@@ -26,19 +26,19 @@ public class EstimatedValueReportUtil extends FunctionReference {
 			int property, boolean withATU) throws Exception {
 		boolean passed = false;
 		
-		click(xpath(SC_PVObjectReferenceSmoketest.logIn));
-		type(xpath(SC_PVObjectReferenceSmoketest.userName), input[uName]);
-		type(xpath(SC_PVObjectReferenceSmoketest.passWord), input[pWord]);
-		click(xpath(SC_PVObjectReferenceSmoketest.btnLogIn));
+		click(xpath(PVObjectReferenceSmoketest.logIn));
+		type(xpath(PVObjectReferenceSmoketest.userName), input[uName]);
+		type(xpath(PVObjectReferenceSmoketest.password), input[pWord]);
+		click(xpath(PVObjectReferenceSmoketest.btnLogIn));
 		
-		type(xpath(SC_PVObjectReferenceSmoketest.slasBox), input[property]);
-		driver.findElement(xpath(SC_PVObjectReferenceSmoketest.slasBox)).sendKeys(Keys.RETURN);
+		type(xpath(PVObjectReferenceSmoketest.slasBoxSC), input[property]);
+		driver.findElement(xpath(PVObjectReferenceSmoketest.slasBoxSC)).sendKeys(Keys.RETURN);
 		
-		waitForElementPresent(xpath(SC_PVObjectReferenceSmoketest.addToCart));
-		Assert.assertTrue(isElementPresent(xpath(SC_PVObjectReferenceSmoketest.addToCart)));
-		click(xpath(SC_PVObjectReferenceSmoketest.addToCart));
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.addToCart));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.addToCart)));
+		click(xpath(PVObjectReferenceSmoketest.addToCart));
 		Thread.sleep(2000);
-		click(xpath(SC_PVObjectReferenceSmoketest.goToCart));
+		click(xpath(PVObjectReferenceSmoketest.goToCart));
 		
 		String url = driver.getCurrentUrl();
 		if(url.contains("/Payment-Form")){
@@ -66,13 +66,13 @@ public class EstimatedValueReportUtil extends FunctionReference {
 	public boolean paymentSuccess(int steps, int inputVal, int expected, int actualPass, int actualFail, int promo, boolean withATU) throws Exception {
 		boolean passed = false;
 		
-		type(xpath(SC_PVObjectReferenceSmoketest.promoCode), input[promo]);
-		driver.findElement(xpath(SC_PVObjectReferenceSmoketest.promoCode)).sendKeys(Keys.RETURN);
-		click(xpath(SC_PVObjectReferenceSmoketest.btnContinue));
+		type(xpath(PVObjectReferenceSmoketest.promoCodeSC), input[promo]);
+		driver.findElement(xpath(PVObjectReferenceSmoketest.promoCodeSC)).sendKeys(Keys.RETURN);
+		click(xpath(PVObjectReferenceSmoketest.btnContinueSC));
 		
-		waitForElementPresent(xpath(SC_PVObjectReferenceSmoketest.paymentSuccess));
-		Assert.assertTrue(isElementPresent(xpath(SC_PVObjectReferenceSmoketest.paymentSuccess)));
-		String text = getText(xpath(SC_PVObjectReferenceSmoketest.paymentSuccess));
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.paymentSuccessSC));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.paymentSuccessSC)));
+		String text = getText(xpath(PVObjectReferenceSmoketest.paymentSuccessSC));
 		if(text.contains("Your order has been successfully completed.")) {
 			passed = true;
 		}

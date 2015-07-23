@@ -6,7 +6,7 @@ public class PVObjectReferenceSmoketest {
 	public static String verifyLogin = "//*[@class='login']";
 	public static String clickLogin = "//*[@class='logged-out'][1]";
 	public static String verifyLoginPage = "//*[@class='form']";
-	public static String userName ="//*[@id='userName']";
+	public static String userName = "//*[@id='userName']";
 	public static String password = "//*[@id='password']";
 	public static String loginSite = "//*[@class='form']//button";
 	public static String verifyLoginName = "//*[@class='login']";
@@ -49,7 +49,6 @@ public class PVObjectReferenceSmoketest {
 	public static String clickPortfolio = "//a[contains(.,'Portfolio')]";
 	public static String getPremium = "//a[contains(.,'Get Premium')]";
 		
-		
 	//Homepage
 	public static String headerNav = "//*[@class='main']";
 	public static String slasBox = "id('propertysearch')";
@@ -59,6 +58,21 @@ public class PVObjectReferenceSmoketest {
 	public static String medianGrossYield = "//*[@id='topsuburblistpanel']/div[2]/div";
 	public static String footer = "//footer";
 
+	//Admin Report
+	public static String adminLogin = "//*[@id='adminloginform']/input[5]";
+	public static String clickRevenueReport = "//*[@id='myTable']/tbody/tr[19]/td[3]/a";
+	public static String dateFrom = "//*[@id='dateFrom']";
+	public static String dateTo = "//*[@id='dateTo']";
+	public static String product = "//*[@id='productId_selection']";
+	public static String optionAll = "//*[@id='productId_selection']/option[2]";
+	public static String document = "//*[@id='Document']";
+	public static String volume = "//*[@id='__bookmark_1']/tbody/tr[3]/td[2]/div";
+	public static String grossSales = "//*[@id='__bookmark_1']/tbody/tr[3]/td[3]/div";
+	public static String GTS = "//*[@id='__bookmark_1']/tbody/tr[3]/td[4]/div";
+	public static String btnReports = "//*/div[1]/table/tbody/tr[5]/td/div/div/nav/ul/li[1]/a";
+	public static String adminReports = "//a[contains(.,'Admin Reports')]";
+	public static String paramTbl = "//*[@id='parameter_table']/tbody/tr[1]/td";
+	
 	//Signup
 	public static String btnSignup = "//*[@class='sign-up']";
 	public static String SignupPage = "//h1[contains(.,'Sign up')]";
@@ -244,8 +258,41 @@ public class PVObjectReferenceSmoketest {
 	public static String checkBreakdown = "//*[@class='street']";
 
 	//SuburbProfilepage premium
-	
 	public static String verifyBedroomSplit = "//*[@class='glance-details glance-grid-5 si-active-desktop']";
 	public static String checkScore = "//*[@id='investment-score-upgrade-content-desktop']";
 	public static String checkPropertyPrices = "//*[@id='comparable_main_wrap']/table/tbody/tr/td/table/tbody/tr/td/div[2]/div/div[3]/div[2]/a[2]";
+	
+	//SUBSCRIPTION CHANNEL MYRP
+	//Signup
+	public static String clickSignup = "//a[contains(.,'SIGN UP')]";
+	public static String firstName = "//*[@id='firstName']";
+	public static String lastName = "//*[@id='lastName']"; 
+	public static String userEmail = "//*[@id='userEmail']";
+	public static String confirmEmail = "//*[@id='confirmUserEmail']";
+	public static String userPass = "//*[@id='userPass']";
+	public static String confirmPass = "//*[@id='confirmUserPass']";
+	public static String termsConditions = "//*[@id='termsConditions']";
+	public static String captchaField = "//*[@id='recaptcha_response_field']";
+	public static String clickDone = "//*[@id='subRegInd']";
+	public static String successSignup = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[3]/td/table/tbody/tr[2]/td/span";
+	
+	//Estimated Value Report
+	public static String logIn = "//*[@class='buttonLogin']";
+	public static String logOut = "//a[contains(.,'LOGOUT')]";
+	public static String btnLogIn = "//*[@name='loginButton']";
+	public static String slasBoxSC = "//*[@id='singleLineSearch']";
+	public static String addToCart = "//*[@id='estimatedValueButton']/div/*[@id='purchaseButton']";
+	public static String goToCart = "//*[@id='goToCart']";
+	public static String promoCodeSC = "//*[@id='promotionCode']";
+	public static String btnContinueSC = "//*[@id='checkOutButton']";
+	public static String paymentSuccessSC = "//*[@id='purchaseDoneForm']/ul/li[1]/label";
+	
+	//Investors Postcode Report
+	public static String investorsTab = "//a[contains(.,'Investors')]";
+	public static String investorAddToCart = "(//*[@class='purchaseButtonContainer'])[1]/div/*[@id='purchaseButton']";
+	public static String guestEmail = "//*[@id='customerEmail']";
+	
+	//Iframe
+	public static String iframe = "//iframe";
+		
 }

@@ -2,8 +2,8 @@ package myrp.Smoketest;
 
 import java.io.IOException;
 
-import myrp.library.ReadXlsData;
-import myrp.library.TestInitReference;
+import pv.library.ReadXlsData;
+import pv.library.TestInitReference;
 import myrp.Utilities.LogoutUtil;
 
 import org.testng.annotations.AfterMethod;
