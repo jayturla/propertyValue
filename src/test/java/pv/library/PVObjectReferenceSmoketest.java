@@ -302,6 +302,9 @@ public class PVObjectReferenceSmoketest {
 	//Street Sales History Report
 	public static String streetAddToCart = "(//*[@class='purchaseButtonContainer'])[1]/div/*[@id='purchaseButton']";
 	
+	//Suburb Sales History Report
+	public static String suburbAddToCart = "(//*[@class='purchaseButtonContainer'])[1]/div/*[@id='purchaseButton']";
+	
 	//Iframe
 	public static String iframe = "//iframe";
 		
