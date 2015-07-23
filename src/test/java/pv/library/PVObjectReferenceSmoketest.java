@@ -311,7 +311,18 @@ public class PVObjectReferenceSmoketest {
 	public static String freeReportSent = "//*[@id='cboxLoadedContent']/div/div/label";
 	public static String clickSubmit = "//*[@id='freePackageSubmit']";
 	
+	//Maps Tab
+	public static String mapTab = "//a[contains(.,'Suburb map')]";
+	public static String mapCentered = "//*[@id='map']/div/div[1]/div[2]";
+	
+	//Forgotten Password
+	public static String clickForgot = "//a[contains(.,'Forgotten password?')]";
+	public static String navForgotPasswordScreen = "//*[@class='sectionHeadingBlack']";
+	public static String forgotPasswordEmail = "//*[@id='forgot_password_email']";
+	public static String resetPassword = "//*[@id='label_container_success']/div";
+	public static String submitForgot = "//*[@id='label_container_success']/div/table/tbody/tr[3]/td[2]/span/a";
+	
 	//Iframe
-	public static String iframe = "//iframe";
+	public static String iframe = "//*/table[1]/tbody/tr[2]/td/iframe";
 		
 }
