@@ -292,6 +292,10 @@ public class PVObjectReferenceSmoketest {
 	public static String investorAddToCart = "(//*[@class='purchaseButtonContainer'])[1]/div/*[@id='purchaseButton']";
 	public static String guestEmail = "//*[@id='customerEmail']";
 	
+	//Sales History report
+	public static String clickProperty = "//*[@id='multipleSearchResults']/div[1]/table/tbody/tr[1]/td/a/h2";
+	public static String salesAddToCart = "(//*[@class='purchaseButtonContainer'])[2]/div/*[@id='purchaseButton']";
+	
 	//Iframe
 	public static String iframe = "//iframe";
 		
