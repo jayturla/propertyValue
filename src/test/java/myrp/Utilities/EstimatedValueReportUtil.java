@@ -37,7 +37,6 @@ public class EstimatedValueReportUtil extends FunctionReference {
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.addToCart));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.addToCart)));
 		click(xpath(PVObjectReferenceSmoketest.addToCart));
-		Thread.sleep(2000);
 		click(xpath(PVObjectReferenceSmoketest.goToCart));
 		
 		String url = driver.getCurrentUrl();
