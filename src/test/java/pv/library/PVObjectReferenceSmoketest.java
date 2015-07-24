@@ -2,6 +2,9 @@ package pv.library;
 
 public class PVObjectReferenceSmoketest {
 	
+	//HealthCheck
+	public static String checkResult = "//*[@id='checkResult']";
+	
 	//HeaderZones
 	public static String verifyLogin = "//*[@class='login']";
 	public static String clickLogin = "//*[@class='logged-out'][1]";
