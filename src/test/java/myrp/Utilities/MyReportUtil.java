@@ -30,11 +30,11 @@ public class MyReportUtil extends FunctionReference {
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickMyAccount));
 		click(xpath(PVObjectReferenceSmoketest.clickMyAccount));
 		
-		String text,text1,text2,text3,text4 = text = text1 = text2 = text3 = getText(xpath(PVObjectReferenceSmoketest.tblPurchased));
-		String text5 = getText(xpath(PVObjectReferenceSmoketest.tblValuations));
+		String text = getText(xpath(PVObjectReferenceSmoketest.tblPurchased));
+		String text1 = getText(xpath(PVObjectReferenceSmoketest.tblValuations));
 		
-		if(text.contains("Magill SA 5072 - Suburb Sales Report") && text1.contains("Esplanade North George Town TAS 7253 - Street Sales Report") && text2.contains("10/287-293 Exhibition Street Melbourne VIC 3000 - Detailed Property Report")
-				&& text3.contains("13 Austin Crescent Lane Cove NSW 2066 - Sales History Report") && text4.contains("6066 WA - Investor Postcode Report") && text5.contains("14N/143 Lowanna Drive Buddina QLD 4575 - Estimated Value Report")) {
+		if(text.contains("Magill SA 5072 - Suburb Sales Report") && text.contains("Esplanade North George Town TAS 7253 - Street Sales Report") && text.contains("10/287-293 Exhibition Street Melbourne VIC 3000 - Detailed Property Report")
+				&& text.contains("13 Austin Crescent Lane Cove NSW 2066 - Sales History Report") && text.contains("6066 WA - Investor Postcode Report") && text1.contains("14N/143 Lowanna Drive Buddina QLD 4575 - Estimated Value Report")) {
 			
 			passed = true;
 		}
