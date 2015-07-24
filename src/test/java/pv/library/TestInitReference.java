@@ -68,6 +68,17 @@ public class TestInitReference extends FunctionReference {
             //driver = new RemoteWebDriver(new URL(URL), capabilities);//for  browserStack testing
             driver = new RemoteWebDriver(new URL(remoteUrl), capabilities);
             //driver.get(remoteUrl);
+            
+//            DesiredCapabilities caps = new DesiredCapabilities();
+//            caps.setCapability("browser", "Firefox");
+//            caps.setCapability("browser_version", "28.0");
+//            caps.setCapability("os", "Windows");
+//            caps.setCapability("os_version", "7");
+//    	    caps.setCapability("browserstack.debug", "true");
+//    	    caps.setCapability("version & build", "DEV v15.07 Build 20150702");
+//    	    caps.setCapability("project", "Property Value");
+//    	    
+//    	    driver = new RemoteWebDriver(new URL(remoteUrl), caps);
         }
         if (browser.contains("HTMLUnit")) {
             capabilities = DesiredCapabilities.htmlUnit();

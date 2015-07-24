@@ -63,7 +63,7 @@ public class PVObjectReferenceSmoketest {
 
 	//Admin Report
 	public static String adminLogin = "//*[@id='adminloginform']/input[5]";
-	public static String clickRevenueReport = "//*[@id='myTable']/tbody/tr[19]/td[3]/a";
+	public static String clickRevenueReport = "//a[contains(.,'Property Value Revenue Report')]";
 	public static String dateFrom = "//*[@id='dateFrom']";
 	public static String dateTo = "//*[@id='dateTo']";
 	public static String product = "//*[@id='productId_selection']";
@@ -74,7 +74,7 @@ public class PVObjectReferenceSmoketest {
 	public static String GTS = "//*[@id='__bookmark_1']/tbody/tr[3]/td[4]/div";
 	public static String btnReports = "//*/div[1]/table/tbody/tr[5]/td/div/div/nav/ul/li[1]/a";
 	public static String adminReports = "//a[contains(.,'Admin Reports')]";
-	public static String paramTbl = "//*[@id='parameter_table']/tbody/tr[1]/td";
+	public static String paramOk = "//*[@id='parameterDialogokButton']/input";
 	
 	//Signup
 	public static String btnSignup = "//*[@class='sign-up']";
@@ -330,7 +330,8 @@ public class PVObjectReferenceSmoketest {
 	public static String tblPurchased = "(//*[@class='roundedWhiteBg'])[1]";
 	public static String tblValuations = "(//*[@class='roundedWhiteBg'])[2]";
 	
-	//Iframe
-	public static String iframe = "//*/table[1]/tbody/tr[2]/td/iframe";
+	//iFrame
+	public static String iframe = "//iframe";
+	public static String iframe2 = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[3]/td/div[4]/iframe";
 		
 }
