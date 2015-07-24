@@ -322,6 +322,11 @@ public class PVObjectReferenceSmoketest {
 	public static String resetPassword = "//*[@id='label_container_success']/div";
 	public static String submitForgot = "//*[@id='label_container_success']/div/table/tbody/tr[3]/td[2]/span/a";
 	
+	//MY REPORT
+	public static String clickMyAccount = "//a[contains(.,'MY ACCOUNT')]";
+	public static String tblPurchased = "(//*[@class='roundedWhiteBg'])[1]";
+	public static String tblValuations = "(//*[@class='roundedWhiteBg'])[2]";
+	
 	//Iframe
 	public static String iframe = "//*/table[1]/tbody/tr[2]/td/iframe";
 		
