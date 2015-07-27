@@ -75,6 +75,7 @@ public class PVObjectReferenceSmoketest {
 	public static String btnReports = "//*/div[1]/table/tbody/tr[5]/td/div/div/nav/ul/li[1]/a";
 	public static String adminReports = "//a[contains(.,'Admin Reports')]";
 	public static String paramOk = "//*[@id='parameterDialogokButton']/input";
+	public static String waitFrame = "//*[@id='AUTOGENBOOKMARK_1_08bda8a2-2ea7-4b4c-800c-446b1dba68fe']/tbody/tr[1]/td/div";
 	
 	//Signup
 	public static String btnSignup = "//*[@class='sign-up']";
