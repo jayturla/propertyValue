@@ -76,6 +76,12 @@ public class PVObjectReferenceSmoketest {
 	public static String adminReports = "//a[contains(.,'Admin Reports')]";
 	public static String paramOk = "//*[@id='parameterDialogokButton']/input";
 	public static String waitFrame = "//*[@id='AUTOGENBOOKMARK_1_08bda8a2-2ea7-4b4c-800c-446b1dba68fe']/tbody/tr[1]/td/div";
+	public static String clickMobileSplit = "//a[contains(.,'Revenue Report (Mobile split)')]";
+	public static String volumeMobileSplit = "//*[@id='__bookmark_2']/tbody/tr[2]/th[5]/div";
+	public static String grossSalesMobileSplit = "//*[@id='__bookmark_2']/tbody/tr[2]/th[6]/div";
+	public static String resiPartner = "//*[@id='__TOC_0_0_0_0_0_1']/td[3]/div";
+	public static String mobileSplitdateFrom = "//*[@id='paraDateFrom']";
+	public static String mobileSplitdateTo = "//*[@id='paraDateTo']";
 	
 	//Signup
 	public static String btnSignup = "//*[@class='sign-up']";
