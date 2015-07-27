@@ -30,7 +30,7 @@ public class LoginSuburbSearchResultUtil extends FunctionReference {
 		login.loginSite();
 		
 		type(xpath(PVObjectReferenceSmoketest.slasBox), input[suburb]);
-		driver.findElement(xpath(PVObjectReferenceSmoketest.slasBox)).sendKeys(Keys.RETURN);
+		click(xpath(PVObjectReferenceSmoketest.selectSuggestion));
 
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.suburbMaps));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.suburbMaps)));
