@@ -37,6 +37,8 @@ public class PVObjectReferenceSmoketest {
 	public static String searchResultsAdvanceSearch = "//*[@class='row sectionAnchor']";
 	public static String gotoMyAccount = "(//*[@class='login']//a)[4]";
 	public static String verifyAccountPage = "//*[@class='container'][1]";
+	public static String navWatchlist = "//a[contains(.,'Watchlist')]";
+	public static String portfolioTab = "//*[@class='DivWidget container']/div/div/ul/li/a[contains(.,'Portfolio')]";
 
 	//HeaderZone jeck
 	public static String clickExplore = "//a[contains(.,'Explore')]";
@@ -193,6 +195,10 @@ public class PVObjectReferenceSmoketest {
 	public static String portfolioValues = "//*[@id='portfolio-watchlist-div']/div/table/tbody/tr/td/div/div[1]/div[1]";
 	public static String calculateEquity = "//*[@id='equity-not-select']/a";
 	public static String calculateModal = "//*[@id='calculateModal']/div/div/div[2]";
+	public static String clickAddPropertyPortfolio = "//*[@id='portfolioListSection']/h4/a";
+	public static String addPropertyModal = "//*[@id='addPropertyModal']/div/div/div[2]";
+	public static String addPortfolio = "//*[@id='addPropertyModal']/div/div/div[2]/div[1]/h3";
+	public static String portfolioSLAS = "//*[@id='search-portfolio']";
 	
 	//StreetDetails
 	public static String togglePropertyType = "//*[@id='propertyTypeToggle_units']";
