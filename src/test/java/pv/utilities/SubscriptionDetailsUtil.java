@@ -30,7 +30,7 @@ public class SubscriptionDetailsUtil extends FunctionReference {
 		login.enterPassword(password);
 		login.loginSite();
 		login.clickMenu();
-		click(xpath(PVObjectReferenceSmoketest.gotoMyAccount));
+		clickgotoMyAccount(0,0,0,0,false);
 		
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.subscriptionType));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.subscriptionType)));
@@ -53,6 +53,27 @@ public class SubscriptionDetailsUtil extends FunctionReference {
 			fail("Subscription Type and Expiry Date are Missing.");
 		}
 		return available;
+	}
+	
+	public boolean clickgotoMyAccount(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.gotoMyAccount));
+			click(xpath(PVObjectReferenceSmoketest.gotoMyAccount));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
 	}
 }
 

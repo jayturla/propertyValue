@@ -102,7 +102,7 @@ public class PostcodeDetailsUtil extends FunctionReference {
 		boolean available = false;
 		
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickSuburb));
-		click(xpath(PVObjectReferenceSmoketest.clickSuburb));
+		clickSuburb(0,0,0,0,false);
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.suburbMaps));
 		available = isElementPresent(xpath(PVObjectReferenceSmoketest.suburbMaps));
 		
@@ -120,6 +120,27 @@ public class PostcodeDetailsUtil extends FunctionReference {
 			fail("Suburb Links cannot navigate to Suburb Map Results of the selected suburb.");
 		}
 		return available;
+	}
+	
+	public boolean clickSuburb(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickSuburb));
+			click(xpath(PVObjectReferenceSmoketest.clickSuburb));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
 	}
 }
 

@@ -29,9 +29,7 @@ public class AdvanceSearchUtil extends FunctionReference {
 		if (text.contains("Advanced Search")) {
 			available = true;
 			
-			waitForElementPresent(xpath(PVObjectReferenceSmoketest.advanceSearch));
-			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.advanceSearch)));
-			click(xpath(PVObjectReferenceSmoketest.advanceSearch));
+			clickbtnadvanceSearch(0,0,0,0,false);
 			
 			
 		}
@@ -142,6 +140,27 @@ public class AdvanceSearchUtil extends FunctionReference {
 			fail("User was not able to search in Advance Search");
 		}
 		return available;
+	}
+	
+	public boolean clickbtnadvanceSearch(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.advanceSearch));
+			click(xpath(PVObjectReferenceSmoketest.advanceSearch));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
 	}
 			
 }

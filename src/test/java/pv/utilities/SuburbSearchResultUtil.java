@@ -24,9 +24,8 @@ public class SuburbSearchResultUtil extends FunctionReference {
 		boolean navigate = false;
 		
 		driver.navigate().to(input[suburb]);
-		
-		click(xpath(PVObjectReferenceSmoketest.btnForSale));
-		click(xpath(PVObjectReferenceSmoketest.btnViewProfile));
+		clickbtnForSale(0,0,0,0,false);
+		clickbtnViewProfile(0,0,0,0,false);
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.navigatePropertyPage));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.navigatePropertyPage)));
 		navigate = isElementVisible(xpath(PVObjectReferenceSmoketest.navigatePropertyPage));
@@ -46,6 +45,48 @@ public class SuburbSearchResultUtil extends FunctionReference {
 		}
 		
 		return navigate;
+	}
+	
+	public boolean clickbtnForSale(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.btnForSale));
+			click(xpath(PVObjectReferenceSmoketest.btnForSale));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	
+	public boolean clickbtnViewProfile(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.btnViewProfile));
+			click(xpath(PVObjectReferenceSmoketest.btnViewProfile));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
 	}
 }
 

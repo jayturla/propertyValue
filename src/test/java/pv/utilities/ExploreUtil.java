@@ -21,13 +21,6 @@ public class ExploreUtil extends FunctionReference {
 	public ExploreUtil(String[] i) {
 			input = i;
 	}
-
-	public void clickExplore() throws Exception {
-		waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickExplore));
-		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.clickExplore)));
-		click(xpath(PVObjectReferenceSmoketest.clickExplore));
-
-	}
 	
 	//Verify if Explore button will navigate to explore page
 	public boolean checkExplore(int steps, int inputVal, int expected, int actual,int userName,int password,boolean withATU)  throws Exception {
@@ -37,7 +30,7 @@ public class ExploreUtil extends FunctionReference {
 		login.enterUserName(userName);
 		login.enterPassword(password);
 		login.loginSite();
-		clickExplore();
+		clickExplore(0,0,0,0,false);
 		
 		String text = getText(xpath(PVObjectReferenceSmoketest.explorePage));
 
@@ -111,10 +104,10 @@ public class ExploreUtil extends FunctionReference {
 		boolean available = false;
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.stateRegionFilter));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.stateRegionFilter)));
-		click(xpath(PVObjectReferenceSmoketest.functionState));
-		click(xpath(PVObjectReferenceSmoketest.selectState));
+		clickfunctionState(0,0,0,0,false);
+		clickselectState(0,0,0,0,false);
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.functionRegion));
-		click(xpath(PVObjectReferenceSmoketest.functionRegion));
+		clickfunctionRegion(0,0,0,0,false);
 		available = isElementVisible(xpath(PVObjectReferenceSmoketest.selectRegion));
 		
 		if(withATU) {
@@ -159,7 +152,7 @@ public class ExploreUtil extends FunctionReference {
 	//check if selected top suburbs can navigate to suburb page
 	public boolean selectTopSuburb(int steps, int inputVal, int expected, int actual,boolean withATU)  throws Exception {
 		boolean available = false;
-		click(xpath(PVObjectReferenceSmoketest.selectTopSuburb));
+		clickselectTopSuburb(0,0,0,0,false);
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.checkProfilePage));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.checkProfilePage)));
 		available = isElementVisible(xpath(PVObjectReferenceSmoketest.checkProfilePage));
@@ -179,5 +172,108 @@ public class ExploreUtil extends FunctionReference {
 		}
 		return available;
 	}
+	
+	public boolean clickExplore(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickExplore));
+			click(xpath(PVObjectReferenceSmoketest.clickExplore));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickfunctionState(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.functionState));
+			click(xpath(PVObjectReferenceSmoketest.functionState));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickselectState(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.selectState));
+			click(xpath(PVObjectReferenceSmoketest.selectState));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickfunctionRegion(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.functionRegion));
+			click(xpath(PVObjectReferenceSmoketest.functionRegion));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickselectTopSuburb(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.selectTopSuburb));
+			click(xpath(PVObjectReferenceSmoketest.selectTopSuburb));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
 }
+
+
 

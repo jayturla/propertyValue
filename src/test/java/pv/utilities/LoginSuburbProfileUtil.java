@@ -30,7 +30,7 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 		login.loginSite();
 		
 		driver.navigate().to(input[suburb]);
-		click(xpath(PVObjectReferenceSmoketest.viewSuburbProfile));
+		clickviewSuburbProfile(0,0,0,0,false);
 		
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.navigatePropertyPage));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.navigatePropertyPage)));
@@ -111,7 +111,7 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 	public boolean btnPropertyType(int steps, int inputVal, int expected, int actual,boolean withATU)  throws Exception {
 		boolean available = false;
 	
-		click(xpath(PVObjectReferenceSmoketest.togglePropertyType));
+		clicktogglePropertyType(0,0,0,0,false);
 		
 		String url = driver.getCurrentUrl();
 		if(url.contains("#Unit")){
@@ -358,5 +358,47 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 		
 		return available;
 	}	
+	
+	public boolean clickviewSuburbProfile(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.viewSuburbProfile));
+			click(xpath(PVObjectReferenceSmoketest.viewSuburbProfile));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clicktogglePropertyType(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.togglePropertyType));
+			click(xpath(PVObjectReferenceSmoketest.togglePropertyType));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
 }
+
 

@@ -26,13 +26,13 @@ public class PaymentUtil extends FunctionReference {
 	public boolean promoCode(int steps, int inputVal, int expected, int actual, int code, int email, boolean withATU)  throws Exception {
 		boolean available = false;
 		
-		click(xpath(PVObjectReferenceSmoketest.getPremium));
-		click(xpath(PVObjectReferenceSmoketest.premiumBuyNow));
-		click(xpath(PVObjectReferenceSmoketest.purchasePremium));
+		clickgetPremium(0,0,0,0,false);
+		clickpremiumBuyNow(0,0,0,0,false);
+		clickpurchasePremium(0,0,0,0,false);
 		type(xpath(PVObjectReferenceSmoketest.promoCode), input[code]);
-		click(xpath(PVObjectReferenceSmoketest.applyCode));
+		clickapplyCode(0,0,0,0,false);
 		type(xpath(PVObjectReferenceSmoketest.PaymentSummaryUserEmail), input[email]);
-		click(xpath(PVObjectReferenceSmoketest.btnContinue));
+		clickbtnContinue(0,0,0,0,false);
 		
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.paymentSuccess));
 		String text = getText(xpath(PVObjectReferenceSmoketest.paymentSuccess));
@@ -60,11 +60,11 @@ public class PaymentUtil extends FunctionReference {
 	public boolean emailPurchase(int steps, int inputVal, int expected, int actual, int email,int chn, int de1, int de2, int cs, int gmail, int gmailPwd, boolean withATU)  throws Exception {
 		boolean available = false;
 		driver.navigate().to("http://dev.propertyvalue.com.au/upgrade");
-		click(xpath(PVObjectReferenceSmoketest.premiumBuyNow));
-		click(xpath(PVObjectReferenceSmoketest.purchasePremium));
+		clickpremiumBuyNow(0,0,0,0,false);
+		clickpurchasePremium(0,0,0,0,false);
 		type(xpath(PVObjectReferenceSmoketest.PaymentSummaryUserEmail), input[email]);
-		click(xpath(PVObjectReferenceSmoketest.btnBuyNow));
-		click(xpath(PVObjectReferenceSmoketest.btnPayNow));
+		clickbtnBuyNow(0,0,0,0,false);
+		clickbtnPayNow(0,0,0,0,false);
 
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.PaymentCheckout));
 		type(xpath(PVObjectReferenceSmoketest.cardNumber), "4111111111111111");
@@ -72,14 +72,14 @@ public class PaymentUtil extends FunctionReference {
 		type(xpath(PVObjectReferenceSmoketest.dateExpiry1), input[de1]);
 		type(xpath(PVObjectReferenceSmoketest.dateExpiry2), input[de2]);
 		type(xpath(PVObjectReferenceSmoketest.cardSecurityCode), input[cs]);
-		click(xpath(PVObjectReferenceSmoketest.btnSubmit));
+		clickbtnSubmit(0,0,0,0,false);
 		
 		driver.navigate().to("https://mail.google.com/mail/u/0/");
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.checkEmail));
 		type(xpath(PVObjectReferenceSmoketest.checkEmail), input[gmail]);
-		click(xpath(PVObjectReferenceSmoketest.btnNext));
+		clickbtnNext(0,0,0,0,false);
 		type(xpath(PVObjectReferenceSmoketest.gmailPasswd), input[gmailPwd]);
-		click(xpath(PVObjectReferenceSmoketest.btnSignin));
+		clickbtnSignin(0,0,0,0,false);
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.checkGmail));
 		String text = getText(xpath(PVObjectReferenceSmoketest.checkGmail));
 		
@@ -101,5 +101,207 @@ public class PaymentUtil extends FunctionReference {
 		}
 		return available;
 	}
+	
+	public boolean clickgetPremium(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.getPremium));
+			click(xpath(PVObjectReferenceSmoketest.getPremium));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickpremiumBuyNow(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.premiumBuyNow));
+			click(xpath(PVObjectReferenceSmoketest.premiumBuyNow));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickpurchasePremium(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.purchasePremium));
+			click(xpath(PVObjectReferenceSmoketest.purchasePremium));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickapplyCode(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.applyCode));
+			click(xpath(PVObjectReferenceSmoketest.applyCode));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickbtnContinue(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.btnContinue));
+			click(xpath(PVObjectReferenceSmoketest.btnContinue));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickbtnBuyNow(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.btnBuyNow));
+			click(xpath(PVObjectReferenceSmoketest.btnBuyNow));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickbtnPayNow(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.btnPayNow));
+			click(xpath(PVObjectReferenceSmoketest.btnPayNow));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickbtnSubmit(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.btnSubmit));
+			click(xpath(PVObjectReferenceSmoketest.btnSubmit));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickbtnNext(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.btnNext));
+			click(xpath(PVObjectReferenceSmoketest.btnNext));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickbtnSignin(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.btnSignin));
+			click(xpath(PVObjectReferenceSmoketest.btnSignin));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
 }
+
 

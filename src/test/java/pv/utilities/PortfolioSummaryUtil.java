@@ -27,8 +27,8 @@ public class PortfolioSummaryUtil extends FunctionReference {
 		login.enterUserName(userName);
 		login.enterPassword(password);
 		login.loginSite();
-		click(xpath(PVObjectReferenceSmoketest.clickMenu));
-		click(xpath(PVObjectReferenceSmoketest.clickPortfolio));
+		clickMenu(0,0,0,0,false);
+		clickPortfolio(0,0,0,0,false);
 		
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.portfolioSnapshot));
 		available = isElementVisible(xpath(PVObjectReferenceSmoketest.portfolioSnapshot));
@@ -75,7 +75,7 @@ public class PortfolioSummaryUtil extends FunctionReference {
 	public boolean calculateEquity(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
 		boolean available = false;
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.calculateEquity));
-		click(xpath(PVObjectReferenceSmoketest.calculateEquity));
+		clickcalculateEquity(0,0,0,0,false);
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.calculateModal));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.calculateModal)));
 		available = isElementVisible(xpath(PVObjectReferenceSmoketest.calculateModal));
@@ -93,6 +93,67 @@ public class PortfolioSummaryUtil extends FunctionReference {
 			fail("Unable to calculate total quity.");
 		}
 		return available;
+	}
+	
+	public boolean clickMenu(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickMenu));
+			click(xpath(PVObjectReferenceSmoketest.clickMenu));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickPortfolio(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickPortfolio));
+			click(xpath(PVObjectReferenceSmoketest.clickPortfolio));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickcalculateEquity(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.calculateEquity));
+			click(xpath(PVObjectReferenceSmoketest.calculateEquity));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
 	}
 }
 

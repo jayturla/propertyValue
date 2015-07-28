@@ -37,7 +37,7 @@ public class ReportsPortfolioAndWatchlistUtil extends FunctionReference {
 		
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.propertyDownload));
 		
-		click(xpath(PVObjectReferenceSmoketest.propertyDownload));
+		clickpropertyDownload(0,0,0,0,false);
 		available = isElementVisible(xpath(PVObjectReferenceSmoketest.successReport));
 		
 		if(withATU) {
@@ -52,7 +52,7 @@ public class ReportsPortfolioAndWatchlistUtil extends FunctionReference {
 		}else {
 			fail("Cannot download unlimited Property and Postcode Reports.");
 		}
-		click(xpath(PVObjectReferenceSmoketest.closebtn));
+		clickclosebtn(0,0,0,0,false);
 		return available;
 	}
 	
@@ -60,9 +60,9 @@ public class ReportsPortfolioAndWatchlistUtil extends FunctionReference {
 	public boolean subscribedPortfolio(int steps, int inputVal, int expected, int actual, boolean withATU)  throws Exception {
 		boolean available = false;
 		
-		click(xpath(PVObjectReferenceSmoketest.clickMenu));
-		click(xpath(PVObjectReferenceSmoketest.clickPortfolio));
-		click(xpath(PVObjectReferenceSmoketest.btnAddProperty));
+		clickMenu(0,0,0,0,false);
+		clickPortfolio(0,0,0,0,false);
+		clickbtnAddProperty(0,0,0,0,false);
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.addProperty));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.addProperty)));
 		String text = getText(xpath(PVObjectReferenceSmoketest.addProperty));
@@ -85,7 +85,7 @@ public class ReportsPortfolioAndWatchlistUtil extends FunctionReference {
 			fail("Unable to add unlimited portfolio and properties.");
 		}
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.addProperty));
-		click(xpath(PVObjectReferenceSmoketest.btnClose));
+		clickbtnClose(0,0,0,0,false);
 		return available;
 	}
 	
@@ -218,5 +218,128 @@ public class ReportsPortfolioAndWatchlistUtil extends FunctionReference {
 		}
 		return available;
 	}
+	
+	public boolean clickpropertyDownload(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.propertyDownload));
+			click(xpath(PVObjectReferenceSmoketest.propertyDownload));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickclosebtn(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.closebtn));
+			click(xpath(PVObjectReferenceSmoketest.closebtn));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickMenu(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickMenu));
+			click(xpath(PVObjectReferenceSmoketest.clickMenu));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickPortfolio(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickPortfolio));
+			click(xpath(PVObjectReferenceSmoketest.clickPortfolio));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickbtnAddProperty(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.btnAddProperty));
+			click(xpath(PVObjectReferenceSmoketest.btnAddProperty));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickbtnClose(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.btnClose));
+			click(xpath(PVObjectReferenceSmoketest.btnClose));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
 }
+
+
 

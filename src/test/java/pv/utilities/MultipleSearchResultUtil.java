@@ -49,7 +49,7 @@ public class MultipleSearchResultUtil extends FunctionReference {
 		public boolean selectProperty(int steps, int inputVal, int expected, int actual, boolean withATU)  throws Exception {
 			boolean navigate = false;
 			waitForElementPresent(xpath(PVObjectReferenceSmoketest.selectProperty));
-			click(xpath(PVObjectReferenceSmoketest.selectProperty));
+			clickbtnselectProperty(0,0,0,0,false);
 			waitForElementPresent(xpath(PVObjectReferenceSmoketest.verifyPropertyInsights));
 			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.verifyPropertyInsights)));
 			navigate = isElementVisible(xpath(PVObjectReferenceSmoketest.verifyPropertyInsights));
@@ -70,5 +70,26 @@ public class MultipleSearchResultUtil extends FunctionReference {
 		
 		return navigate;
 	}
+	
+		public boolean clickbtnselectProperty(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+			boolean click = false;
+			
+			try{
+				waitForElementPresent(xpath(PVObjectReferenceSmoketest.selectProperty));
+				click(xpath(PVObjectReferenceSmoketest.selectProperty));
+				click = true;
+			}catch(Exception e){
+			}
+			
+			if(withATU) {
+				if(click){
+					atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+				}else {
+					atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+				}
+			}
+			
+			return click;
+		}
 }
 

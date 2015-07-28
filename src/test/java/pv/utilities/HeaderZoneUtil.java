@@ -9,7 +9,6 @@ import pv.library.PVObjectReferenceSmoketest;
 
 import org.testng.Assert;
 
-import com.sun.org.apache.xerces.internal.impl.xpath.XPath;
 
 public class HeaderZoneUtil extends FunctionReference {
 	
@@ -124,7 +123,7 @@ public class HeaderZoneUtil extends FunctionReference {
 		
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.resetFP));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.resetFP)));
-		click(xpath(PVObjectReferenceSmoketest.resetFP));
+		clickbtnresetFP(0,0,0,0,false);
 		
 	}
 		
@@ -252,7 +251,26 @@ public class HeaderZoneUtil extends FunctionReference {
 
 		return available;
 	}
-
-
+	
+	public boolean clickbtnresetFP(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.resetFP));
+			click(xpath(PVObjectReferenceSmoketest.resetFP));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
 }
 

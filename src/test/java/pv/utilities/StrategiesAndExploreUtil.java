@@ -9,12 +9,8 @@ import pv.atu_utilities.copy.ATUUtil;
 import pv.library.FunctionReference;
 import pv.library.PVObjectReferenceSmoketest;
 
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
-import atu.testng.reports.ATUReports;
+import org.testng.Assert;
 
 public class StrategiesAndExploreUtil extends FunctionReference {
 	
@@ -34,7 +30,7 @@ public class StrategiesAndExploreUtil extends FunctionReference {
 		login.enterPassword(password);
 		login.loginSite();
 		
-		click(xpath(PVObjectReferenceSmoketest.clickStrategy));
+		clickStrategy(0, 0, 0, 0, false);
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.investmentStrategy));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.investmentStrategy)));
 		available = isElementVisible(xpath(PVObjectReferenceSmoketest.investmentStrategy));
@@ -57,11 +53,11 @@ public class StrategiesAndExploreUtil extends FunctionReference {
 	//check explore unlimited suburbs
 	public boolean checkUnliSuburbs(int steps, int inputVal, int expected, int actual, boolean withATU)  throws Exception {
 		boolean available = false;
-		click(xpath(PVObjectReferenceSmoketest.clickExplore));
-		click(xpath(PVObjectReferenceSmoketest.functionState));
-		click(xpath(PVObjectReferenceSmoketest.selectState));
-		click(xpath(PVObjectReferenceSmoketest.functionRegion));
-		click(xpath(PVObjectReferenceSmoketest.selectRegion));
+		clickExplore(0, 0, 0, 0, false);
+		clickfunctionState(0, 0, 0, 0, false);
+		clickSelectState(0, 0, 0, 0, false);
+		clickfunctionRegion(0, 0, 0, 0, false);
+		clickSelectRegion(0, 0, 0, 0, false);
 		
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.checkExplorePane));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.checkExplorePane)));
@@ -85,9 +81,8 @@ public class StrategiesAndExploreUtil extends FunctionReference {
 	//check if order of suburbs by Investment Strategy Scores changed.
 	public boolean checkOrder(int steps, int inputVal, int expected, int actual, boolean withATU)  throws Exception {
 		boolean available = false;
-		click(xpath(PVObjectReferenceSmoketest.clickOrder));
-		click(xpath(PVObjectReferenceSmoketest.selectOrder));
-		
+		clickOrder(0,0,0,0,false);
+		clickselectOrder(0, 0, 0, 0, false);
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickOrder));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.clickOrder)));
 		String text = getText(xpath(PVObjectReferenceSmoketest.clickOrder));
@@ -114,7 +109,7 @@ public class StrategiesAndExploreUtil extends FunctionReference {
 	public boolean checkSort(int steps, int inputVal, int expected, int actual, boolean withATU)  throws Exception {
 		boolean available = false;
 			
-		click(xpath(PVObjectReferenceSmoketest.clickSort));
+		clickSort(0, 0, 0, 0, false);
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.checkSortText));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.checkSortText)));
 		String text = getText(xpath(PVObjectReferenceSmoketest.checkSortText));
@@ -158,6 +153,192 @@ public class StrategiesAndExploreUtil extends FunctionReference {
 			fail("Cannot view value from the selected Investment strategy score column.");
 		}
 		return available;
+	}
+	
+	public boolean clickStrategy(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickStrategy));
+			click(xpath(PVObjectReferenceSmoketest.clickStrategy));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	
+	public boolean clickExplore(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickExplore));
+			click(xpath(PVObjectReferenceSmoketest.clickExplore));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	
+	public boolean clickfunctionState(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.functionState));
+			click(xpath(PVObjectReferenceSmoketest.functionState));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	
+	public boolean clickSelectState(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.selectState));
+			click(xpath(PVObjectReferenceSmoketest.selectState));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	
+	public boolean clickfunctionRegion(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.functionRegion));
+			click(xpath(PVObjectReferenceSmoketest.functionRegion));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	
+	public boolean clickSelectRegion(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.selectRegion));
+			click(xpath(PVObjectReferenceSmoketest.selectRegion));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickOrder(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickOrder));
+			click(xpath(PVObjectReferenceSmoketest.clickOrder));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickselectOrder(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.selectOrder));
+			click(xpath(PVObjectReferenceSmoketest.selectOrder));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clickSort(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickSort));
+			click(xpath(PVObjectReferenceSmoketest.clickSort));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
 	}
 }
 

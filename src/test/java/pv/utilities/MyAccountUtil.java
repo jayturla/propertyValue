@@ -29,9 +29,7 @@ public class MyAccountUtil extends FunctionReference {
 		if (text.contains("Account")) {
 			available = true;
 			
-			waitForElementPresent(xpath(PVObjectReferenceSmoketest.gotoMyAccount));
-			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.gotoMyAccount)));
-			click(xpath(PVObjectReferenceSmoketest.gotoMyAccount));
+			clickgotoMyAccount(0,0,0,0,false);
 			
 			
 		}
@@ -78,6 +76,26 @@ public class MyAccountUtil extends FunctionReference {
 		return available;
 	}
 	
+	public boolean clickgotoMyAccount(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.gotoMyAccount));
+			click(xpath(PVObjectReferenceSmoketest.gotoMyAccount));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
 	
 }
 	

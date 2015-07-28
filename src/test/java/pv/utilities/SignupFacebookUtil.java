@@ -9,10 +9,6 @@ import pv.atu_utilities.copy.ATUUtil;
 import pv.library.FunctionReference;
 import pv.library.PVObjectReferenceSmoketest;
 
-import org.testng.Assert;
-
-import atu.testng.reports.ATUReports;
-
 public class SignupFacebookUtil extends FunctionReference {
 	
 	private String[] input = null;
@@ -25,12 +21,12 @@ public class SignupFacebookUtil extends FunctionReference {
 	//Verify if Signup with facebook is working
 	public boolean signupFacebook(int steps, int inputVal, int expected, int actual,boolean withATU)  throws Exception {
 		boolean available = false;
-		click(xpath(PVObjectReferenceSmoketest.btnSignup));
+		clickbtnSignup(0,0,0,0,false);
 		// Store the current window handle
 		String winHandleBefore = driver.getWindowHandle();
 		
 		// Perform the click operation that opens new window
-		click(xpath(PVObjectReferenceSmoketest.clickSignupFB));
+		clickSignupFB(0,0,0,0,false);
 		
 		// Switch to new window opened
 		for(String winHandle : driver.getWindowHandles()){
@@ -57,6 +53,48 @@ public class SignupFacebookUtil extends FunctionReference {
 			fail("Cannot sign up with Facebook");
 		}
 		return available;
+	}
+	
+	public boolean clickbtnSignup(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.btnSignup));
+			click(xpath(PVObjectReferenceSmoketest.btnSignup));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	
+	public boolean clickSignupFB(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickSignupFB));
+			click(xpath(PVObjectReferenceSmoketest.clickSignupFB));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
 	}
 }
 

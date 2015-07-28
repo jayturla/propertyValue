@@ -26,7 +26,7 @@ public class SignupUtil extends FunctionReference {
 	public boolean btnSignup(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
 		boolean available = false;
 		
-		click(xpath(PVObjectReferenceSmoketest.btnSignup));
+		clickbtnSignup(0,0,0,0,false);
 		String url = driver.getCurrentUrl();
 		if(url.contains("/signup")){
 			available = true;
@@ -60,7 +60,7 @@ public class SignupUtil extends FunctionReference {
 		type(xpath(PVObjectReferenceSmoketest.confirmEmailBox), input[conEmBox]);
 		type(xpath(PVObjectReferenceSmoketest.passwordBox), input[pWord]);
 		type(xpath(PVObjectReferenceSmoketest.confirmpasswordBox), input[conPWord]);
-		click(xpath(PVObjectReferenceSmoketest.termsAndCondition));
+		clicktermsAndCondition(0,0,0,0,false);
 		
 		String captcha = null;
 		
@@ -71,7 +71,7 @@ public class SignupUtil extends FunctionReference {
 		
 		type(xpath(PVObjectReferenceSmoketest.captchaBox), captcha);
 		
-		click(xpath(PVObjectReferenceSmoketest.submitSignup));
+		clicksubmitSignup(0,0,0,0,false);
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.signupSuccess));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.signupSuccess)));
 		
@@ -95,5 +95,68 @@ public class SignupUtil extends FunctionReference {
 		}
 		return available;
 	}
+	
+	public boolean clickbtnSignup(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.btnSignup));
+			click(xpath(PVObjectReferenceSmoketest.btnSignup));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	
+	public boolean clicktermsAndCondition(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.termsAndCondition));
+			click(xpath(PVObjectReferenceSmoketest.termsAndCondition));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	public boolean clicksubmitSignup(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.submitSignup));
+			click(xpath(PVObjectReferenceSmoketest.submitSignup));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
 }
+
 

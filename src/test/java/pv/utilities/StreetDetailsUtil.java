@@ -96,7 +96,7 @@ public class StreetDetailsUtil extends FunctionReference {
 	//check if updates as Property Type btn is toggled
 	public boolean btnPropertyType(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
 		boolean available = false;
-		click(xpath(PVObjectReferenceSmoketest.togglePropertyType));
+		clicktogglePropertyType(0, 0, 0, 0, false);
 		
 		String url = driver.getCurrentUrl();
 		if(url.contains("#Unit")){
@@ -115,7 +115,7 @@ public class StreetDetailsUtil extends FunctionReference {
 		}else {
 			fail("Data on the page doesn't updates as Property Type Button is toggled.");
 		}
-		click(xpath(PVObjectReferenceSmoketest.clickHouse));
+		clickHouse(0, 0, 0, 0, false);
 		return available;
 	}
 	
@@ -283,6 +283,48 @@ public class StreetDetailsUtil extends FunctionReference {
 		}
 		
 		return available;
-	}	
+	}
+	
+	public boolean clicktogglePropertyType(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.togglePropertyType));
+			click(xpath(PVObjectReferenceSmoketest.togglePropertyType));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	
+	public boolean clickHouse(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickHouse));
+			click(xpath(PVObjectReferenceSmoketest.clickHouse));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
 }
 
