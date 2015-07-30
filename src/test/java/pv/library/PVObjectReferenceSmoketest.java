@@ -1,4 +1,5 @@
 package pv.library;
+import static org.openqa.selenium.By.xpath;
 
 public class PVObjectReferenceSmoketest {
 	
@@ -347,5 +348,25 @@ public class PVObjectReferenceSmoketest {
 	//iFrame
 	public static String iframe = "//iframe";
 	public static String iframe2 = "/html/body/table/tbody/tr/td/table/tbody/tr/td/table/tbody/tr[2]/td/table/tbody/tr/td/table/tbody/tr[3]/td/div[4]/iframe";
-		
+	
+
+	//----------------------------------------------Regression TEST---------------------------------------------------
+	
+	//Homepage
+	public static String watchVideo = "//*[@class='watch-link']";
+	public static String videoPlay = "//*[@id='watchvideo']/div[2]";
+	public static String frameVideo = "//*[@id='watchvideo']/div[2]/iframe";
+	public static String videoClose = "//*[@id='watchvideo']/div[2]/div";
+	public static String ASXTicker = "//*[@id='data-rismark']";
+	public static String ASXContent = "//*[@id='data-rismark']/div";
+	public static String corelogicIndex = "//*[@class='span4 pull-left mt0']";
+	public static String btnExplore = "//*[@id='explore_button']";
+	public static String btnStrategies = "//a[contains(@class, 'orange-small-btn') and text() = 'Strategies']";
+	public static String btnLearnMore = "//a[contains(@class, 'orange-small-btn') and text() = 'Learn more']";
+	public static String btnMedianPriceChange = "//*[@id='fourth']";
+	public static String displayUpdates = "//*[@class=' highcharts-yaxis-title']";
+	public static String btnUnits = "//*/div/a[contains(.,'Units')]";
+	public static String btnCapitalGrowth = "(//*[@class='blue-icon'])[1]";
+	public static String btnCashFlow = "(//*[@class='blue-icon'])[2]";
+	public static String btnLowerRisk = "(//*[@class='blue-icon'])[3]";
 }
