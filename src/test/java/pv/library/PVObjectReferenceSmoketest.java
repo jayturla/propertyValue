@@ -1,5 +1,4 @@
 package pv.library;
-import static org.openqa.selenium.By.xpath;
 
 public class PVObjectReferenceSmoketest {
 	
@@ -369,4 +368,10 @@ public class PVObjectReferenceSmoketest {
 	public static String btnCapitalGrowth = "(//*[@class='blue-icon'])[1]";
 	public static String btnCashFlow = "(//*[@class='blue-icon'])[2]";
 	public static String btnLowerRisk = "(//*[@class='blue-icon'])[3]";
+	
+	//Signup
+	public static String emptyFirstName = "//*[@id='freemiumRegisForm']/div/div/div/div[1]/div[1]/div[1]/div[1]/div[2]";
+	public static String emptyEmailAdd = "//*[@id='freemiumRegisForm']/div/div/div/div[1]/div[1]/div[2]/div[2]/div[2]";
+	public static String emptyPassword = "//*[@id='freemiumRegisForm']/div/div/div/div[1]/div[1]/div[2]/div[4]/div[3]";
+	public static String emptyCaptcha = "//*[@id='freemiumRegisForm']/div/div/div/div[1]/div[1]/div[4]/div[2]";
 }
