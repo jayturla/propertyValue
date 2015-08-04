@@ -374,4 +374,38 @@ public class PVObjectReferenceSmoketest {
 	public static String emptyEmailAdd = "//*[@id='freemiumRegisForm']/div/div/div/div[1]/div[1]/div[2]/div[2]/div[2]";
 	public static String emptyPassword = "//*[@id='freemiumRegisForm']/div/div/div/div[1]/div[1]/div[2]/div[4]/div[3]";
 	public static String emptyCaptcha = "//*[@id='freemiumRegisForm']/div/div/div/div[1]/div[1]/div[4]/div[2]";
+	
+	//Suburb Profile Links
+	public static String clickBreadcrumbsManly = "//*[@class='breadcrumbs']/li/div/a[contains(.,'Manly')]";
+	public static String clickPremium = "//*[@class='get-premium-action']/a[contains(.,'Upgrade to Premium')]";
+	public static String getPremiumModal = "//*[@id='getPremium']/div/div";
+	public static String premiumClose = "//*[@id='getPremium']/div/div/div[1]/button";
+	public static String clickbuyPostcodeReport = "//*[@class='report-action col-xs-6'][2]/a[contains(.,' Buy Postcode Report ')]";
+	public static String btnWatchlist = "//*[@id='watch_button']/i[(@data-n='1')]";
+	public static String btnShare = "//*[@class='social-action col-xs-6']/a";
+	public static String socialFB = "//*[@id='a2apage_mini_services']/a[1]";
+	public static String rankingSuburb = "(//*[@class='stats'])[1]";
+	public static String premiumInvestment = "//*[@id='investment-score-upgrade-content-desktop']";
+	public static String frameAds = "(//iframe)[3]";
+	public static String clickFrame = "(//iframe['/html/body/a'])[3]";
+	public static String switchRecentSold = "//*[@id='comparable_main_wrap']/table/tbody/tr/td/table/tbody/tr/td/div[2]/div/div[2]/div[2]/div/div[2]/div";
+	public static String switchForRent = "//*[@id='comparable_main_wrap']/table/tbody/tr/td/table/tbody/tr/td/div[2]/div/div[2]/div[2]/div/div[3]/div";
+	public static String textRecentSold = "//*[@id='comparable_main_wrap']/table/tbody/tr/td/table/tbody/tr/td/div[2]/div/div[3]/h5/span";
+	public static String textForRent = "//*[@id='comparable_main_wrap']/table/tbody/tr/td/table/tbody/tr/td/div[2]/div/div[3]/h5/span";
+	public static String clickPropertyList = "//*[@id='comparable_main_wrap']/table/tbody/tr/td/table/tbody/tr/td/div[2]/div/div[3]/div[2]/div[1]/div/div[2]/div/div[1]/a";
+	public static String getPremiumOtherSection = "(//*[@class='result-list']/a[contains(@class,'viewmore free-version-block')])[2]";
+	public static String councilName = "//*[@class='subtitle suburbInfo_council']/a";
+	public static String checkToggleCityCouncilM = "(//*[@class='highcharts-series highcharts-tracker'])[2]";
+	public static String toggleCityCouncilM = "(//*[@class='highcharts-legend-item'])[2]";
+	public static String checkToggleCityCouncil = "(//*[@class='highcharts-series highcharts-tracker'])[6]";
+	public static String toggleCityCouncil = "(//*[@class='highcharts-legend-item'])[6]";
+	public static String toggleCouples = "(//*[@class='highcharts-legend-item'])[8]";
+	public static String toggleOutright = "(//*[@class='highcharts-legend-item'])[14]";
+	public static String togglePropertySold = "//*[@id='market-trends-metric-box-values']/ul/li[2]/a";
+	public static String toggleMedianRent = "//*[@id='market-trends-metric-box-values']/ul/li[3]/a";
+	public static String toggleMedianGross = "//*[@id='market-trends-metric-box-values']/ul/li[4]/a";
+	public static String checkMetricUpdate = "(//*[@class=' highcharts-yaxis-title'])[3]";
+	public static String frameExperts = "(//iframe)[5]";
+	public static String viewAll = "//*[@id='main-btn-link']";
+	public static String selectStreet = "//*[@id='streets-insights']/div[2]/div/div/div[1]/div/ul/li[1]/a";
 }
