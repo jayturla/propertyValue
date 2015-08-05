@@ -408,4 +408,20 @@ public class PVObjectReferenceSmoketest {
 	public static String frameExperts = "(//iframe)[5]";
 	public static String viewAll = "//*[@id='main-btn-link']";
 	public static String selectStreet = "//*[@id='streets-insights']/div[2]/div/div/div[1]/div/ul/li[1]/a";
+	
+	//Street Details Links
+	public static String clickBreadcrumbsStreet = "//*[@class='breadcrumbs']/li/div/a[contains(.,'South Turramurra 2074')]";
+	public static String propertyPricesNav = "//*[@id='freemium-floating-menu-property-prices']";
+	public static String propertyPricesNav1 = "//*[@class='fixed-aux-nav']/ul/li/a[contains(.,'Property Prices')]";
+	public static String insightsNav = "//*[@id='freemium-floating-menu-insights']/a";
+	public static String viewTooltip = "//*[@class='growth']/a/i";
+	public static String checkTooltip = "//*[@class='tooltip fade top in']";
+	public static String learnMore = "//*[@class='street-composition-free-div']/a[contains(.,'Learn more')]";
+	public static String modalLearnMore = "//*[@id='streetLearnMoreModal']";
+	public static String closeLearnMore = "//*[@id='streetLearnMore']/div/div/div[1]/button/span";
+	public static String suburbClick = "//*[@class='hidden-xs']/a[contains(.,'Suburb Profile')]";
+	public static String clickHeart = "//*[@class='watch-action col-xs-6']/a";
+	
+	
+	
 }
