@@ -422,6 +422,16 @@ public class PVObjectReferenceSmoketest {
 	public static String suburbClick = "//*[@class='hidden-xs']/a[contains(.,'Suburb Profile')]";
 	public static String clickHeart = "//*[@class='watch-action col-xs-6']/a";
 	
+	//Property Details Links
 	
+	public static String clickBreadcrumbsProperty = "//*[@class='breadcrumbs']/li/div/a[contains(.,'Darlington Drive')]";
+	public static String clickBuyPropertyReport = "//*[@class='report-action col-xs-6']/a[contains(.,' Buy Property Report ')]";
+	public static String clickBuyTitleDocuments = "//*[@class='report-action col-xs-6']/a[contains(.,' Buy Title Documents ')]";
+	public static String aboutNav1 = "//*[@class='fixed-aux-nav']/ul/li/a[contains(.,'About')]";
+	public static String aboutNav = "//*[@id='freemium-floating-menu-about']";
+	public static String viewPropertyTooltip = "//*[@id='property-insights']/div[2]/div[1]/div[2]/div[1]/table/tbody/tr[3]/td[1]/span[1]/i";
+	public static String swipeImage = "//*[@id='photoGallerySide']/table/tbody/tr/td/div/div[2]/div[2]/div/img";
+	public static String imgElement = "//*[@id='photoGallerySide']/table/tbody/tr/td/div/div[2]/div[2]/div";
+	public static String propertyCouncil = "//*[@id='property-insights']/div[3]/div[7]/div/div[2]/div[1]/span[1]/a";
 	
 }
