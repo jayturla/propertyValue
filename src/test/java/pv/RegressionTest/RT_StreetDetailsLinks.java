@@ -34,15 +34,15 @@ public class RT_StreetDetailsLinks extends TestInitReference {
 
 		try {
 			//verify if breadcrumbs are clickable and will navigate to relevant page
-			pvRegression.breadcrumbsNav(0, 1, 2, 3, 4, 5, true);
+			pvRegression.breadcrumbsNav(0, 1, 2, 3, 4, 5, 18, 19, true);
 			//switch between property types
-			pvRegression.switchPropertyType(6, 1, 7, 8, 4, true);
+//			pvRegression.switchPropertyType(6, 1, 7, 8, 4, true);
 			//check if upgrade to premium is clickable
-			pvRegression.upgradePremiumNav(9, 1, 10, 11, 4, true);
+//			pvRegression.upgradePremiumNav(9, 1, 10, 11, 4, true);
 			//check if can buy postcode report when available
-			pvRegression.postcodeReportNav(12, 1, 13, 14, 4, true);
+//			pvRegression.postcodeReportNav(12, 1, 13, 14, 4, true);
 			//check if can add to watchlist
-			pvRegression.btnAddToWatchlist(15, 1, 16, 17, 4, 18, 19, 5, true);
+			pvRegression.btnAddToWatchlist(15, 1, 16, 17, 4, true);
 			//check if can share the suburb profile to social 
 			pvRegression.btnShare(20, 1, 21, 22, 4, true);
 			//check if can click links on left nav bar to anchor specific page

@@ -4,8 +4,6 @@ import static org.openqa.selenium.By.xpath;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import pv.atu_utilities.copy.ATUUtil;
@@ -22,16 +20,23 @@ public class RT_StreetDetailsLinksUtil extends FunctionReference {
 			input = i;
 	}
 	
-	private RT_SuburbProfileLinksUtil click = new RT_SuburbProfileLinksUtil(input); 
+	private RT_SuburbProfileLinksUtil click = new RT_SuburbProfileLinksUtil(input);
+	
 	
 	//verify if breadcrumbs are clickable and will navigate to relevant page
-	public boolean breadcrumbsNav(int steps, int inputVal, int expected, int actualPass, int actualFail, int urlnav, boolean withATU) throws Exception {
+	public boolean breadcrumbsNav(int steps, int inputVal, int expected, int actualPass, int actualFail, int urlnav, int userName, int password, boolean withATU) throws Exception {
 		boolean passed = false;
+		
+		pv.utilities.HeaderZoneUtil login = new HeaderZoneUtil(input);
+		login.clickLogin();
+		login.enterUserName(userName);
+		login.enterPassword(password);		
+		login.loginSite();
 		
 		driver.navigate().to(input[urlnav]);
 		clickBreadcrumbs(0, 0, 0, 0, false);
 		String url = driver.getCurrentUrl();
-		if(url.contains("/suburb/south%20turramurra-2074-nsw")) {
+		if(url.contains("/suburb/ballarat%20east-3350-vic")) {
 			passed = true;
 			driver.navigate().back();
 		}
@@ -135,16 +140,8 @@ public class RT_StreetDetailsLinksUtil extends FunctionReference {
 	}
 	
 	//check if can add to watchlist
-	public boolean btnAddToWatchlist(int steps, int inputVal, int expected, int actualPass, int actualFail, int userName, int password, int urlnav, boolean withATU) throws Exception {
+	public boolean btnAddToWatchlist(int steps, int inputVal, int expected, int actualPass, int actualFail, boolean withATU) throws Exception {
 		boolean passed = false;
-		
-		pv.utilities.HeaderZoneUtil login = new HeaderZoneUtil(input);
-		
-		click.clickbtnWatchlist(0, 0, 0, 0, false);
-		
-		login.enterUserName(userName);
-		login.enterPassword(password);
-		login.loginSite();
 		
 		clickbtnWatchlist(0, 0, 0, 0, false);
 		Thread.sleep(2000);
@@ -166,9 +163,7 @@ public class RT_StreetDetailsLinksUtil extends FunctionReference {
 		}else {
 			fail("Unable to add the suburb to Watchlist.");
 		}
-		click.clickMenu(0, 0, 0, 0, false);
-		click.clickLogout(0, 0, 0, 0, false);
-		driver.navigate().to(input[urlnav]);
+		clickbtnWatchlist(0, 0, 0, 0, false);
 		return passed;
 	}
 	
@@ -311,6 +306,7 @@ public class RT_StreetDetailsLinksUtil extends FunctionReference {
 		click.clickForRent(0, 0, 0, 0, false);
 		Thread.sleep(2000);
 		String text1 = getText(xpath(PVObjectReferenceSmoketest.textForRent));
+	
 		
 		if(text.contains("sold") && text1.contains("for rent")) {
 			passed = true;

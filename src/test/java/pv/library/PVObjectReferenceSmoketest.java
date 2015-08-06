@@ -410,7 +410,7 @@ public class PVObjectReferenceSmoketest {
 	public static String selectStreet = "//*[@id='streets-insights']/div[2]/div/div/div[1]/div/ul/li[1]/a";
 	
 	//Street Details Links
-	public static String clickBreadcrumbsStreet = "//*[@class='breadcrumbs']/li/div/a[contains(.,'South Turramurra 2074')]";
+	public static String clickBreadcrumbsStreet = "//*[@class='breadcrumbs']/li/div/a[contains(.,'Ballarat East 3350')]";
 	public static String propertyPricesNav = "//*[@id='freemium-floating-menu-property-prices']";
 	public static String propertyPricesNav1 = "//*[@class='fixed-aux-nav']/ul/li/a[contains(.,'Property Prices')]";
 	public static String insightsNav = "//*[@id='freemium-floating-menu-insights']/a";
