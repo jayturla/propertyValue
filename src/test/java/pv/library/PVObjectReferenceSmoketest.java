@@ -155,6 +155,9 @@ public class PVObjectReferenceSmoketest {
 	public static String checkGmail = "//*[@id=':2']/div/div";
 	public static String btnNext = "//*[@id='next']";
 	public static String btnSignin = "//*[@id='signIn']";
+	public static String clickCancel = "//*[@id='clickedCancel']";
+	public static String paymentMsg = "//*[@class='wrap']/h2";
+	public static String paymentBodyTxt = "//*[@class='wrap']/h1";
 	
 	//PostCodeDetails
 	public static String postcodeAddress = "//h1[contains(.,'Suburbs in Postcode')]";
