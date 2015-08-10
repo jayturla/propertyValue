@@ -15,6 +15,7 @@ public class PVObjectReferenceSmoketest {
 	public static String verifyLoginName = "//*[@class='login']";
 	public static String clickMenu = "(//*[@class='login']//a)[1]";
 	public static String clickLogOut = "(//*[@class='login']//a)[5]";
+	public static String clickMenuWatchlist = "//*[@class='logged-in-nav']/ul/li/a[contains(.,'Watchlist')]";
 	public static String selectPropety = "//*[@class='home-slas-def']//ul//li";
 	public static String verifyPropertyInsights = "(//*[@class='wbdRichText']//h2)[1]";
 	public static String clickAddtoWatchList = "(//*[@class='hidden-xs']//li//a)[1]";
@@ -436,5 +437,15 @@ public class PVObjectReferenceSmoketest {
 	public static String swipeImage = "//*[@id='photoGallerySide']/table/tbody/tr/td/div/div[2]/div[2]/div/img";
 	public static String imgElement = "//*[@id='photoGallerySide']/table/tbody/tr/td/div/div[2]/div[2]/div";
 	public static String propertyCouncil = "//*[@id='property-insights']/div[3]/div[7]/div/div[2]/div[1]/span[1]/a";
+	
+	//Watchlist Links
+	public static String countWatchlist = "//*[@id='watchlist-results-table']";
+	public static String propertyShowMore = "//*[@id='watchlist-results-table-more']";
+	public static String streetShowMore = "//*[@id='street-results-table-more']";
+	public static String suburbShowMore = "//*[@id='suburb-results-table-more']";
+	public static String leftNavProperties = "//*[@wl-stat='wl-section-is-watched']";
+	public static String leftNavPropertiesEle = "//*[@class='fixed-aux-nav']/ul/li/a[contains(.,'Properties')]";
+	public static String myAccountLink = "//a[contains(.,'My Account')]";
+	public static String checkAccount = "(//*[@class='row']/div[1])/h2[contains(.,'User Profile')]";
 	
 }
