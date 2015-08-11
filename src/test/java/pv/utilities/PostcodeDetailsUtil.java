@@ -21,25 +21,25 @@ public class PostcodeDetailsUtil extends FunctionReference {
 	}
 	
 	//Checking SLAS Box if available in the page
-		public boolean checkSLAS(int steps, int inputVal, int expected, int actual,boolean withATU) throws Exception {
-			boolean available = false;
-			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.slasBox)));
-			available = isElementVisible(xpath(PVObjectReferenceSmoketest.slasBox));
-			
-			if(withATU) {
-				if(available){
-					atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
-				}else {
-					atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
-				}
-			}
-			
+	public boolean checkSLAS(int steps, int inputVal, int expected, int actual,boolean withATU) throws Exception {
+		boolean available = false;
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.slasBox)));
+		available = isElementVisible(xpath(PVObjectReferenceSmoketest.slasBox));
+		
+		if(withATU) {
 			if(available){
-				pass("SLAS is available in the page.");
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
 			}else {
-				fail("SLAS is NOT AVAILABLE in the page.");
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
 			}
-			return available;	
+		}
+		
+		if(available){
+			pass("SLAS is available in the page.");
+		}else {
+			fail("SLAS is NOT AVAILABLE in the page.");
+		}
+		return available;	
 	}
 		
 	//check if SLAS will navigate to postcode page when entered <postcode address>
@@ -47,7 +47,7 @@ public class PostcodeDetailsUtil extends FunctionReference {
 		boolean details = false;
 		
 		type(xpath(PVObjectReferenceSmoketest.slasBox), input[postcode]);
-		driver.findElement(xpath(PVObjectReferenceSmoketest.slasBox)).sendKeys(Keys.RETURN);
+		clickselectSuggestion(0,0,0,0,false);
 		
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.postcodeAddress));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.postcodeAddress)));
@@ -128,6 +128,27 @@ public class PostcodeDetailsUtil extends FunctionReference {
 		try{
 			waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickSuburb));
 			click(xpath(PVObjectReferenceSmoketest.clickSuburb));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	
+	public boolean clickselectSuggestion(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.selectSuggestion));
+			click(xpath(PVObjectReferenceSmoketest.selectSuggestion));
 			click = true;
 		}catch(Exception e){
 		}

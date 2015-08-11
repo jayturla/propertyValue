@@ -25,7 +25,7 @@ public class PropertyProfileReportUtil extends FunctionReference {
 	public boolean checkBuyPropertyReport(int steps, int inputVal, int expected, int actual,int property,boolean withATU)  throws Exception {
 		boolean available = false;
 		type(xpath(PVObjectReferenceSmoketest.slasBox), input[property]);
-		driver.findElement(xpath(PVObjectReferenceSmoketest.slasBox)).sendKeys(Keys.RETURN);
+		clickselectSuggestion(0,0,0,0,false);
 		
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.BuyPropertyReport));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.BuyPropertyReport)));
@@ -295,5 +295,30 @@ public class PropertyProfileReportUtil extends FunctionReference {
 		
 		return click;
 	}
+	
+	public boolean clickselectSuggestion(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.selectSuggestion));
+			click(xpath(PVObjectReferenceSmoketest.selectSuggestion));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	
 }
+
+
+
 

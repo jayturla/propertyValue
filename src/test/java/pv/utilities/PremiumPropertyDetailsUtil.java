@@ -29,7 +29,7 @@ public class PremiumPropertyDetailsUtil extends FunctionReference {
 		login.loginSite();
 		
 		type(xpath(PVObjectReferenceSmoketest.slasBox), input[property]);
-		driver.findElement(xpath(PVObjectReferenceSmoketest.slasBox)).sendKeys(Keys.RETURN);
+		clickselectSuggestion(0,0,0,0,false);
 		
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.checkExactValue));
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.checkEstimatedValue));
@@ -254,5 +254,26 @@ public class PremiumPropertyDetailsUtil extends FunctionReference {
 		}
 		return available;
 	}	
+	
+	public boolean clickselectSuggestion(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.selectSuggestion));
+			click(xpath(PVObjectReferenceSmoketest.selectSuggestion));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
 }
 
