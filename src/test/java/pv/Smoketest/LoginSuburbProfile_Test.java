@@ -28,7 +28,7 @@ public class LoginSuburbProfile_Test extends TestInitReference {
 	String testCase = "Suburb Profile";
 		
 	@Test(description="Login User Suburb Profile", dataProvider = "Data-Provider-Function")
-	public void testLoginSuburbSearchResult(Class clzz, String[] input) {
+	public void testLoginSuburbProfile(Class clzz, String[] input) {
 		LoginSuburbProfileUtil pvSmoke = new LoginSuburbProfileUtil(input);
 		
 
