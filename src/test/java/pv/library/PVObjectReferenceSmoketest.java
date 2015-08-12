@@ -448,4 +448,12 @@ public class PVObjectReferenceSmoketest {
 	public static String myAccountLink = "//a[contains(.,'My Account')]";
 	public static String checkAccount = "(//*[@class='row']/div[1])/h2[contains(.,'User Profile')]";
 	
+	//Portfolio Calculate
+	public static String addedPortfolio = "//*[@id='portfolio-watchlist-div']/div/table/tbody/tr/td/div/div[1]/h3";
+	public static String clickAddEquity = "//*[@id='equity-not-select']/a";
+	public static String calculateModalRT = "//*[@id='calculateModal']/div/div/div[2]/div";
+	public static String updateNow = "//*[@id='update-now-button']";
+	public static String currentLoan = "//*[@id='currentLoan']";
+	public static String btnSave = "//*[@id='calculateModal']/div/div/div[2]/div/div[2]/a";
+	public static String checkBox4 = "//*[@id='equity-select']";
 }
