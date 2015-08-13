@@ -40,6 +40,10 @@ public class PVObjectReferenceSmoketest {
 	public static String verifyAccountPage = "//*[@class='container'][1]";
 	public static String navWatchlist = "//a[contains(.,'Watchlist')]";
 	public static String portfolioTab = "//*[@class='DivWidget container']/div/div/ul/li/a[contains(.,'Portfolio')]";
+	public static String watchlistDropDown = "//*[@id='dropdownMenu1']";
+	public static String removeWatchlist = "//*[@id='watched-pty-206']/td[4]/div/ul/li[4]/a";
+	public static String removeStreet = "//*[@id='watched-street-house-207']/td[5]/div/ul/li[3]/a";
+	public static String removeSuburb = "//*[@id='watched-suburb-house-208']/td[6]/div/ul/li[4]/a";
 
 	//HeaderZone jeck
 	public static String clickExplore = "//a[contains(.,'Explore')]";
