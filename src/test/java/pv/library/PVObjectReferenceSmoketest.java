@@ -144,12 +144,12 @@ public class PVObjectReferenceSmoketest {
 		
 	//Payment Checkout
 	public static String PaymentCheckout = "//*[@id='PxPayAuthMain']/div/h2";
-	public static String cardNumber = "//*[@id='CardNumber']";
-	public static String cardHolderName = "//*[@id='CardHolderName']";
+	public static String cardNumber = "//*[@id='12691']";
+	public static String cardHolderName = "//*[@id='12692']";
 	public static String dateExpiry1 = "//*[@id='DateExpiry_1']";
 	public static String dateExpiry2 = "//*[@id='DateExpiry_2']";
-	public static String cardSecurityCode = "//*[@id='Cvc2']";
-	public static String btnSubmit = "//*[@id='clickedAdd']";
+	public static String cardSecurityCode = "//*[@id='12696']";
+	public static String btnSubmit = "//*[@id='clicked12725']";
 	public static String paymentSuccess = "//h2[contains(.,'Your payment has been successful!')]";
 	public static String checkEmail = "//*[@id='Email']";
 	public static String gmailPasswd = "//*[@id='Passwd']";
