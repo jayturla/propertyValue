@@ -154,7 +154,7 @@ public class HeaderZoneUtil extends FunctionReference {
 		loginSite();
 		
 		String text = getText(xpath(PVObjectReferenceSmoketest.verifyLoginName));
-		if (text.contains("Pat")) {
+		if (text.contains("tooltwist")) {
 			available = true;	
 		}
 		
