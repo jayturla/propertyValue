@@ -49,7 +49,7 @@ public class SignupUtil extends FunctionReference {
 	}
 	
 	//fill all the mandatory fields and success signup
-	public boolean signupSuccess(int steps, int inputVal, int expected, int actual, int fName, int lName, int adBox, int emBox, int conEmBox,
+	public boolean signupSuccess(int steps, int inputVal, int expected, int actual, int fName, int lName, int adBox, int emBox,
 			int pWord, int conPWord, boolean withATU) throws Exception {
 		boolean available = false;
 		
@@ -57,7 +57,7 @@ public class SignupUtil extends FunctionReference {
 		type(xpath(PVObjectReferenceSmoketest.lastNameBox), input[lName]);
 		type(xpath(PVObjectReferenceSmoketest.addressBox), input[adBox]);
 		type(xpath(PVObjectReferenceSmoketest.emailBox), input[emBox]);
-		type(xpath(PVObjectReferenceSmoketest.confirmEmailBox), input[conEmBox]);
+		type(xpath(PVObjectReferenceSmoketest.confirmEmailBox), input[emBox]);
 		type(xpath(PVObjectReferenceSmoketest.passwordBox), input[pWord]);
 		type(xpath(PVObjectReferenceSmoketest.confirmpasswordBox), input[conPWord]);
 		clicktermsAndCondition(0,0,0,0,false);

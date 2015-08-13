@@ -38,7 +38,7 @@ public class Signup_Test extends TestInitReference {
 			pvSmoke.btnSignup(0,1,2,3,true);
 //-------CHANGE EMAIL EVERY TEST RUNS on xls
 			//fill all the mandatory fields and success signup
-			pvSmoke.signupSuccess(4,1,5,6,7,8,9,10,11,12,13,true);
+			pvSmoke.signupSuccess(4,1,5,6,7,8,9,10,11,12,true);
 			
 		} catch (Exception e) {
 		}
