@@ -86,10 +86,10 @@ public class AddtoWatchListUtil extends FunctionReference {
 	
 	
 	
-	public boolean selectStreet(int street ,int steps, int inputVal, int expected, int actualPass,int actualFail ,boolean withATU)  throws Exception{
+	public boolean selectStreet(int street ,int steps, int inputVal, int expected, int actualPass,int actualFail , int url, boolean withATU)  throws Exception{
 		boolean available = false;
 		
-		clickLogo();
+		driver.navigate().to(input[url]);
 		type(xpath(PVObjectReferenceSmoketest.slasBox), input[street]);
 		clickselectSuggestion(0,0,0,0,false);
 		
@@ -147,10 +147,10 @@ public class AddtoWatchListUtil extends FunctionReference {
 		return available;
 	}
 	
-	public boolean selectSuburb(int suburb ,int steps, int inputVal, int expected, int actualPass,int actualFail ,boolean withATU)  throws Exception{
+	public boolean selectSuburb(int suburb ,int steps, int inputVal, int expected, int actualPass,int actualFail ,int url, boolean withATU)  throws Exception{
 		boolean available = false;
 		
-		clickLogo();
+		driver.navigate().to(input[url]);
 		type(xpath(PVObjectReferenceSmoketest.slasBox), input[suburb]);
 		clickselectSuggestion(0,0,0,0,false);
 		clicViewSuburbProfile();
@@ -311,21 +311,6 @@ public class AddtoWatchListUtil extends FunctionReference {
 		return click;
 	}
 	
-	
-	public void searchAddress(int inputval) throws Exception{
-	 	waitForElementPresent(xpath(PVObjectReferenceSmoketest.slasBox));
-		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.slasBox)));
-		type(xpath(PVObjectReferenceSmoketest.slasBox), input[inputval]);
-	 
- 	}
- 
-	public void selectAddress() throws Exception{
-	
-		waitForElementPresent(xpath(PVObjectReferenceSmoketest.selectPropety));
-		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.selectPropety)));
-		click(xpath(PVObjectReferenceSmoketest.selectPropety));
- 	}
-	
 	public void clickAddtoWatchList() throws Exception{
 		
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickAddtoWatchList));
@@ -339,13 +324,6 @@ public class AddtoWatchListUtil extends FunctionReference {
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.goToWatclist));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.goToWatclist)));
 		click(xpath(PVObjectReferenceSmoketest.goToWatclist));
-	}
-	
-	public void clickLogo() throws Exception{
-		waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickLogo));
-		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.clickLogo)));
-		click(xpath(PVObjectReferenceSmoketest.clickLogo));
-		
 	}
 	
 	public void clicViewSuburbProfile() throws Exception{

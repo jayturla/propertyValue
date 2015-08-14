@@ -41,13 +41,13 @@ public class AddtoWatchList extends TestInitReference {
 		   //Verify if Property is added and displaying in WatchList
 			pvAddtoWatchList.verifyIfPropertyisAddedtoWatchList(13, 14, 15, 16, 17, true);
 			//Search and Select for Street
-			pvAddtoWatchList.selectStreet(18, 19, 20, 21, 22, 23, true);
+			pvAddtoWatchList.selectStreet(18, 19, 20, 21, 22, 23, 40,true);
 			//Verify if Street is added and displaying in WatchList
 			pvAddtoWatchList.verifyIfStreetisAddedtoWatchList(24, 25, 26, 27, 28, true);
 			//Search and Select for Suburb
-			pvAddtoWatchList.selectSuburb(29, 30, 31, 32, 33, 34, true);
+			pvAddtoWatchList.selectSuburb(29, 30, 31, 32, 33, 34,40, true);
 			//Verify if Suburb is added and displaying in WatchList
-			pvAddtoWatchList.verifyIfSuburbisAddedtoWatchList(35, 36, 37, 38, 39, true);
+			pvAddtoWatchList.verifyIfSuburbisAddedtoWatchList(35, 36, 37, 38, 39,  true);
 		
 		} catch (Exception e) {
 		}
