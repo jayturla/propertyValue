@@ -193,7 +193,7 @@ public class PVObjectReferenceSmoketest {
 	public static String propertyGallery = "//*[@id='property-insights']/div[2]/div[1]/div[1]";
 	public static String aboutProperty = "//*[@id='property-insights']/div[3]";
 	public static String comparableProperties = "//*[@id='comparable_main_wrap']/table/tbody/tr/td/table/tbody/tr/td/div[2]/div/div[2]/div[2]/div";
-	public static String auctionResults = "//*[@id='property-insights']/div[3]/div[6]";
+	public static String auctionResults = "//*[@id='property-insights']/div[3]/div[5]/h3[1]";
 	public static String suburbInfo = "//*[@id='property-insights']/div[3]/div[7]/div";
 	public static String suburbStats = "//*[@id='property-insights']/div[3]/div[8]/div/div[1]";
 	public static String marketTrends = "//*[@id='upgrade-premium-btn']/div/a";
