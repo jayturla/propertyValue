@@ -29,6 +29,7 @@ public class SignupUtil extends FunctionReference {
 			int userEmail, int confirmEmail, int userPass, int confirmPass, boolean withATU) throws Exception {
 		boolean passed = false;
 		
+		driver.navigate().to("http://consumer:QWE!%40%23rty456@dev-subscriptions.propertyvalue.com.au/");
 		click(xpath(PVObjectReferenceSmoketest.clickSignup));
 		type(xpath(PVObjectReferenceSmoketest.firstName), input[firstName]);
 		type(xpath(PVObjectReferenceSmoketest.lastName), input[lastName]);

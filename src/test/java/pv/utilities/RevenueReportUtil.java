@@ -26,6 +26,7 @@ public class RevenueReportUtil extends FunctionReference {
 			int dateFrom, int dateTo, boolean withATU)  throws Exception {
 		boolean available = false;
 		
+		driver.navigate().to(input[url]);
 		type(xpath(PVObjectReferenceSmoketest.userName), input[userName]);
 		type(xpath(PVObjectReferenceSmoketest.password), input[password]);
 		clickAdminLogin(0, 0, 0, 0, false);
@@ -81,6 +82,7 @@ public class RevenueReportUtil extends FunctionReference {
 			fail("Cannot Generate Property Value Revenue Report.");
 		}
 		driver.switchTo().defaultContent();
+		driver.navigate().to("http://consumer:QWE!%40%23rty456@dev.propertyvalue.com.au/");
 		return available;
 	}
 	
