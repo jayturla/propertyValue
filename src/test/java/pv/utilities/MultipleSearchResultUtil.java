@@ -24,7 +24,7 @@ public class MultipleSearchResultUtil extends FunctionReference {
 		boolean navigate = false;
 		
 		type(xpath(PVObjectReferenceSmoketest.slasBox), input[parent]);
-		clickselectSuggestion(0,0,0,0,false);
+		driver.findElement(xpath(PVObjectReferenceSmoketest.slasBox)).sendKeys(Keys.RETURN);;
 		
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.navigateMultipleSearchResult));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.navigateMultipleSearchResult)));
@@ -77,27 +77,6 @@ public class MultipleSearchResultUtil extends FunctionReference {
 		try{
 			waitForElementPresent(xpath(PVObjectReferenceSmoketest.selectProperty));
 			click(xpath(PVObjectReferenceSmoketest.selectProperty));
-			click = true;
-		}catch(Exception e){
-		}
-		
-		if(withATU) {
-			if(click){
-				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
-			}else {
-				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
-			}
-		}
-		
-		return click;
-	}
-	
-	public boolean clickselectSuggestion(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
-		boolean click = false;
-		
-		try{
-			waitForElementPresent(xpath(PVObjectReferenceSmoketest.selectSuggestion));
-			click(xpath(PVObjectReferenceSmoketest.selectSuggestion));
 			click = true;
 		}catch(Exception e){
 		}

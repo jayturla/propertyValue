@@ -74,7 +74,7 @@ public class PaymentUtil extends FunctionReference {
 		type(xpath(PVObjectReferenceSmoketest.cardSecurityCode), input[cs]);
 		clickbtnSubmit(0,0,0,0,false);
 		
-		driver.navigate().to("https://mail.google.com/mail/u/0/");
+		driver.navigate().to("https://accounts.google.com/ServiceLogin?service=mail&continue=https://mail.google.com/mail/#identifier");
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.checkEmail));
 		type(xpath(PVObjectReferenceSmoketest.checkEmail), input[gmail]);
 		clickbtnNext(0,0,0,0,false);

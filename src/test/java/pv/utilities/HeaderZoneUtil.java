@@ -135,12 +135,11 @@ public class HeaderZoneUtil extends FunctionReference {
 			}
 		}
 		if(available){
-			pass("Reset buton is displat!");
+			pass("Reset buton is displayed!");
 		}else {
-			fail("Existing User was not able to Login!");
+			fail("Reset buton is not displayed!");
 		}
 		
-
 		return available;
 		
 	}

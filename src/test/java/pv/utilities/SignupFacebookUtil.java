@@ -38,6 +38,9 @@ public class SignupFacebookUtil extends FunctionReference {
 
 		if (text.contains("Facebook")) {
 				available = true;
+				driver.close();
+				driver.switchTo().window(winHandleBefore);
+				
 		}
 		
 		if(withATU) {
