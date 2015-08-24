@@ -193,9 +193,9 @@ public class PVObjectReferenceSmoketest {
 	public static String propertyGallery = "//*[@id='property-insights']/div[2]/div[1]/div[1]";
 	public static String aboutProperty = "//*[@id='property-insights']/div[3]";
 	public static String comparableProperties = "//*[@id='comparable_main_wrap']/table/tbody/tr/td/table/tbody/tr/td/div[2]/div/div[2]/div[2]/div";
-	public static String auctionResults = "//*[@id='property-insights']/div[3]/div[5]/h3[1]";
-	public static String suburbInfo = "//*[@id='property-insights']/div[3]/div[7]/div";
-	public static String suburbStats = "//*[@id='property-insights']/div[3]/div[8]/div/div[1]";
+	public static String auctionResults = "//*[@id='property-insights']/div[3]/h3";
+	public static String suburbInfo = "//*[@id='property-insights']/div[5]/div";
+	public static String suburbStats = "//*[@id='property-insights']/div[6]/div/div[1]";
 	public static String marketTrends = "//*[@id='upgrade-premium-btn']/div/a";
 	
 	//Portfolio Summary
@@ -264,7 +264,7 @@ public class PVObjectReferenceSmoketest {
 	public static String clickOrder = "//*[@id='explore_metric_div']/a";
 	public static String selectOrder = "//*[@id='explore_metric_div']/div/ul/li[2]/a";
 	public static String clickSort = "//*[@id='explore_form']/div/div/div[4]/table/thead/tr/th[1]";
-	public static String checkSortText = "//a[contains(.,'Ainslie')]";
+	public static String checkSortText = "//*[@id='explore_form']/div[1]/div/div[4]/table/tbody/tr[1]/td[1]";
 	public static String viewValue = "//*[@id='explore_form']/div/div/div[4]/table/tbody/tr[1]/td[4]/div/div[2]/div";
 	
 	//PropertyDetails  premium

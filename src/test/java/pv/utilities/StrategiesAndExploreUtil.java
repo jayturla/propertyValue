@@ -110,8 +110,8 @@ public class StrategiesAndExploreUtil extends FunctionReference {
 		boolean available = false;
 			
 		clickSort(0, 0, 0, 0, false);
-//		waitForElementPresent(xpath(PVObjectReferenceSmoketest.checkSortText));
-//		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.checkSortText)));
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.checkSortText));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.checkSortText)));
 		Thread.sleep(2000);
 		String text = getText(xpath(PVObjectReferenceSmoketest.checkSortText));
 		if(text.contains("Ainslie")){

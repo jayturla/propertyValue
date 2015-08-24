@@ -58,8 +58,9 @@ public class loginPortfolioUtil extends FunctionReference {
 		clickAddPropertyPortfolio(0,0,0,0,false);
 		
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.addPropertyModal));
-		
+		Thread.sleep(2000);
 		String text = getText(xpath(PVObjectReferenceSmoketest.addPortfolio));
+		
 		if(text.contains("Add a property to your porftolio") && isElementPresent(xpath(PVObjectReferenceSmoketest.portfolioSLAS))){
 			available = true;
 		}
