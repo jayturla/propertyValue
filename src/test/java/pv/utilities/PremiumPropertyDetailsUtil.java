@@ -207,6 +207,7 @@ public class PremiumPropertyDetailsUtil extends FunctionReference {
 	public boolean checkUnliComparableProperties(int steps, int inputVal, int expected, int actual, boolean withATU)  throws Exception {
 		boolean available = false;
 		
+		clickswitchRecentSold(0, 0, 0, 0, false);
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.unliComparableProperties));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.unliComparableProperties)));
 		String text = getText(xpath(PVObjectReferenceSmoketest.unliComparableProperties));
@@ -261,6 +262,27 @@ public class PremiumPropertyDetailsUtil extends FunctionReference {
 		try{
 			waitForElementPresent(xpath(PVObjectReferenceSmoketest.selectSuggestion));
 			click(xpath(PVObjectReferenceSmoketest.selectSuggestion));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
+	
+	public boolean clickswitchRecentSold(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.switchRecentSold));
+			click(xpath(PVObjectReferenceSmoketest.switchRecentSold));
 			click = true;
 		}catch(Exception e){
 		}

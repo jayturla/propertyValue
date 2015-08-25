@@ -68,9 +68,9 @@ public class MyAccountUtil extends FunctionReference {
 			}
 		}
 		if(available){
-			pass("My Account is Available and clickable");
+			pass("My Account button will navigate to Account Page");
 		}else {
-			fail("My Account is Not Available and clickable");
+			fail("My Account button will not navigate to Account Page");
 		}
 	
 		return available;

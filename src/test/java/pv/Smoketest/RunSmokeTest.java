@@ -63,19 +63,19 @@ public class RunSmokeTest extends TestInitReference {
 		}
 	}
 	
-	@Test(dataProvider = "XMLFileLoader", priority = 3)
-	@XmlFileParameters(path = "../propertyValue-automation/pvtest-data/signup.xls")
-	public void runSignup(Class clzz, String[] input) {
-		
-		try {
-			System.out.println("");
-			log("Testing Signup...");
-			Signup_Test testLog = new Signup_Test();
-			testLog.testSignup(clzz, input);
-			
-		} catch (Exception e) {
-		}
-	}
+//	@Test(dataProvider = "XMLFileLoader", priority = 3)
+//	@XmlFileParameters(path = "../propertyValue-automation/pvtest-data/signup.xls")
+//	public void runSignup(Class clzz, String[] input) {
+//		
+//		try {
+//			System.out.println("");
+//			log("Testing Signup...");
+//			Signup_Test testLog = new Signup_Test();
+//			testLog.testSignup(clzz, input);
+//			
+//		} catch (Exception e) {
+//		}
+//	}
 	
 	@Test(dataProvider = "XMLFileLoader", priority = 4)
 	@XmlFileParameters(path = "../propertyValue-automation/pvtest-data/loginSuburbSearchResult.xls")
@@ -549,7 +549,6 @@ public class RunSmokeTest extends TestInitReference {
 		} catch (Exception e) {
 		}
 	}
-	
 	
 	
 //	@Test(dataProvider = "XMLFileLoader", priority = 37)

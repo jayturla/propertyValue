@@ -13,8 +13,8 @@ public class PVObjectReferenceSmoketest {
 	public static String password = "//*[@id='password']";
 	public static String loginSite = "//*[@class='form']//button";
 	public static String verifyLoginName = "//*[@class='login']";
-	public static String clickMenu = "(//*[@class='login']//a)[1]";
-	public static String clickLogOut = "(//*[@class='login']//a)[5]";
+	public static String clickMenu = "//*[@class='logged-in']";
+	public static String clickLogOut = "(//*[@class='login']//a)[8]";
 	public static String clickMenuWatchlist = "//*[@class='logged-in-nav']/ul/li/a[contains(.,'Watchlist')]";
 	public static String selectPropety = "//*[@class='home-slas-def']//ul//li";
 	public static String verifyPropertyInsights = "(//*[@class='wbdRichText']//h2)[1]";
@@ -30,13 +30,13 @@ public class PVObjectReferenceSmoketest {
 	public static String emailForgottenPassword = "//*[@id='resetPassword_input']";
 	public static String verifyResetPW = "//*[@class='user-sign']";
 	public static String resetFP = "//*[@id='resetPassword_submit']";
-	public static String advanceSearch = "(//*[@class='active']//button)[15]";
+	public static String advanceSearch = "(//*[@class='active']//button)[16]";
 	public static String fpPage = "//*[@class='container'][1]";
 	public static String unitAdvanceSearch = "//*[@id='adv_unitnumber']";
 	public static String advanceSearchPage = "//*[@class='form']";
 	public static String streetAdvanceSearch = "//*[@id='adv_streetname']";
 	public static String searchResultsAdvanceSearch = "//*[@class='row sectionAnchor']";
-	public static String gotoMyAccount = "(//*[@class='login']//a)[4]";
+	public static String gotoMyAccount = "(//*[@class='login']//a)[7]";
 	public static String verifyAccountPage = "//*[@class='container'][1]";
 	public static String navWatchlist = "//a[contains(.,'Watchlist')]";
 	public static String portfolioTab = "//*[@class='DivWidget container']/div/div/ul/li/a[contains(.,'Portfolio')]";
@@ -148,12 +148,12 @@ public class PVObjectReferenceSmoketest {
 		
 	//Payment Checkout
 	public static String PaymentCheckout = "//*[@id='PxPayAuthMain']/div/h2";
-	public static String cardNumber = "//*[@id='12691']";
-	public static String cardHolderName = "//*[@id='12692']";
+	public static String cardNumber = "//*[@id='12939']";
+	public static String cardHolderName = "//*[@id='12940']";
 	public static String dateExpiry1 = "//*[@id='DateExpiry_1']";
 	public static String dateExpiry2 = "//*[@id='DateExpiry_2']";
-	public static String cardSecurityCode = "//*[@id='12696']";
-	public static String btnSubmit = "//*[@id='clicked12725']";
+	public static String cardSecurityCode = "//*[@id='12944']";
+	public static String btnSubmit = "//*[@id='12973']";
 	public static String paymentSuccess = "//h2[contains(.,'Your payment has been successful!')]";
 	public static String checkEmail = "//*[@id='Email']";
 	public static String gmailPasswd = "//*[@id='Passwd']";
@@ -192,10 +192,10 @@ public class PVObjectReferenceSmoketest {
 	public static String propertyInsightsData = "//h4[contains(.,'-')]";
 	public static String propertyGallery = "//*[@id='property-insights']/div[2]/div[1]/div[1]";
 	public static String aboutProperty = "//*[@id='property-insights']/div[3]";
-	public static String comparableProperties = "//*[@id='comparable_main_wrap']/table/tbody/tr/td/table/tbody/tr/td/div[2]/div/div[2]/div[2]/div";
-	public static String auctionResults = "//*[@id='property-insights']/div[3]/h3";
-	public static String suburbInfo = "//*[@id='property-insights']/div[5]/div";
-	public static String suburbStats = "//*[@id='property-insights']/div[6]/div/div[1]";
+	public static String comparableProperties = "//*[@class='comparable-properties-section']";
+	public static String auctionResults = "//*[@class='spacer toh2 sectionAnchor']";
+	public static String suburbInfo = "//*[@class='neighbourhood-info hidden-xs suburbInfo_d']";
+	public static String suburbStats = "//*[@class='graph']";
 	public static String marketTrends = "//*[@id='upgrade-premium-btn']/div/a";
 	
 	//Portfolio Summary
