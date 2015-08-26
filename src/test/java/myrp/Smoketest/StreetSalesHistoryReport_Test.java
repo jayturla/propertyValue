@@ -35,6 +35,7 @@ public class StreetSalesHistoryReport_Test extends TestInitReference {
 			//check if can navigate to shopping cart screen when go to cart button is clicked after adding to cart
 			scSmoke.shopCartScreen(0, 1, 2, 3, 4, 5, true);
 			//payment success using promo code and guest email
+			//change guest email or address every transaction
 			scSmoke.paymentSuccess(6, 1, 7, 8, 4, 9, 10, true);
 		} catch (Exception e) {
 		}

@@ -32,7 +32,7 @@ public class EstimatedValueReportUtil extends FunctionReference {
 		click(xpath(PVObjectReferenceSmoketest.btnLogIn));
 		
 		type(xpath(PVObjectReferenceSmoketest.slasBoxSC), input[property]);
-		driver.findElement(xpath(PVObjectReferenceSmoketest.slasBoxSC)).sendKeys(Keys.RETURN);
+		clickselectSuggestion(0,0,0,0,false);
 		
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.addToCart));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.addToCart)));
@@ -91,6 +91,27 @@ public class EstimatedValueReportUtil extends FunctionReference {
 		}
 		
 		return passed;
+	}
+	
+	public boolean clickselectSuggestion(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.selectSuggestion));
+			click(xpath(PVObjectReferenceSmoketest.selectSuggestion));
+			click = true;
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
 	}
 } 
 
