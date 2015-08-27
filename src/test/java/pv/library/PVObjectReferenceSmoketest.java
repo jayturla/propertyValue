@@ -460,4 +460,11 @@ public class PVObjectReferenceSmoketest {
 	public static String currentLoan = "//*[@id='currentLoan']";
 	public static String btnSave = "//*[@id='calculateModal']/div/div/div[2]/div/div[2]/a";
 	public static String checkBox4 = "//*[@id='equity-select']";
+	
+	//Suburb Insights
+	public static String stockMarket = "(//a[contains(.,'for sale')])[1]";
+	public static String selectedPropertyType = "//*[@class='trigger'][contains(.,'House')]";
+	public static String countResult = "//*[@class='result-list']";
+	
+	
 }
