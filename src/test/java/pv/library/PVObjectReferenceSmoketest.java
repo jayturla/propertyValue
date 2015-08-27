@@ -466,5 +466,13 @@ public class PVObjectReferenceSmoketest {
 	public static String selectedPropertyType = "//*[@class='trigger'][contains(.,'House')]";
 	public static String countResult = "//*[@class='result-list']";
 	
+	//RT My Account
+	public static String editProfile = "//*[@class='col-md-8']/a[contains(.,'Edit Profile')]";
+	public static String editProfilePage = "//*[@id='freemiumEditProfileForm']/div/div/h1";
+	public static String changePassword = "//*[@class='user-left']/a[contains(.,'Change Password')]";
+	public static String changePasswordPage = "//*[@class='form']/h1";
+	public static String changeEmailOptions = "//*[@class='user-left']/a[contains(.,'Change Email Options')]";
+	public static String changeEmailOptionsPage = "//*[@id='editEmailNotifications']/h4";
+	
 	
 }
