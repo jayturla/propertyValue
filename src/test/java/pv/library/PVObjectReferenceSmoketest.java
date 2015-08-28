@@ -474,5 +474,14 @@ public class PVObjectReferenceSmoketest {
 	public static String changeEmailOptions = "//*[@class='user-left']/a[contains(.,'Change Email Options')]";
 	public static String changeEmailOptionsPage = "//*[@id='editEmailNotifications']/h4";
 	
+	//User Search
+	public static String userSearch = "//*[@id='userSearch']";
+	public static String customerDetails = "//*[@class='input-group']/h2";
+	public static String accessLevel = "//*[@class='nav ']/a[contains(.,'Access Level')]";
+	public static String updateSave = "//*[@id='btnSubmit']";
+	public static String updateSuccess = "//*[@class='modal-title']";
+	public static String modalOK = "//*[@class='modal-button-wrap']/input";
+	public static String loginAsUser = "//*[@id='switchUser']";
+			
 	
 }
