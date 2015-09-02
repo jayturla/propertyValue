@@ -474,6 +474,13 @@ public class PVObjectReferenceSmoketest {
 	public static String changeEmailOptions = "//*[@class='user-left']/a[contains(.,'Change Email Options')]";
 	public static String changeEmailOptionsPage = "//*[@id='editEmailNotifications']/h4";
 	
+	//RT Explore
+	public static String viewPropertiesForSale = "(//a[contains(.,'Properties for sale')])[1]";
+	public static String clickSortOrder = "//*[@id='explore_metric_div']/a";
+	public static String selectSortOrder = "//*[@id='explore_metric_div']/div/ul/li[2]/a";
+	public static String verifySortOrder = "//*[@class='desc']";
+	public static String selectSortOrder2 = "//*[@id='explore_metric_div']/div/ul/li[3]/a";
+	
 	//User Search
 	public static String userSearch = "//*[@id='userSearch']";
 	public static String customerDetails = "//*[@class='input-group']/h2";
