@@ -490,5 +490,11 @@ public class PVObjectReferenceSmoketest {
 	public static String modalOK = "//*[@class='modal-button-wrap']/input";
 	public static String loginAsUser = "//*[@id='switchUser']";
 			
-	
+	//RT CMS
+	public static String clickInfographic = "(//*[@class='col-xs-12 col-sm-2 col-md-2 col-lg-2 hidden-xs'])/ul/li/a[contains(.,'Infographic')]";
+	public static String clickAboutUs = "(//*[@class='col-xs-12 col-sm-2 col-md-2 col-lg-2 hidden-xs'])/ul/li/a[contains(.,'About Us')]";
+	public static String clickContactUs = "(//*[@class='col-xs-12 col-sm-2 col-md-2 col-lg-2 hidden-xs'])/ul/li/a[contains(.,'Contact Us')]";
+	public static String clickFeatures = "(//*[@class='col-xs-12 col-sm-2 col-md-2 col-lg-2 hidden-xs'])/ul/li/a[contains(.,'Features')]";
+	public static String clickPremiumCMS = "(//*[@class='col-xs-12 col-sm-3 col-md-3 col-lg-2 col-md-offset-1 hidden-xs'])/ul/li/a[contains(.,'Premium')]";
+	public static String clickHelpFaq = "(//*[@class='col-xs-12 col-sm-2 col-md-2 col-lg-2 hidden-xs'])/ul/li/a[contains(.,'Help / FAQ')]";
 }
