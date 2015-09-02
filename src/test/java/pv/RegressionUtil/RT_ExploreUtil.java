@@ -2,13 +2,6 @@ package pv.RegressionUtil;
 
 import static org.openqa.selenium.By.xpath;
 
-import javax.lang.model.element.ElementVisitor;
-
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-
 import pv.atu_utilities.copy.ATUUtil;
 import pv.library.FunctionReference;
 import pv.library.PVObjectReferenceSmoketest;
