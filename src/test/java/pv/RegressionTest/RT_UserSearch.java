@@ -38,6 +38,13 @@ public class RT_UserSearch extends TestInitReference {
 			pvRegression.accessLevel(8, 1, 9, 10, 4, true);
 			//check if login as user is functional
 			pvRegression.loginAsUser(11, 1, 12, 13, 4, true);
+			//check if purchased reports can be viewed and download.
+			pvRegression.viewReports(14, 1, 15, 16, 4, true);
+			//check if Searched user subscription details
+			pvRegression.viewSubscriptions(17, 1, 18, 19, 4, true);
+			//check if general site content can be updated
+			pvRegression.siteContentConfig(20, 1, 21, 22, 4, 23, true);
+			
 		} catch (Exception e) {
 		}
 	}

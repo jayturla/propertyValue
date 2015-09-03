@@ -489,6 +489,14 @@ public class PVObjectReferenceSmoketest {
 	public static String updateSuccess = "//*[@class='modal-title']";
 	public static String modalOK = "//*[@class='modal-button-wrap']/input";
 	public static String loginAsUser = "//*[@id='switchUser']";
+	public static String btnReportsRT = "//*[@class='nav ']/a[contains(.,'Reports')]";
+	public static String verifyReport = "//*[@class='oddnohover']";
+	public static String btnSubscriptions = "//*[@class='nav ']/a[contains(.,'Subscription')]";
+	public static String verifySubscriptions = "//*[@class='modal-box']";
+	public static String btnExtend = "//*[@class='btn-line orange-btn-line manageSubscription']";
+	public static String btnSaveRT = "//*[@class='btn-line orange-btn-line']";
+	public static String btnSaveConfig = "//*[@class='btn lead-btn']";
+	public static String successConfig = "//*[@class='alert alert-success']";
 			
 	//RT CMS
 	public static String clickInfographic = "(//*[@class='col-xs-12 col-sm-2 col-md-2 col-lg-2 hidden-xs'])/ul/li/a[contains(.,'Infographic')]";
