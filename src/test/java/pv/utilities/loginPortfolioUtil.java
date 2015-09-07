@@ -160,6 +160,78 @@ public class loginPortfolioUtil extends FunctionReference {
 		
 		return click;
 	}
+	
+	public boolean AddPorpertytoPortfolio(int steps, int inputVal, int expected, int actual, int address, boolean withATU) throws Exception {
+		boolean add = false;
+		
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.portfolioSLAS));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.portfolioSLAS)));
+			if(isElementVisible(xpath(PVObjectReferenceSmoketest.portfolioSLAS)) == true)
+			{
+				type(xpath(PVObjectReferenceSmoketest.portfolioSLAS), input[address]);
+				clickselectSuggestion(0,0,0,0,false);
+		
+				waitForElementPresent(xpath(PVObjectReferenceSmoketest.modalPropertyItem));
+				Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.modalPropertyItem)));
+				if(isElementVisible(xpath(PVObjectReferenceSmoketest.modalPropertyItem)) == true)
+				{
+					waitForElementPresent(xpath(PVObjectReferenceSmoketest.addPortfolioButton));
+					Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.addPortfolioButton)));
+					if(isElementVisible(xpath(PVObjectReferenceSmoketest.addPortfolioButton)) == true)
+					{
+						click(xpath(PVObjectReferenceSmoketest.addPortfolioButton));
+						//Thread.sleep(1000);
+						waitForElementPresent(xpath(PVObjectReferenceSmoketest.dataCrunchHeader));
+						Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.dataCrunchHeader)));
+						if(isElementVisible(xpath(PVObjectReferenceSmoketest.dataCrunchHeader)) == true)
+						{
+							add = true;
+						}	
+					}
+				}
+			}
+		if(withATU) {
+			if(add){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		if(add){
+			pass("User was able to Add Property to Portfolio Screen and data crunching modal appeared");
+		}else {
+			fail("User was not able to Add Property to Portfolio Screen and data crunching modal appeared");
+		}		
+		return add;
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public boolean clickselectSuggestion(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
+		boolean click = false;
+		
+		try{
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.selectSuggestion));
+			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.selectSuggestion)));
+			if(isElementVisible(xpath(PVObjectReferenceSmoketest.selectSuggestion))==true)
+			{
+				click(xpath(PVObjectReferenceSmoketest.selectSuggestion));
+				click = true;
+			}
+			
+		}catch(Exception e){
+		}
+		
+		if(withATU) {
+			if(click){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+			}
+		}
+		
+		return click;
+	}
 }
 
 

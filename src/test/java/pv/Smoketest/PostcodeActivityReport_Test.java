@@ -35,7 +35,7 @@ public class PostcodeActivityReport_Test extends TestInitReference {
 
 		try {
 			//check for $ Buy Postcode report
-			pvSmoke.checkBuyPostcodeReport(1,2,3,4,5,6,30,true);
+			pvSmoke.checkBuyPostcodeReport(1,2,3,4,5,6,30,31,true);
 			//click $ Buy Postcode report button to navigate to Postcode Activity Report screen
 			pvSmoke.clickBuyPostcodeReport(7,2,8,9,true);
 			//click Get This Report Button to navigate Payment Summary Screen

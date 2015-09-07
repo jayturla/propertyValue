@@ -36,6 +36,7 @@ public class loginPortfolio_Test extends TestInitReference {
 			pvSmoke.navigatePortfolioScreen(0, 1, 2, 3, 4, 5, true);
 			//check if add property modal is promted and portfolio SLAS is available
 			pvSmoke.btnAddPropertyPortfolio(6, 1, 7, 8, true);
+			pvSmoke.AddPorpertytoPortfolio(9,1,10,11,12, true);
 		} catch (Exception e) {
 		}
 	}

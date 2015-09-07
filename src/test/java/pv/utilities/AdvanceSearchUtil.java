@@ -24,14 +24,12 @@ public class AdvanceSearchUtil extends FunctionReference {
 	public boolean clickAdvanceSearch(int steps, int inputVal, int expected, int actualPass, int actualFail, boolean withATU)  throws Exception{
 		boolean available = false;
 		
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.advanceSearch));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.advanceSearch)));
 		String text = getText(xpath(PVObjectReferenceSmoketest.advanceSearch));
 		if (text.contains("Advanced Search")) {
 			available = true;
-			
 			clickbtnadvanceSearch(0,0,0,0,false);
-			
-			
 		}
 		
 		if(withATU) {
@@ -42,9 +40,9 @@ public class AdvanceSearchUtil extends FunctionReference {
 			}
 		}
 		if(available){
-			pass("Advance search is available in the homepage");
+			pass("Advance Search button is functional");
 		}else {
-			fail("Advance search is Not available in the homepage");
+			fail("Advance Search button is functional");
 		}
 	
 		return available;
@@ -53,18 +51,18 @@ public class AdvanceSearchUtil extends FunctionReference {
 	public boolean enterUnit(int steps,int inputVal, int expected, int actualPass, int actualFail, int unit,boolean withATU) throws Exception{
 		boolean available = false;
 		
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.advanceSearchPage));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.advanceSearchPage)));
-		String text = getText(xpath(PVObjectReferenceSmoketest.advanceSearchPage));
-		if (text.contains("Unit No.")) {
-			available = true;
-			
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.advanceSearchPage)) == true)
+		{
 			waitForElementPresent(xpath(PVObjectReferenceSmoketest.unitAdvanceSearch));
 			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.unitAdvanceSearch)));
-			type(xpath(PVObjectReferenceSmoketest.unitAdvanceSearch), input[unit]);
-		
-	}
-	
-	
+			if(isElementVisible(xpath(PVObjectReferenceSmoketest.unitAdvanceSearch)) ==true)
+			{
+				type(xpath(PVObjectReferenceSmoketest.unitAdvanceSearch), input[unit]);
+				available = true;
+			}
+		}
 		if(withATU) {
 			if(available){
 				atu.performATU(input[steps],input[inputVal],input[expected],input[actualPass],true,true);//pass
@@ -73,9 +71,9 @@ public class AdvanceSearchUtil extends FunctionReference {
 			}
 		}
 		if(available){
-			pass("User was able to enter unit in Advance Search");
+			pass("User was able to enter unit number in Advance Search");
 		}else {
-			fail("User was not able to enter unit in Advance Search");
+			fail("User was not able to enter unit number in Advance Search");
 		}
 		return available;
 	
@@ -84,18 +82,14 @@ public class AdvanceSearchUtil extends FunctionReference {
 	public boolean enterStreetName(int steps,int inputVal, int expected, int actualPass, int actualFail, int street,boolean withATU) throws Exception{
 		boolean available = false;
 		
-		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.advanceSearchPage)));
-		String text = getText(xpath(PVObjectReferenceSmoketest.advanceSearchPage));
-		if (text.contains("Street Name")) {
-			available = true;
-			
 			waitForElementPresent(xpath(PVObjectReferenceSmoketest.streetAdvanceSearch));
 			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.streetAdvanceSearch)));
-			type(xpath(PVObjectReferenceSmoketest.streetAdvanceSearch), input[street]);
-			
+			if(isElementVisible(xpath(PVObjectReferenceSmoketest.streetAdvanceSearch)) == true)
+			{
+				type(xpath(PVObjectReferenceSmoketest.streetAdvanceSearch), input[street]);
+				available = true;
+			}
 			Thread.sleep(3000);
-		}
-	
 		if(withATU) {
 			if(available){
 				atu.performATU(input[steps],input[inputVal],input[expected],input[actualPass],true,true);//pass
@@ -112,21 +106,26 @@ public class AdvanceSearchUtil extends FunctionReference {
 	
 	}
 
-	public boolean searchInAdvanceSearch(int steps,int inputVal, int expected, int actualPass, int actualFail, int unit, int street,boolean withATU) throws Exception{
+	public boolean searchInAdvanceSearch(int steps,int inputVal, int expected, int actualPass, int actualFail, int unit, int street, boolean withATU) throws Exception{
 		boolean available = false;
 		
 			enterUnit(0, 0, 0, 0, 0, unit, false);
 			enterStreetName(0, 0, 0, 0, 0, street, false);
-		
-			Thread.sleep(3000);
 			
-			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.advanceSearchPage)));
-			String text = getText(xpath(PVObjectReferenceSmoketest.advanceSearchPage));
-			if (text.contains("5 matches found.")) {
-				available = true;
-			
-		}
-		
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.advSearchSuggest));
+			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.advSearchSuggest)));
+			if(isElementVisible(xpath(PVObjectReferenceSmoketest.advSearchSuggest)) == true)
+			{
+				click(xpath(PVObjectReferenceSmoketest.advSearchSuggest));
+				
+				//advance search result
+				waitForElementPresent(xpath(PVObjectReferenceSmoketest.advSearchResults));
+				Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.advSearchResults)));
+				if(isElementVisible(xpath(PVObjectReferenceSmoketest.advSearchResults)) == true)
+				{
+					available =true;
+				}
+			}
 		if(withATU) {
 			if(available){
 				atu.performATU(input[steps],input[inputVal],input[expected],input[actualPass],true,true);//pass
@@ -147,8 +146,13 @@ public class AdvanceSearchUtil extends FunctionReference {
 		
 		try{
 			waitForElementPresent(xpath(PVObjectReferenceSmoketest.advanceSearch));
-			click(xpath(PVObjectReferenceSmoketest.advanceSearch));
-			click = true;
+			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.advanceSearch)));
+			if(isElementVisible(xpath(PVObjectReferenceSmoketest.advanceSearch)) == true)
+			{
+				click(xpath(PVObjectReferenceSmoketest.advanceSearch));
+				click = true;
+			}
+			
 		}catch(Exception e){
 		}
 		
@@ -158,6 +162,11 @@ public class AdvanceSearchUtil extends FunctionReference {
 			}else {
 				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
 			}
+		}
+		if(click){
+			pass("Advance search is available in the homepage");
+		}else {
+			fail("Advance search is available in the homepage");
 		}
 		
 		return click;

@@ -23,9 +23,12 @@ public class PostcodeDetailsUtil extends FunctionReference {
 	//Checking SLAS Box if available in the page
 	public boolean checkSLAS(int steps, int inputVal, int expected, int actual,boolean withATU) throws Exception {
 		boolean available = false;
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.slasBox));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.slasBox)));
-		available = isElementVisible(xpath(PVObjectReferenceSmoketest.slasBox));
-		
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.slasBox)) == true)
+		{
+			available =true;
+		}
 		if(withATU) {
 			if(available){
 				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
@@ -55,7 +58,6 @@ public class PostcodeDetailsUtil extends FunctionReference {
 		
 		if (text.contains("Suburbs in Postcode")) {
 			details = true;
-			
 		}
 		
 		if(withATU) {
@@ -79,8 +81,13 @@ public class PostcodeDetailsUtil extends FunctionReference {
 		boolean available = false;
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.suburbLinks));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.suburbLinks)));
-		available = isElementVisible(xpath(PVObjectReferenceSmoketest.suburbLinks));
-		
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.suburbMaps));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.suburbMaps)));
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.suburbLinks)) == true && 
+				isElementVisible(xpath(PVObjectReferenceSmoketest.suburbMaps)) == true)
+		{
+			available = true;
+		}
 		if(withATU) {
 			if(available){
 				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
@@ -101,11 +108,19 @@ public class PostcodeDetailsUtil extends FunctionReference {
 	public boolean navigateSuburbs(int steps, int inputVal, int expected, int actual,boolean withATU) throws Exception {
 		boolean available = false;
 		
-		waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickSuburb));
+		//waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickSuburb));
+		//Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.clickSuburb)));
 		clickSuburb(0,0,0,0,false);
-		waitForElementPresent(xpath(PVObjectReferenceSmoketest.suburbMaps));
-		available = isElementPresent(xpath(PVObjectReferenceSmoketest.suburbMaps));
 		
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.mapFilters));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.mapFilters)));
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.mapContainer));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.mapContainer)));
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.mapFilters)) == true && 
+				isElementVisible(xpath(PVObjectReferenceSmoketest.mapContainer)) == true)
+		{
+			available = true;
+		}
 		if(withATU) {
 			if(available){
 				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
@@ -127,8 +142,13 @@ public class PostcodeDetailsUtil extends FunctionReference {
 		
 		try{
 			waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickSuburb));
-			click(xpath(PVObjectReferenceSmoketest.clickSuburb));
-			click = true;
+			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.clickSuburb)));
+			if(isElementVisible(xpath(PVObjectReferenceSmoketest.clickSuburb)) == true)
+			{
+				click(xpath(PVObjectReferenceSmoketest.clickSuburb));
+				click = true;
+			}
+			
 		}catch(Exception e){
 		}
 		
@@ -139,7 +159,11 @@ public class PostcodeDetailsUtil extends FunctionReference {
 				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
 			}
 		}
-		
+		if(click){
+			pass("Suburb Links are clickable");
+		}else {
+			fail("Suburb Links are NOT clickable");
+		}
 		return click;
 	}
 	
@@ -148,8 +172,12 @@ public class PostcodeDetailsUtil extends FunctionReference {
 		
 		try{
 			waitForElementPresent(xpath(PVObjectReferenceSmoketest.selectSuggestion));
-			click(xpath(PVObjectReferenceSmoketest.selectSuggestion));
-			click = true;
+			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.selectSuggestion)));
+			if(isElementPresent(xpath(PVObjectReferenceSmoketest.selectSuggestion)) == true)
+			{
+				click(xpath(PVObjectReferenceSmoketest.selectSuggestion));
+				click = true;
+			}
 		}catch(Exception e){
 		}
 		

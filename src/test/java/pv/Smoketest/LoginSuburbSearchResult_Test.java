@@ -38,7 +38,8 @@ public class LoginSuburbSearchResult_Test extends TestInitReference {
 			//check if neighbouring suburb pins are plotted
 			pvSmoke.suburbPins(7, 1, 8, 9, true);
 			//check if properties in the suburb are plotted in the map
-			pvSmoke.suburbProperties(10, 1, 11, 12, true);
+			//pvSmoke.suburbProperties(10, 1, 11, 12, true);
+			pvSmoke.suburbPropertyList(10, 1, 11, 12, true);
 			
 		} catch (Exception e) {
 		}

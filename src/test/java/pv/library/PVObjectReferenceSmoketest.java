@@ -4,7 +4,14 @@ public class PVObjectReferenceSmoketest {
 	
 	//HealthCheck
 	public static String checkResult = "//*[@id='checkResult']";
-	
+	//Add to watchlist XPATH
+	public static String actionBar = "//*[@class='action-bar']";
+	public static String propertyWatchlistHeader = "//*[@id='watchlist-nproperties']";
+	public static String propertyWatchlistTable = "//*[@id='watchlist-properties-div']";
+	public static String streetWatchlistHeader = "//*[@id='street-results-title']";
+	public static String streetWatchlistTable = "//*[@id='watchlist-streets-div']";
+	public static String suburbWatchlistHeader = "//*[@id='suburb-results-title']";
+	public static String suburbWatchlistTable ="//*[@id='wl-suburb-section']";
 	//HeaderZones
 	public static String verifyLogin = "//*[@class='login']";
 	public static String clickLogin = "//*[@class='logged-out'][1]";
@@ -44,20 +51,32 @@ public class PVObjectReferenceSmoketest {
 	public static String removeWatchlist = "//*[@id='watched-pty-206']/td[4]/div/ul/li[4]/a";
 	public static String removeStreet = "//*[@id='watched-street-house-207']/td[5]/div/ul/li[3]/a";
 	public static String removeSuburb = "//*[@id='watched-suburb-house-208']/td[6]/div/ul/li[4]/a";
-
+	public static String advSearchSuggest = "//*[@class='popover-content']";
+	public static String advSearchResults = "//*[@class='adv-results']";
+		
 	//HeaderZone jeck
 	public static String clickExplore = "//a[contains(.,'Explore')]";
-	public static String explorePage = "//*[@id='explore_form']/div/div/p[1]";
+	public static String explorePage = "//p[contains(.,'Explore every State in Australia by ordering suburbs based on your buying criteria.')]";
 	public static String stateRegionFilter = "//*[@id='explore_form']/div/div/div[1]";
 	public static String functionState = "//*[@id='explore_state_select']/a";
 	public static String functionRegion = "//*[@id='explore_region_select']/a";
-	public static String selectState = "//*[@id='explore_state_select']/div/ul/li[2]/a";
-	public static String selectRegion ="//*[@id='explore_region_select']/div/ul";
-	public static String metricSorting ="//*[@id='explore_metric_div']";
-	public static String selectTopSuburb = "//*[@id='explore_form']/div/div/div[4]/table/tbody/tr[1]/td[1]/a";
-	public static String checkProfilePage = "//*[@class='col-xs-12 col-sm-8 col-md-8 col-lg-8']";
 	public static String clickPortfolio = "//a[contains(.,'Portfolio')]";
 	public static String getPremium = "//a[contains(.,'Get Premium')]";
+	
+	public static String explorePaeHeader = "//h1[contains(.,'Find the suburbs that are right for you')]";
+	//Explore page XPATH 
+	
+	public static String toggleButton ="//*[@class='houses-units']";
+	public static String stateFilter = "//*[@id='explore_state_select']/a";
+	public static String regionFilter = "//*[@id='explore_region_select']/a";
+	public static String selectState = "//*[@id='explore_state_select']/div/ul/li[2]";
+	public static String selectRegion ="//*[@id='explore_region_select']/div/ul/li[2]/a";
+	public static String marketActPane = "//*[@id='explore_activity_pane']";
+	public static String metricSorting ="//*[@id='explore_metric_div']/a";
+	public static String selectTopSuburb = "//*[@class='results-table']";
+	public static String suburbList = "//*[@title='Forrest, ACT 2603']";
+	public static String checkProfilePage = "//*[@class='property-summary']";
+	public static String suburbPage = "//*[@id='paddress']";
 		
 	//Homepage
 	public static String headerNav = "//*[@class='main']";
@@ -105,12 +124,23 @@ public class PVObjectReferenceSmoketest {
 	public static String submitSignup = "//*[@id='freemiumRegisForm']/div/div/div/div[1]/div[1]/button";
 	public static String signupSuccess = "//*[@id='signupSuccess']";
 	
+	public static String mapFilters = "//*[@id='filters-pane']";
+	public static String mapContainer = "//*[@class='map-container']";
+	
 	
 	//login suburb search
 	public static String suburbPins = "//*[@id='googleMap']/div/div[1]/div[3]/div[3]/div[19]";
 	public static String propertyPins = "//*[@id='googleMap']/div/div[1]/div[3]/div[3]/div[5]";
 	public static String propertyData = "//*[@id='property-result-list']/div[1]";
 	public static String selectSuggestion = "(//*[@class='jquery-autocomplete-selected-item acSelect'])";
+	public static String suburbSearchPin = "//*[@class='map-pin-suburb-fill']";
+	public static String unitPropertyPin = "//*[@class='marker_3988092 marker_3988003 map-pin pin-sale-fill']";
+	public static String housePropertyPin = "//*[@class='marker_3971028 map-pin pin-sale-fill']";
+	public static String neighbourhoodFairlight = "//*[@style='position: absolute; overflow: hidden; opacity: 0.01; margin-left: -43px; margin-top: -20px; left: 425px; top: 273px; z-index: 1000002; display: block; cursor: pointer;']";
+	public static String neighbourhoodManlyVale = "//*[@style='position: absolute; overflow: hidden; opacity: 0.01; margin-left: -43px; margin-top: -20px; left: 240px; top: -32px; z-index: 1000002; display: block; cursor: pointer;']";
+	public static String neightbourhoodSuburb = "//*[@class='map-pin-suburb-fill white-space-nowrap']";
+	public static String viewSuburbButton = "//*[@class='default-btn blue-btn hidden-xs hidden-sm']";
+	public static String mapPropertyList = "//*[@class='prop-results']";
 	
 	//Signup with FB
 	public static String clickSignupFB = "//*[@id='freemiumRegisForm']/div/div/div/div[1]/div[1]/div[5]/div/div[1]/a";
@@ -121,6 +151,7 @@ public class PVObjectReferenceSmoketest {
 	public static String ProfileReportPage = "//*[@class='report']";	
 	public static String btnGetThisReport = "//a[contains(.,'Get this report for ')]";
 	public static String btnGetThisReportProperty = "//a[contains(.,'Get this Report for ')]";
+	public static String ProfileReportPageHeader = "//h1[contains(.,'Property Profile Report')]";	
 	
 	//Suburb Profile
 	public static String checkAddress = "//*[@id='paddress']";
@@ -133,6 +164,17 @@ public class PVObjectReferenceSmoketest {
 	public static String suburbTrends = "//*/div[4]/div/div[2]/div[16]/div";
 	public static String localExperts = "//*/div[4]/div/div[2]/div[17]/table/tbody/tr[2]/td/div/div";
 	
+	//LEFT margin XPATH
+	public static String about="//*[@id='freemium-floating-menu-about']";
+	public static String comparable = "//*[@id='freemium-floating-menu-comparables']";
+	public static String insights = "//a[contains(.,'Insights')]";
+	public static String propertyprices = "//*[@id='freemium-floating-menu-property-prices']";
+	public static String AuctionResults = "//*[@id='freemium-floating-menu-auction-results']";
+	public static String neighbourhood = "//*[@id='freemium-floating-menu-neighbourhood']";
+	public static String markettrends = "//*[@id='freemium-floating-menu-market-trends']";
+	public static String localexperts = "//*[@id='freemium-floating-menu-local-experts']";
+	public static String otherStreet = "//*[@id='freemium-floating-menu-streets']";
+	public static String streetSection = "//*[@id='freemium-floating-menu-other-streets']";
 	
 	//Payment Summary 
 	public static String PaymentSummaryScreen = "//*[@id='payment_panel']/h2";
@@ -145,6 +187,19 @@ public class PVObjectReferenceSmoketest {
 	public static String btnContinue = "//*[@id='continue_btn']";
 	public static String applyCode = "//*[@id='promocode_panel']/div/div[2]/button";
 	public static String circleLogo = "//*[@class='circle-logo']//a";
+	public static String propertyPricesSection = "//*[@class='comparable-properties-section']";
+	public static String suburbSaleProperty = "//*[@class='title forsale']";
+	public static String suburbSoldProperty = "//*[@class='title sold']";
+	public static String suburbRentProperty = "//*[@class='title rent']";
+	public static String suburbInfoHeader ="//h2[contains(.,'Suburb Information')]";
+	public static String suburbINfoSection ="//*[@class='neighbourhood-info  suburbInfo_d']";
+	public static String trendsHeader = "//h2[contains(.,'Market Trends for ')]";
+	public static String trendsMetric = "//*[@id='market-trends-metric-box-values']";
+	public static String trendsGraph = "//*[@class='graph-big']";
+	public static String localExpertsSection = "//h2[contains(.,'Local Experts')]";
+	public static String otherStreetsHeader = "//h2[contains(.,'Streets in Manly')]";
+	public static String otherStreetsSection = "//*[@id='streets-insights-main-container']";
+	
 		
 	//Payment Checkout
 	public static String PaymentCheckout = "//*[@id='PxPayAuthMain']/div/h2";
@@ -169,6 +224,10 @@ public class PVObjectReferenceSmoketest {
 	public static String suburbLinks = "//*[@class='rowlist']";
 	public static String clickSuburb = "//*/div[2]/div/div[2]/div[3]/div/div[1]/div[1]/b/a";
 	public static String suburbMaps = "//*[@id='googleMap']/div/div[1]/div[2]";
+	public static String reportAddress="//*[@id='reportAddress']";
+	public static String price = "//*[@class='original-price']";
+	public static String paymentSuccessHeader = "//h2[contains(.,'Your payment has been successful!')]";
+	public static String getPostcodeReport = "//a[contains(.,'Get this report for $59.95')]";
 		
 	//SEARCH
 	//SuburbSearchResult
@@ -185,28 +244,43 @@ public class PVObjectReferenceSmoketest {
 	public static String rememberCard = "//*[@id='rememberCard']";
 	public static String waitCreditCardPayment = "//*[@id='TxnAuthCreditCard']";
 	public static String backtoHomepage = "//*[@class='home-link-success']";
+	public static String postcodeActivityReportHeader = "//h1[contains(.,'Postcode Activity Report')]";
+	public static String postcodeReportSection = "//*[@class='premium-features']";
 	
 	//PropertyDetails
 	public static String propertyDetailsHeader = "//*[@class='ie']";
 	public static String checkPropertyInsights = "//*[@id='property-insights']";
 	public static String propertyInsightsData = "//h4[contains(.,'-')]";
 	public static String propertyGallery = "//*[@id='property-insights']/div[2]/div[1]/div[1]";
-	public static String aboutProperty = "//*[@id='property-insights']/div[3]";
-	public static String comparableProperties = "//*[@class='comparable-properties-section']";
 	public static String auctionResults = "//*[@class='spacer toh2 sectionAnchor']";
-	public static String suburbInfo = "//*[@class='neighbourhood-info hidden-xs suburbInfo_d']";
-	public static String suburbStats = "//*[@class='graph']";
 	public static String marketTrends = "//*[@id='upgrade-premium-btn']/div/a";
+	public static String aboutPropertyHeader = "//h2[contains(.,'About this Property')]";
+	public static String aboutProperty = "//*[@class='property-table']";
+	public static String comparableSection ="//*[@class='comparable-properties-section']";
+	public static String comparableProperties = "//*[@id='comparable_main_wrap']";
+	public static String marketTrendsHeader = "//*[@class='row sectionAnchor']";
+	public static String marketTrendsMetric = "//*[@id='market-trends-metric-box-values']";
+	public static String marketTrendsGraph = "//*[@class='graph-big']";
+	
+	public static String suburbinfoHeader = "//h2[contains(.,'Neighbourhood')]";
+	public static String suburbInfo = "//*[@class='neighbourhood-info hidden-xs suburbInfo_d']";
+	public static String suburbStats = "//*[@class='DivWidget neighbourhood-graph']";
 	
 	//Portfolio Summary
 	public static String portfolioSnapshot = "//*[@id='portfolio-watchlist-div']/div/table/tbody/tr/td/div/div[1]";
 	public static String portfolioValues = "//*[@id='portfolio-watchlist-div']/div/table/tbody/tr/td/div/div[1]/div[1]";
 	public static String calculateEquity = "//*[@id='equity-not-select']/a";
 	public static String calculateModal = "//*[@id='calculateModal']/div/div/div[2]";
-	public static String clickAddPropertyPortfolio = "//*[@id='portfolioListSection']/h4/a";
-	public static String addPropertyModal = "//*[@id='addPropertyModal']/div/div/div[2]";
 	public static String addPortfolio = "//*[@id='addPropertyModal']/div/div/div[2]/div[1]/h3";
-	public static String portfolioSLAS = "//*[@id='search-portfolio']";
+	public static String clickAddPropertyPortfolio = "//a[contains(.,' Add Property')]";//"//*[@id='portfolioListSection']/h4/a";
+	public static String addPropertyModal = "//*[@id='addPropertyModal']/div/div";//"//*[@id='addPropertyModal']/div/div/div[2]";
+	public static String addPropertyModalHeader = "//h3[contains(.,'Add a property to your porftolio')]";
+	public static String addPortfolioButton = "//*[@class='portfolioGroupbutton']/a";//"//*[@class='portfolioGroupbutton']";
+	public static String modalPropertyItem = "//*[@class='autocomplete-result-item']";
+	public static String dataCrunchModal = "//*[@id='dataCruchModal']/div/div[1]/div[2]";
+	public static String dataCrunchHeader = "//h3[contains(.,'Data crunching in progress ...')]";
+	public static String portfolioSLAS ="//*[@id='search-portfolio']";
+	public static String portfolioSection = "//*[@class='portfolio-section']";
 	
 	//StreetDetails
 	public static String togglePropertyType = "//*[@id='propertyTypeToggle_units']";
@@ -217,7 +291,15 @@ public class PVObjectReferenceSmoketest {
 	public static String streetSuburbInfo = "//*[@class='spacer sectionAnchor']";
 	public static String streetSuburbStat = "//*[@class='col-sm-12 col-md-12 hidden-xs nhGraph']";
 	public static String otherStreets = "//*[@id='streets-insights-main-container']";	
+	public static String unitLabel = "//span[contains(.,' Units in last 12 months')]";
+	public static String streetSuburbInfoHeader = "//h2[contains(.,'Suburb Information')]";
 	
+	//StreetDetails
+	public static String streetPageHeader = "//*[@class='ie']";
+	public static String streetAddress = "//*[@id='paddress']";
+		
+		
+		
 	//SUBSCRIBED USERS
 	//Subscription Details
 	public static String subscriptionType = "//*[@class='col-md-8']";
@@ -416,6 +498,14 @@ public class PVObjectReferenceSmoketest {
 	public static String frameExperts = "(//iframe)[5]";
 	public static String viewAll = "//*[@id='main-btn-link']";
 	public static String selectStreet = "//*[@id='streets-insights']/div[2]/div/div/div[1]/div/ul/li[1]/a";
+	public static String SuburbDetailsHeader = "//*[@class='ie']";
+	
+	//Suburb Profile
+		//Suburb Profile page
+	public static String checkSuburbAddress = "//*[@id='paddress']";
+	public static String checkStateAddress = "//*[@id='paddress2']";
+	
+	
 	
 	//Street Details Links
 	public static String clickBreadcrumbsStreet = "//*[@class='breadcrumbs']/li/div/a[contains(.,'Ballarat East 3350')]";

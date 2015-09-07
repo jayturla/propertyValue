@@ -35,7 +35,7 @@ public class MultipleSearchResult_Test extends TestInitReference {
 		try {
 			//Search parent unit -->> navigate to multiple search results
 			pvSmoke.multipleSearchResult(1,2,3,4,5,true);
-			pvSmoke.selectProperty(6,2,7,8,true);
+			pvSmoke.clickbtnselectProperty(6,2,7,8,true);
 		} catch (Exception e) {
 		}
 	}

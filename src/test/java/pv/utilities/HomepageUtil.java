@@ -22,6 +22,8 @@ public class HomepageUtil extends FunctionReference {
 	//Checking Header if available in the homepage
 	public boolean checkHeader(int steps, int inputVal, int expected, int actual,boolean withATU)  throws Exception {
 		boolean available = false;
+		
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.headerNav));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.headerNav)));
 		String text = getText(xpath(PVObjectReferenceSmoketest.headerNav));
 
@@ -37,9 +39,9 @@ public class HomepageUtil extends FunctionReference {
 			}
 		}
 		if(available){
-			pass("Header is available in the page.");
+			pass("Header is available in the Homepage.");
 		}else {
-			fail("Header is NOT AVAILABLE in the page.");
+			fail("Header is NOT AVAILABLE in the Homepage.");
 		}
 		return available;
 	}
@@ -47,8 +49,14 @@ public class HomepageUtil extends FunctionReference {
 	//Checking SLAS Box if available in the homepage
 	public boolean checkSLAS(int steps, int inputVal, int expected, int actual,boolean withATU) throws Exception {
 		boolean available = false;
+		
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.slasBox));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.slasBox)));
-		available = isElementVisible(xpath(PVObjectReferenceSmoketest.slasBox));
+		
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.slasBox)) == true)
+		{
+			available=true;
+		}
 		
 		if(withATU) {
 			if(available){
@@ -59,9 +67,9 @@ public class HomepageUtil extends FunctionReference {
 		}
 		
 		if(available){
-			pass("SLAS is available in the page.");
+			pass("SLAS field is available in the Homepage.");
 		}else {
-			fail("SLAS is NOT AVAILABLE in the page.");
+			fail("SLAS field is NOT AVAILABLE in the Homepage.");
 		}
 		return available;	
 	}
@@ -109,9 +117,9 @@ public class HomepageUtil extends FunctionReference {
 					}
 			}
 			if(available){
-				pass("Top Suburbs is available in the page.");
+				pass("Top Suburbs section is available in the Homepage.");
 			}else {
-				fail("Top Suburbs is NOT AVAILABLE in the page.");
+				fail("Top Suburbs section is NOT AVAILABLE in the Homepage.");
 			}
 			return available;
 	}
@@ -134,9 +142,9 @@ public class HomepageUtil extends FunctionReference {
 				}
 		}
 		if(available){
-			pass("Top Suburbs by Median Price Change (1 yr) is available in the page.");
+			pass("Top Suburbs by Median Price Change (1 yr) is available in the Homepage.");
 		}else {
-			fail("Top Suburbs by Median Price Change (1 yr) is NOT AVAILABLE in the page.");
+			fail("Top Suburbs by Median Price Change (1 yr) is NOT AVAILABLE in the Homepage.");
 		}
 		return available;
 	}
@@ -158,9 +166,9 @@ public class HomepageUtil extends FunctionReference {
 				}
 		}
 		if(available){
-			pass("Top Suburbs by Median Gross Yield is available in the page.");
+			pass("Top Suburbs by Median Gross Yield is available in the Homepage.");
 		}else {
-			fail("Top Suburbs by Median Gross Yield is NOT AVAILABLE in the page.");
+			fail("Top Suburbs by Median Gross Yield is NOT AVAILABLE in the Homepage.");
 		}
 		return available;
 	}
@@ -170,7 +178,10 @@ public class HomepageUtil extends FunctionReference {
 		boolean available = false;
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.footer));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.footer)));
-		available = isElementVisible(xpath(PVObjectReferenceSmoketest.footer));
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.footer)) == true)
+		{
+			available = true;
+		}
 		
 		if(withATU) {
 			if(available){

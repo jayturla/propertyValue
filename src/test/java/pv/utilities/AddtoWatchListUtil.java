@@ -18,23 +18,42 @@ public class AddtoWatchListUtil extends FunctionReference {
 	
 	public AddtoWatchListUtil(String[] i) {
 		input = i;
-	}
 	
+	
+	}
 	private HeaderZoneUtil head =  new HeaderZoneUtil(input);
+
+ public void searchAddress(int inputval) throws Exception{
+	 	waitForElementPresent(xpath(PVObjectReferenceSmoketest.slasBox));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.slasBox)));
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.slasBox)))
+		{
+			type(xpath(PVObjectReferenceSmoketest.slasBox), input[inputval]);
+		}
+ 	}
+ 
+ 
+ public void selectAddress() throws Exception{
+	waitForElementPresent(xpath(PVObjectReferenceSmoketest.selectPropety));
+	Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.selectPropety)));
+	if(isElementPresent(xpath(PVObjectReferenceSmoketest.selectPropety))==true)
+	{
+		click(xpath(PVObjectReferenceSmoketest.selectPropety));
+	}
+ 	}
 	  
  	public boolean selectProperty(int property ,int steps, int inputVal, int expected, int actualPass,int actualFail ,boolean withATU)  throws Exception{
 		boolean available = false;
 		
-		type(xpath(PVObjectReferenceSmoketest.slasBox), input[property]);
-		clickselectSuggestion(0,0,0,0,false);
+		searchAddress(property);
+		selectAddress();
 		
-		waitForElementPresent(xpath(PVObjectReferenceSmoketest.verifyPropertyInsights));
-		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.verifyPropertyInsights)));
-		String text = getText(xpath(PVObjectReferenceSmoketest.verifyPropertyInsights));
-		if (text.contains("Property Insights")) {
-			available = true;	
-		}
-		
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.actionBar));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.actionBar)));
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.actionBar)) == true)
+		{
+			available = true;
+		}	
 		if(withATU) {
 			if(available){
 				atu.performATU(input[steps],input[inputVal],input[expected],input[actualPass],true,true);//pass
@@ -47,25 +66,44 @@ public class AddtoWatchListUtil extends FunctionReference {
 		}else {
 			fail("User was not able to search and select property");
 		}
-
 		return available;
 	
  	}
 	
+	public void clickAddtoWatchList() throws Exception{
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickAddtoWatchList));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.clickAddtoWatchList)));
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.clickAddtoWatchList)) == true)
+		{
+			click(xpath(PVObjectReferenceSmoketest.clickAddtoWatchList));
+		}	
+	}
+ 
+	public void goToWatchList() throws Exception{
+		
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.goToWatclist));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.goToWatclist)));
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.goToWatclist)) == true)
+		{
+			click(xpath(PVObjectReferenceSmoketest.goToWatclist));
+		}
+	}
+	
 	public boolean verifyIfPropertyisAddedtoWatchList(int steps, int inputVal, int expected, int actualPass,int actualFail ,boolean withATU)  throws Exception{
 		boolean available = false;
-		
 		clickAddtoWatchList();
 		head.clickMenu();
 		goToWatchList();
 		
-		String text = getText(xpath(PVObjectReferenceSmoketest.checkWatchlist));
-		if (text.contains("79 Darley Road")) {
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.propertyWatchlistHeader));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.propertyWatchlistHeader)));
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.propertyWatchlistTable));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.propertyWatchlistTable)));
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.propertyWatchlistHeader)) == true && 
+				isElementPresent(xpath(PVObjectReferenceSmoketest.propertyWatchlistTable)) == true)
+		{
 			available = true;	
-			clickWatchlistDropDown(0, 0, 0, 0, false);
-			clickRemoveWatchlist(0, 0, 0, 0, false);
 		}
-		
 		if(withATU) {
 			if(available){
 				atu.performATU(input[steps],input[inputVal],input[expected],input[actualPass],true,true);//pass
@@ -74,32 +112,47 @@ public class AddtoWatchListUtil extends FunctionReference {
 			}
 		}
 		if(available){
-			pass("Property was added to WatchList");
+			pass("Property address has been added to Property WatchList Table");
 		}else {
-			fail("Property was not added to WatchList");
+			fail("Property was not added to Property WatchList Table");
 		}
 		
 
 		return available;
 	}
 		
+	/*public void clickLogo() throws Exception{
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickLogo));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.clickLogo)));
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.clickLogo)))
+		{
+			click(xpath(PVObjectReferenceSmoketest.clickLogo));
+		}
+	}*/
+	
+	public void clicViewSuburbProfile() throws Exception{
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.viewSuburbProfile));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.viewSuburbProfile)));
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.viewSuburbProfile)) == true)
+		{
+			click(xpath(PVObjectReferenceSmoketest.viewSuburbProfile));
+		}
+	}
 	
 	
-	
-	public boolean selectStreet(int street ,int steps, int inputVal, int expected, int actualPass,int actualFail , int url, boolean withATU)  throws Exception{
+	public boolean selectStreet(int street ,int steps, int inputVal, int expected, int actualPass,int actualFail ,boolean withATU)  throws Exception{
 		boolean available = false;
 		
-		driver.navigate().to(input[url]);
-		type(xpath(PVObjectReferenceSmoketest.slasBox), input[street]);
-		clickselectSuggestion(0,0,0,0,false);
+		//clickLogo();
+		searchAddress(street);
+		selectAddress();
 		
-		waitForElementPresent(xpath(PVObjectReferenceSmoketest.verifyStreetInsights));
-		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.verifyStreetInsights)));
-		String text = getText(xpath(PVObjectReferenceSmoketest.verifyStreetInsights));
-		if (text.contains("Street Insights")) {
-			available = true;	
-		}
-		
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.actionBar));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.actionBar)));
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.actionBar)) == true)
+		{
+			available = true;
+		}	
 		if(withATU) {
 			if(available){
 				atu.performATU(input[steps],input[inputVal],input[expected],input[actualPass],true,true);//pass
@@ -123,13 +176,16 @@ public class AddtoWatchListUtil extends FunctionReference {
 		head.clickMenu();
 		goToWatchList();
 		
-		String text = getText(xpath(PVObjectReferenceSmoketest.checkWatchlist));
-		if (text.contains("Maxwell Street")) {
-			available = true;	
-			clickWatchlistDropDown(0, 0, 0, 0, false);
-			clickRemoveStreet(0, 0, 0, 0, false);
-		}
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.streetWatchlistHeader));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.streetWatchlistHeader)));
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.streetWatchlistTable));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.streetWatchlistTable)));
 		
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.streetWatchlistHeader)) == true && 
+				isElementVisible(xpath(PVObjectReferenceSmoketest.streetWatchlistTable)) == true)
+		{
+			available = true;	
+		}
 		if(withATU) {
 			if(available){
 				atu.performATU(input[steps],input[inputVal],input[expected],input[actualPass],true,true);//pass
@@ -138,28 +194,27 @@ public class AddtoWatchListUtil extends FunctionReference {
 			}
 		}
 		if(available){
-			pass("Street was added to WatchList");
+			pass("Street Addess was added to Street WatchList Table");
 		}else {
-			fail("Street was not added to WatchList");
+			fail("Street Addess was NOT added to Street WatchList Table");
 		}
-		
-
 		return available;
 	}
 	
-	public boolean selectSuburb(int suburb ,int steps, int inputVal, int expected, int actualPass,int actualFail ,int url, boolean withATU)  throws Exception{
+	public boolean selectSuburb(int suburb ,int steps, int inputVal, int expected, int actualPass,int actualFail ,boolean withATU)  throws Exception{
 		boolean available = false;
 		
-		driver.navigate().to(input[url]);
-		type(xpath(PVObjectReferenceSmoketest.slasBox), input[suburb]);
-		clickselectSuggestion(0,0,0,0,false);
+		//clickLogo();
+		searchAddress(suburb);
+		selectAddress();
 		clicViewSuburbProfile();
 		
-		String text = getText(xpath(PVObjectReferenceSmoketest.verifySuburbInsights));
-		if (text.contains("Suburb Insights")) {
-			available = true;	
-		}
-		
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.actionBar));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.actionBar)));
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.actionBar)) == true)
+		{
+			available = true;
+		}	
 		if(withATU) {
 			if(available){
 				atu.performATU(input[steps],input[inputVal],input[expected],input[actualPass],true,true);//pass
@@ -172,8 +227,6 @@ public class AddtoWatchListUtil extends FunctionReference {
 		}else {
 			fail("User was not able to search and select a Suburb");
 		}
-		
-
 		return available;
 	}
 	
@@ -183,13 +236,16 @@ public class AddtoWatchListUtil extends FunctionReference {
 		head.clickMenu();
 		goToWatchList();
 		
-		String text = getText(xpath(PVObjectReferenceSmoketest.checkWatchlist));
-		if (text.contains("Manly, NSW 2095")) {
-			available = true;	
-			clickWatchlistDropDown(0, 0, 0, 0, false);
-			clickRemoveSuburb(0, 0, 0, 0, false);
-		}
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.suburbWatchlistHeader));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.suburbWatchlistHeader)));
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.suburbWatchlistTable));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.suburbWatchlistTable)));
 		
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.suburbWatchlistHeader)) == true && 
+				isElementVisible(xpath(PVObjectReferenceSmoketest.suburbWatchlistTable)) == true)
+		{
+			available = true;	
+		}
 		if(withATU) {
 			if(available){
 				atu.performATU(input[steps],input[inputVal],input[expected],input[actualPass],true,true);//pass
@@ -198,139 +254,68 @@ public class AddtoWatchListUtil extends FunctionReference {
 			}
 		}
 		if(available){
-			pass("Suburb was added to WatchList");
+			pass("Suburb Address was added to Suburb WatchList Table");
 		}else {
-			fail("Suburb was not added to WatchList");
+			fail("Suburb Address was not added to Suburb WatchList Table");
 		}
-	
 		return available;
 	}
+	public boolean selectStreet(int street ,int steps, int inputVal, int expected, int actualPass,int actualFail ,int a,boolean withATU)  throws Exception{
+		boolean available = false;
+		
+		//clickLogo();
+		searchAddress(street);
+		selectAddress();
+		
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.actionBar));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.actionBar)));
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.actionBar)) == true)
+		{
+			available = true;
+		}	
+		if(withATU) {
+			if(available){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actualPass],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actualFail],true,false);//fail
+			}
+		}
+		if(available){
+			pass("User was able to search and select a Street");
+		}else {
+			fail("User was not able to search and select a Street");
+		}
+		
 
-	public boolean clickselectSuggestion(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
-		boolean click = false;
+		return available;
+	}
+	public boolean selectSuburb(int suburb ,int steps, int inputVal, int expected, int actualPass,int actualFail ,int a,boolean withATU)  throws Exception{
+		boolean available = false;
 		
-		try{
-			waitForElementPresent(xpath(PVObjectReferenceSmoketest.selectSuggestion));
-			click(xpath(PVObjectReferenceSmoketest.selectSuggestion));
-			click = true;
-		}catch(Exception e){
-		}
+		//clickLogo();
+		searchAddress(suburb);
+		selectAddress();
+		clicViewSuburbProfile();
 		
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.actionBar));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.actionBar)));
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.actionBar)) == true)
+		{
+			available = true;
+		}	
 		if(withATU) {
-			if(click){
-				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			if(available){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actualPass],true,true);//pass
 			}else {
-				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actualFail],true,false);//fail
 			}
 		}
-		
-		return click;
-	}
-	
-	public boolean clickWatchlistDropDown(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
-		boolean click = false;
-		
-		try{
-			waitForElementPresent(xpath(PVObjectReferenceSmoketest.watchlistDropDown));
-			click(xpath(PVObjectReferenceSmoketest.watchlistDropDown));
-			click = true;
-		}catch(Exception e){
+		if(available){
+			pass("User was able to search and select a Suburb");
+		}else {
+			fail("User was not able to search and select a Suburb");
 		}
-		
-		if(withATU) {
-			if(click){
-				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
-			}else {
-				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
-			}
-		}
-		
-		return click;
-	}
-	
-	public boolean clickRemoveWatchlist(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
-		boolean click = false;
-		
-		try{
-			waitForElementPresent(xpath(PVObjectReferenceSmoketest.removeWatchlist));
-			click(xpath(PVObjectReferenceSmoketest.removeWatchlist));
-			click = true;
-		}catch(Exception e){
-		}
-		
-		if(withATU) {
-			if(click){
-				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
-			}else {
-				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
-			}
-		}
-		
-		return click;
-	}
-	
-	public boolean clickRemoveStreet(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
-		boolean click = false;
-		
-		try{
-			waitForElementPresent(xpath(PVObjectReferenceSmoketest.removeStreet));
-			click(xpath(PVObjectReferenceSmoketest.removeStreet));
-			click = true;
-		}catch(Exception e){
-		}
-		
-		if(withATU) {
-			if(click){
-				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
-			}else {
-				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
-			}
-		}
-		
-		return click;
-	}
-	
-	public boolean clickRemoveSuburb(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
-		boolean click = false;
-		
-		try{
-			waitForElementPresent(xpath(PVObjectReferenceSmoketest.removeSuburb));
-			click(xpath(PVObjectReferenceSmoketest.removeSuburb));
-			click = true;
-		}catch(Exception e){
-		}
-		
-		if(withATU) {
-			if(click){
-				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
-			}else {
-				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
-			}
-		}
-		
-		return click;
-	}
-	
-	public void clickAddtoWatchList() throws Exception{
-		
-		waitForElementPresent(xpath(PVObjectReferenceSmoketest.clickAddtoWatchList));
-		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.clickAddtoWatchList)));
-		click(xpath(PVObjectReferenceSmoketest.clickAddtoWatchList));
-		
-	}
- 
-	public void goToWatchList() throws Exception{
-		
-		waitForElementPresent(xpath(PVObjectReferenceSmoketest.goToWatclist));
-		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.goToWatclist)));
-		click(xpath(PVObjectReferenceSmoketest.goToWatclist));
-	}
-	
-	public void clicViewSuburbProfile() throws Exception{
-		waitForElementPresent(xpath(PVObjectReferenceSmoketest.viewSuburbProfile));
-		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.viewSuburbProfile)));
-		click(xpath(PVObjectReferenceSmoketest.viewSuburbProfile));
-	
+		return available;
 	}
 } 
 

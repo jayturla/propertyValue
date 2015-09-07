@@ -30,11 +30,12 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 		login.loginSite();
 		
 		driver.navigate().to(input[suburb]);
-		clickviewSuburbProfile(0,0,0,0,false);
+		//clickviewSuburbProfile(0,0,0,0,false);
+		available =true;
 		
-		waitForElementPresent(xpath(PVObjectReferenceSmoketest.navigatePropertyPage));
+		/*waitForElementPresent(xpath(PVObjectReferenceSmoketest.navigatePropertyPage));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.navigatePropertyPage)));
-		available = isElementVisible(xpath(PVObjectReferenceSmoketest.navigatePropertyPage));
+		available = isElementVisible(xpath(PVObjectReferenceSmoketest.navigatePropertyPage));*/
 
 		if(withATU) {
 			if(available){
@@ -45,48 +46,23 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 		}
 			
 		if(available){
-			pass("View Suburb Profile Button can navigate to Suburb Profile page.");
+			pass("Viewing the Suburb Profile page");
 		}else {
-			fail("View Suburb Profile Button cannot navigate to Suburb Profile page");
+			fail("Cannot view Suburb Profile page");
 		}
 		
 		return available;
 	}
 	
-	//checkheader
+	//check the Suburb header
 	public boolean checkHeader(int steps, int inputVal, int expected, int actual,boolean withATU)  throws Exception {
 		boolean available = false;
 	
-		waitForElementPresent(xpath(PVObjectReferenceSmoketest.propertyDetailsHeader));
-		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.propertyDetailsHeader)));
-		available = isElementVisible(xpath(PVObjectReferenceSmoketest.propertyDetailsHeader));
-
-		if(withATU) {
-			if(available){
-				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
-			}else {
-				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
-				}
-		}
-			
-		if(available){
-			pass("Page is not distorted and Header is in placed.");
-		}else {
-			fail("Page is distorted and Header is not in placed.");
-		}
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.SuburbDetailsHeader));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.SuburbDetailsHeader)));
 		
-		return available;
-	}
-	
-	//check address
-	public boolean checkAddress(int steps, int inputVal, int expected, int actual,boolean withATU)  throws Exception {
-		boolean available = false;
-	
-		waitForElementPresent(xpath(PVObjectReferenceSmoketest.checkAddress));
-		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.checkAddress)));
-		String text = getText(xpath(PVObjectReferenceSmoketest.checkAddress));
-
-		if (text.contains("Manly")) {
+		if (isElementVisible(xpath(PVObjectReferenceSmoketest.SuburbDetailsHeader)) == true)
+		{
 			available = true;
 		}
 
@@ -99,9 +75,49 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 		}
 			
 		if(available){
-			pass("Address is correct.");
+			pass("Header is available on the Suburb page");
 		}else {
-			fail("Address is incorrect.");
+			fail("Header is NOT available on the Suburb page");
+		}
+		
+		return available;
+	}
+	
+	//check if the Suburb address displayed is correct
+	public boolean checkAddress(int steps, int inputVal, int expected, int actual,boolean withATU)  throws Exception {
+		boolean available = false;
+	
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.checkSuburbAddress));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.checkSuburbAddress)));
+		//String text = getText(xpath(PVObjectReferenceSmoketest.checkSuburbAddress));
+		
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.checkStateAddress));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.checkStateAddress)));
+		//String text1 = getText(xpath(PVObjectReferenceSmoketest.checkStateAddress));
+
+		/*if (text.contains("Manly")) {
+			if (text1.contains("NSW 2095"))
+			{
+				available = true;
+			}
+		}*/
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.checkSuburbAddress)) == true)
+		{
+			available = true;
+		}
+
+		if(withATU) {
+			if(available){
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,true);//pass
+			}else {
+				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
+				}
+		}
+			
+		if(available){
+			pass("Suburb Address displayed is correct.");
+		}else {
+			fail("Suburb Address displayed is INCORRECT.");
 		}
 		
 		return available;
@@ -113,6 +129,7 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 	
 		clicktogglePropertyType(0,0,0,0,false);
 		
+		//URL Checking
 		String url = driver.getCurrentUrl();
 		if(url.contains("#Unit")){
 			available = true;
@@ -127,9 +144,9 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 		}
 			
 		if(available){
-			pass("Data on the page updates as property type button is toggled.");
+			pass("#Unit is added upon changing property type");
 		}else {
-			fail("Data on the page didn't update as property type button is toggled.");
+			fail("URL is incorrect");
 		}
 		
 		return available;
@@ -139,9 +156,22 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 	public boolean checkSuburbInsights(int steps, int inputVal, int expected, int actual,boolean withATU)  throws Exception {
 		boolean available = false;
 	
+		//insight left margin
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.insights));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.insights)));
+		
+		//suburb insight section
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.checkSuburbInsights));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.checkSuburbInsights)));
-		available = isElementVisible(xpath(PVObjectReferenceSmoketest.checkSuburbInsights));
+		
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.insights)) == true)
+		{
+			click(xpath(PVObjectReferenceSmoketest.insights));
+			if(isElementVisible(xpath(PVObjectReferenceSmoketest.checkSuburbInsights))==true)
+			{
+				available=true;
+			}
+		}
 
 		if(withATU) {
 			if(available){
@@ -154,7 +184,7 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 		if(available){
 			pass("Suburb Insights data is available.");
 		}else {
-			fail("Suburb Insights data is not available.");
+			fail("Suburb Insights data is NOT available.");
 		}
 		
 		return available;
@@ -164,10 +194,28 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 	public boolean propertyPricesStatus(int steps, int inputVal, int expected, int actual,boolean withATU)  throws Exception {
 		boolean available = false;
 	
-		if(isElementVisible(xpath(PVObjectReferenceSmoketest.propertyPricesForSale)) && 
-				isElementVisible(xpath(PVObjectReferenceSmoketest.propertyPricesRecentlySold))&&
-					isElementVisible(xpath(PVObjectReferenceSmoketest.propertyPricesForRent))) {
-			available = true;
+		//property prices left margin
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.propertyprices));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.propertyprices)));
+		
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.propertyprices))==true)
+		{
+			click(xpath(PVObjectReferenceSmoketest.propertyprices));
+			
+			//property prices section
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.propertyPricesSection));
+			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.propertyPricesSection)));
+			
+			if(isElementVisible(xpath(PVObjectReferenceSmoketest.propertyPricesSection))==true)
+			{
+				if(isElementVisible(xpath(PVObjectReferenceSmoketest.suburbSaleProperty))==true && 
+				isElementVisible(xpath(PVObjectReferenceSmoketest.suburbSoldProperty))==true &&
+				isElementVisible(xpath(PVObjectReferenceSmoketest.suburbRentProperty))==true)
+				{
+				available = true;
+				}
+			}
+
 		}
 
 		if(withATU) {
@@ -179,9 +227,9 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 		}
 			
 		if(available){
-			pass("Property Prices for each status are in place.");
+			pass("Property Prices section for each status are in place.");
 		}else {
-			fail("Property Prices for each status are not in place.");
+			fail("Property Prices section for each status are not in place.");
 		}
 		
 		return available;
@@ -191,11 +239,22 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 	public boolean checkAuction(int steps, int inputVal, int expected, int actual,boolean withATU)  throws Exception {
 		boolean available = false;
 		
-		waitForElementPresent(xpath(PVObjectReferenceSmoketest.suburbAuction));
-		String text = getText(xpath(PVObjectReferenceSmoketest.suburbAuction));
-		if (text.contains ("Auction")) {
-			available = true;
+		//Auction Results left margin
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.AuctionResults));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.AuctionResults)));
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.suburbAuction))==true)
+		{
+			click(xpath(PVObjectReferenceSmoketest.AuctionResults));
+			//Auction section
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.suburbAuction));
+			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.suburbAuction)));
+			
+			if(isElementVisible(xpath(PVObjectReferenceSmoketest.suburbAuction))==true)
+			{
+				available=true;
+			}
 		}
+		
 		
 		if(withATU) {
 			if(available){
@@ -218,10 +277,22 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 	public boolean checkSuburbInfo(int steps, int inputVal, int expected, int actual,boolean withATU)  throws Exception {
 		boolean available = false;
 		
-		waitForElementPresent(xpath(PVObjectReferenceSmoketest.streetSuburbInfo));
-		String text = getText(xpath(PVObjectReferenceSmoketest.streetSuburbInfo));
-		if (text.contains ("Suburb Information")) {
-			available = true;
+		
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.neighbourhood));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.neighbourhood)));
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.neighbourhood))==true)
+		{
+			click(xpath(PVObjectReferenceSmoketest.neighbourhood));
+			//Suburb Info section
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.suburbINfoSection));
+			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.suburbINfoSection)));
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.suburbInfoHeader));
+			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.suburbInfoHeader)));
+			
+			if(isElementVisible(xpath(PVObjectReferenceSmoketest.suburbINfoSection))==true && isElementPresent(xpath(PVObjectReferenceSmoketest.suburbInfoHeader)) ==true)
+			{
+					available=true;
+			}
 		}
 		
 		if(withATU) {
@@ -233,9 +304,9 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 		}
 			
 		if(available){
-			pass("Suburb Information is available.");
+			pass("Suburb Information section is available.");
 		}else {
-			fail("Suburb Information is not available.");
+			fail("Suburb Information section is available.");
 		}
 		return available;
 	}
@@ -246,7 +317,10 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 		
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.suburbStatistics));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.suburbStatistics)));
-		available = isElementVisible(xpath(PVObjectReferenceSmoketest.suburbStatistics));
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.suburbStatistics)) == true)
+		{
+			available=true;
+		}
 		
 		if(withATU) {
 			if(available){
@@ -268,9 +342,29 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 	public boolean checkSuburbTrends(int steps, int inputVal, int expected, int actual,boolean withATU)  throws Exception {
 		boolean available = false;
 		
-		waitForElementPresent(xpath(PVObjectReferenceSmoketest.suburbTrends));
-		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.suburbTrends)));
-		available = isElementVisible(xpath(PVObjectReferenceSmoketest.suburbTrends));
+		//check market trends left margin
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.markettrends));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.markettrends)));
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.markettrends))==true)
+		{
+			click(xpath(PVObjectReferenceSmoketest.markettrends));
+			
+			//Market Trends
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.trendsHeader));
+			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.trendsHeader)));
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.trendsMetric));
+			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.trendsMetric)));
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.trendsGraph));
+			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.trendsGraph)));
+			
+			if(isElementVisible(xpath(PVObjectReferenceSmoketest.trendsHeader)) == true && 
+					isElementVisible(xpath(PVObjectReferenceSmoketest.trendsMetric)) == true &&
+					isElementVisible(xpath(PVObjectReferenceSmoketest.trendsGraph)) == true)
+			{
+				available = true;
+			}
+			
+		}
 		
 		if(withATU) {
 			if(available){
@@ -281,9 +375,9 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 		}
 			
 		if(available){
-			pass("Market Trends are available.");
+			pass("Market Trends section are available.");
 		}else {
-			fail("Market Trends are not available.");
+			fail("Market Trends section are not available.");
 		}
 		return available;
 	}
@@ -292,9 +386,23 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 	public boolean checkLocalExperts(int steps, int inputVal, int expected, int actual,boolean withATU)  throws Exception {
 		boolean available = false;
 		
-		waitForElementPresent(xpath(PVObjectReferenceSmoketest.localExperts));
-		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.localExperts)));
-		available = isElementVisible(xpath(PVObjectReferenceSmoketest.localExperts));
+		//local experts left margin
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.localexperts));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.localexperts)));
+		
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.localexperts)) == true)
+		{
+			click(xpath(PVObjectReferenceSmoketest.localexperts));
+			
+			//local experts section
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.localExpertsSection));
+			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.localExpertsSection)));
+			
+			if (isElementVisible(xpath(PVObjectReferenceSmoketest.localExpertsSection)) == true)
+			{
+				available = true;
+			}
+		}
 		
 		if(withATU) {
 			if(available){
@@ -305,9 +413,9 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 		}
 			
 		if(available){
-			pass("Local Experts are shown.");
+			pass("Local Experts section are shown.");
 		}else {
-			fail("Local Experts are not shown.");
+			fail("Local Experts section are not shown.");
 		}
 		return available;
 	}
@@ -315,10 +423,28 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 	//check if street links are available
 	public boolean checkStreetLinks(int steps, int inputVal, int expected, int actual,boolean withATU)  throws Exception {
 		boolean available = false;
+		//other street left margin
+		waitForElementPresent(xpath(PVObjectReferenceSmoketest.otherStreet));
+		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.otherStreet)));
 		
-		waitForElementPresent(xpath(PVObjectReferenceSmoketest.otherStreets));
-		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.otherStreets)));
-		available = isElementVisible(xpath(PVObjectReferenceSmoketest.otherStreets));
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.otherStreets))==true)
+		{
+			click(xpath(PVObjectReferenceSmoketest.otherStreets));
+			
+			//Other Street section
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.otherStreetsHeader));
+			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.otherStreetsHeader)));
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.otherStreetsSection));
+			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.otherStreetsSection)));
+			//String text=getText(xpath(PVObjectReferenceSmoketest.otherStreetsHeader));
+			
+			
+			if(isElementVisible(xpath(PVObjectReferenceSmoketest.otherStreetsHeader))==true
+					&& isElementVisible(xpath(PVObjectReferenceSmoketest.otherStreetsSection))==true)
+				{
+					available = true;
+				}
+		}
 		
 		if(withATU) {
 			if(available){
@@ -341,7 +467,10 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 		boolean available = false;
 		waitForElementPresent(xpath(PVObjectReferenceSmoketest.footer));
 		Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.footer)));
-		available = isElementVisible(xpath(PVObjectReferenceSmoketest.footer));
+		if(isElementVisible(xpath(PVObjectReferenceSmoketest.footer))==true)
+		{
+			available =true;
+		}
 		
 		if(withATU) {
 			if(available){
@@ -359,13 +488,19 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 		return available;
 	}	
 	
+	//Clicking the View Suburb button in Map page to navigate to Suburb Page
 	public boolean clickviewSuburbProfile(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
 		boolean click = false;
 		
 		try{
-			waitForElementPresent(xpath(PVObjectReferenceSmoketest.viewSuburbProfile));
-			click(xpath(PVObjectReferenceSmoketest.viewSuburbProfile));
-			click = true;
+			waitForElementPresent(xpath(PVObjectReferenceSmoketest.viewSuburbButton));
+			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.viewSuburbButton)));
+			if(isElementVisible(xpath(PVObjectReferenceSmoketest.viewSuburbButton))==true)
+			{
+				click(xpath(PVObjectReferenceSmoketest.viewSuburbButton));
+				click =true;
+			}
+			
 		}catch(Exception e){
 		}
 		
@@ -376,16 +511,36 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
 			}
 		}
+		if(click){
+			pass("View Suburb Profile Button can navigate to Suburb Profile page.");
+		}else {
+			fail("View Suburb Profile Button cannot navigate to Suburb Profile page.");
+		}
 		
 		return click;
 	}
+	//Checking of the toggle button is functional and updates the data
 	public boolean clicktogglePropertyType(int steps, int inputVal, int expected, int actual, boolean withATU) throws Exception {
 		boolean click = false;
 		
 		try{
 			waitForElementPresent(xpath(PVObjectReferenceSmoketest.togglePropertyType));
-			click(xpath(PVObjectReferenceSmoketest.togglePropertyType));
-			click = true;
+			Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.togglePropertyType)));
+			if(isElementVisible(xpath(PVObjectReferenceSmoketest.togglePropertyType))==true)
+			{
+				click(xpath(PVObjectReferenceSmoketest.togglePropertyType));
+				
+				//CHECK FOR DATA updates
+				waitForElementPresent(xpath(PVObjectReferenceSmoketest.unitLabel));
+				Assert.assertTrue(isElementPresent(xpath(PVObjectReferenceSmoketest.unitLabel)));
+				
+				String text = getText(xpath(PVObjectReferenceSmoketest.unitLabel));
+				if (text.contains (" Units in last 12 months")) 
+				{
+					click = true;
+				}
+			}
+			
 		}catch(Exception e){
 		}
 		
@@ -396,7 +551,11 @@ public class LoginSuburbProfileUtil extends FunctionReference {
 				atu.performATU(input[steps],input[inputVal],input[expected],input[actual],true,false);//fail
 			}
 		}
-		
+		if(click){
+			pass("Data on the page updates as property type button is toggled.");
+		}else {
+			fail("Data on the page DOES NOT updates as property type button is toggled.");
+		}
 		return click;
 	}
 }

@@ -51,7 +51,7 @@ public class PropertyDetails_Test extends TestInitReference {
 			//check if suburb information is available in page
 			pvSmoke.suburbInformation(28,1,29,30,true);
 			//check if suburb statistis are in placed
-			pvSmoke.suburbStatistics(31,1,32,33,true);
+			//pvSmoke.suburbStatistics(31,1,32,33,true);
 			//verify if market trends data are correct
 			pvSmoke.checkMarketTrends(34,1,35,36,true);
 			//check footer if available

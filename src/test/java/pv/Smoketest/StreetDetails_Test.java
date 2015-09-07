@@ -49,7 +49,7 @@ public class StreetDetails_Test extends TestInitReference {
 			//check if street suburb information if available 
 			pvSmoke.streetSuburbInformation(25,1,26,27,true);
 			//check if street suburb statistics if available
-			pvSmoke.streetSuburbStatistics(28,1,29,30,true);
+			//pvSmoke.streetSuburbStatistics(28,1,29,30,true);
 			//check if other streets section is available
 			pvSmoke.checkOtherStreets(31,1,32,33,true);
 			//check footer

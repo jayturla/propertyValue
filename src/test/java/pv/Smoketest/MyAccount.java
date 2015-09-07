@@ -38,9 +38,9 @@ public class MyAccount extends TestInitReference {
 			//Click Menu 
 			headZone.clickMenu();
 			//Check if My Account is available and Go to Account
-			 pvMyAccount.clickAccount(7,8,9,10,11,true);
+			pvMyAccount.clickAccount(7,8,9,10,11,true);
 			 //Verify My Account page
-			 pvMyAccount.checkAccountPage(12,13,14,15,16,true);
+			pvMyAccount.checkAccountPage(12,13,14,15,16,true);
 			 
 		} catch (Exception e) {
 		}

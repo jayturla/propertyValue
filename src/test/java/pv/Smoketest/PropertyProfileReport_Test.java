@@ -34,7 +34,7 @@ public class PropertyProfileReport_Test extends TestInitReference {
 
 		try {
 			//check for $ Buy Property report
-			pvSmoke.checkBuyPropertyReport(1,2,3,4,25,true);
+			pvSmoke.checkBuyPropertyReport(1,2,3,4,25,26,27,true);
 			//click $ Buy Property report button to navigate to Property Profile Report screen
 			pvSmoke.clickBuyPropertyReport(5,2,6,7,true);
 			//click Get This Report Button to navigate Payment Summary Screen
@@ -42,7 +42,7 @@ public class PropertyProfileReport_Test extends TestInitReference {
 			//click buy now button checked if updated to pay now button
 			pvSmoke.clickBuyNow(11,2,12,13,true);
 			//click pay now button to navigate to Payment Checkout
-			pvSmoke.clickPayNow(14,2,15,16,true);
+			//pvSmoke.clickPayNow(14,2,15,16,true);
 			//submit credit card details and navigate to payment success screen
 			pvSmoke.submitCreditCard(17,2,18,19,21,22,23,24,true);
 		} catch (Exception e) {
